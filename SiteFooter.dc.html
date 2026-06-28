@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+</helmet>
+<div>
+<footer style="background:#1A1F3D;color:#C7CCEA;padding:clamp(40px,5vw,64px) clamp(16px,4vw,32px) 32px;font-family:'Nunito',system-ui,sans-serif">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(24px,3vw,40px);margin-bottom:36px">
+      <div>
+        <a href="Heldenshop Homepage.dc.html" style="display:flex;align-items:center;margin-bottom:14px;text-decoration:none"><span style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.4rem;color:#fff">Heldenshop</span></a>
+        <p style="font-weight:600;font-size:.9rem;line-height:1.5;color:#9AA0C8;margin:0">Samengesteld door echte superheldenfans. Onafhankelijk, vrolijk en altijd eerlijk.</p>
+      </div>
+      <div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;color:#fff;margin-bottom:12px">Thema's</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ themes }}" as="t" hint-placeholder-count="11"><li><a href="{{ t.href }}" style="color:#AEB4DA;text-decoration:none;font-weight:600;font-size:.9rem" style-hover="color:#fff">{{ t.name }}</a></li></sc-for>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;color:#fff;margin-bottom:12px">Spider-Man categorieën</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ categories }}" as="c" hint-placeholder-count="8"><li><a href="{{ c.href }}" style="color:#AEB4DA;text-decoration:none;font-weight:600;font-size:.9rem" style-hover="color:#fff">{{ c.name }}</a></li></sc-for>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;color:#fff;margin-bottom:12px">Over Heldenshop</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ overLinks }}" as="o" hint-placeholder-count="4"><li><a href="{{ o.href }}" style="color:#AEB4DA;text-decoration:none;font-weight:600;font-size:.9rem" style-hover="color:#fff">{{ o.name }}</a></li></sc-for>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;color:#fff;margin-bottom:12px">Info &amp; contact</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ infoLinks }}" as="n" hint-placeholder-count="4"><li><a href="{{ n.href }}" style="color:#AEB4DA;text-decoration:none;font-weight:600;font-size:.9rem" style-hover="color:#fff">{{ n.name }}</a></li></sc-for>
+        </ul>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px 20px;font-size:.84rem;font-weight:600;line-height:1.5;color:#9AA0C8;margin-bottom:24px"><strong style="color:#C7CCEA">Affiliate-melding:</strong> Heldenshop is een onafhankelijke fansite en geen webshop. Wij verkopen zelf niets en hebben geen winkelmandje. Via onze links koop je bij externe winkels zoals bol; wij ontvangen daarvoor mogelijk een kleine commissie, zonder extra kosten voor jou.</div>
+    <div style="font-size:.78rem;line-height:1.6;color:#6F76A0;border-top:1px solid rgba(255,255,255,.08);padding-top:20px">
+      <p style="margin:0 0 10px">{{ seoText }}</p>
+      <span style="color:#565C84">© {{ year }} Heldenshop.nl · Een onafhankelijke fansite. Spider-Man™ en alle personages zijn eigendom van hun respectievelijke rechthebbenden.</span>
+    </div>
+  </div>
+</footer>
+<div style="background:#FFE9A8;color:#7A5A00;font-size:.82rem;font-weight:700;text-align:center;padding:13px 16px;line-height:1.45">
+  <span style="display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;max-width:1100px"><span aria-hidden="true" style="width:18px;height:18px;border-radius:50%;background:#7A5A00;color:#FFE9A8;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;flex:0 0 auto">i</span> Heldenshop is een onafhankelijke fansite. Koop je via onze links, dan verdienen wij een kleine commissie — jij betaalt niets extra.</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:520},&quot;seoText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const themeSlugs = [
+      ['Spider-Man', 'spider-man-speelgoed'], ['Batman', 'batman-speelgoed'], ['Avengers', 'avengers-speelgoed'], ['Hulk', 'hulk-speelgoed'],
+      ['Pokémon', 'pokemon-speelgoed'], ['Super Mario', 'super-mario-speelgoed'], ['Star Wars', 'star-wars-speelgoed'],
+      ['Frozen', 'frozen-speelgoed'], ['Paw Patrol', 'paw-patrol-speelgoed'], ['Harry Potter', 'harry-potter-speelgoed'],
+      ['LEGO', 'lego-speelgoed']
+    ];
+    const themes = themeSlugs.map(([name, slug]) => ({ name, href: 'Speelgoed.dc.html?p=' + slug }))
+      .concat([{ name: 'Alle helden', href: 'Speelgoed.dc.html?p=alle-helden' }]);
+    const cats = [
+      ['Actiefiguren', 'spider-man-actiefiguren'], ['LEGO', 'spider-man-lego'], ['Verkleedpak & Kostuum', 'spider-man-verkleedpak'],
+      ['Maskers', 'spider-man-maskers'], ['Knuffels', 'spider-man-knuffels'], ['Voertuigen', 'spider-man-voertuigen'],
+      ['Puzzels', 'spider-man-puzzels'], ['Feestartikelen', 'spider-man-feestartikelen']
+    ];
+    const categories = cats.map(([name, slug]) => ({ name, href: 'Speelgoed.dc.html?p=' + slug }));
+    const overLinks = [
+      { name: 'Over ons', href: 'Info.dc.html?page=over-ons' },
+      { name: 'Hoe wij kiezen', href: 'Info.dc.html?page=hoe-wij-kiezen' },
+      { name: 'Affiliate-beleid', href: 'Info.dc.html?page=affiliate-beleid' },
+      { name: 'Heldenshop gidsen', href: 'Gidsen.dc.html' }
+    ];
+    const infoLinks = [
+      { name: 'Contact', href: 'Info.dc.html?page=contact' },
+      { name: 'Veelgestelde vragen', href: 'Info.dc.html?page=faq' },
+      { name: 'Privacy', href: 'Info.dc.html?page=privacy' },
+      { name: 'Cookies', href: 'Info.dc.html?page=cookies' }
+    ];
+    const seoText = this.props.seoText || 'Op Heldenshop vind je het leukste Spider-Man speelgoed van 2026: van LEGO Marvel bouwsets en Titan Hero actiefiguren tot web-blasters, verkleedpakken, maskers, knuffels en Funko Pop verzamelfiguren. Onze fans vergelijken prijzen en kiezen alleen officiële producten, zodat ouders en kinderen snel het perfecte Spider-Man cadeau vinden — passend bij elke leeftijd, van peuter tot verzamelaar. Extra leuk dankzij de nieuwe film Spider-Man: Brand New Day (in de bioscoop vanaf 31 juli 2026).';
+    return { themes, categories, overLinks, infoLinks, seoText, year: new Date().getFullYear() };
+  }
+}
+</script>
+</body>
+</html>

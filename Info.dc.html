@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Over Heldenshop: een onafhankelijke fansite voor superhelden-speelgoed. Lees hoe wij kiezen, ons affiliate-beleid en neem contact op.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFBF2}
+@keyframes hs-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+<div style="font-family:'Nunito',system-ui,sans-serif;color:#232850;background:#FFFBF2;overflow-x:hidden">
+  <dc-import name="SiteHeader" active-slug="" hint-size="100%,150px"></dc-import>
+  <main>
+    <nav aria-label="Kruimelpad" style="max-width:860px;margin:0 auto;padding:18px clamp(16px,4vw,32px) 0">
+      <ol style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;list-style:none;margin:0;padding:0;font-weight:700;font-size:.86rem;color:#8A8FB0">
+        <li><a href="Heldenshop Homepage.dc.html" style="color:#2B54E0;text-decoration:none">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li aria-current="page" style="color:#232850">{{ crumbName }}</li>
+      </ol>
+    </nav>
+
+    <section aria-labelledby="info-title" style="padding:clamp(22px,3vw,38px) clamp(16px,4vw,32px) clamp(20px,3vw,30px)">
+      <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <div style="width:clamp(64px,8vw,92px);height:clamp(78px,10vw,112px);flex:0 0 auto"><dc-import name="Vonk" hint-size="100%,100%" style="width:100%;height:100%"></dc-import></div>
+        <div>
+          <span style="font-family:'Fredoka',sans-serif;font-weight:600;color:#1FC3B1;letter-spacing:.04em;text-transform:uppercase;font-size:.82rem">{{ eyebrow }}</span>
+          <h1 id="info-title" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.05;letter-spacing:-.02em;color:#232850;margin:6px 0 8px">{{ title }}</h1>
+          <p style="font-size:clamp(1rem,1.6vw,1.15rem);color:#4C5276;font-weight:600;margin:0;max-width:54ch">{{ lead }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Inhoud" style="padding:clamp(10px,2vw,20px) clamp(16px,4vw,32px) clamp(24px,3vw,36px)">
+      <div style="max-width:860px;margin:0 auto;font-size:clamp(1.02rem,1.6vw,1.1rem);line-height:1.75;color:#3A4068;font-weight:500">
+        <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="3">
+          <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.25rem,2.4vw,1.6rem);color:#232850;margin:clamp(22px,3.5vw,32px) 0 10px;line-height:1.2">{{ sec.h }}</h2>
+          <sc-for list="{{ sec.paras }}" as="para" hint-placeholder-count="1"><p style="margin:0 0 12px">{{ para }}</p></sc-for>
+          <sc-if value="{{ sec.hasList }}" hint-placeholder-val="">
+            <ul style="margin:4px 0 12px;padding-left:22px;display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ sec.list }}" as="li" hint-placeholder-count="3"><li style="line-height:1.5">{{ li }}</li></sc-for>
+            </ul>
+          </sc-if>
+        </sc-for>
+
+        <sc-if value="{{ hasForm }}" hint-placeholder-val="">
+          <div style="margin-top:clamp(20px,3vw,30px)">
+            <sc-if value="{{ sent }}" hint-placeholder-val="">
+              <div style="background:#E2F7F3;border:2px solid #B6EAE2;border-radius:22px;padding:24px;font-family:'Fredoka',sans-serif;font-weight:600;color:#13988A;font-size:1.1rem">🎉 Bedankt voor je bericht! We lezen alles en reageren zo snel mogelijk.</div>
+            </sc-if>
+            <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+              <form onSubmit="{{ onSend }}" style="background:#fff;border:2px solid #EFE6CE;border-radius:24px;padding:clamp(18px,3vw,26px);display:flex;flex-direction:column;gap:14px;box-shadow:0 12px 26px rgba(35,40,80,.06)">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+                  <label style="display:flex;flex-direction:column;gap:6px;font-family:'Fredoka',sans-serif;font-weight:600;color:#232850;font-size:.92rem">Naam<input type="text" required style="border:2px solid #EFE6CE;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-weight:600;font-size:1rem;color:#232850;outline:none" style-focus="border-color:#1FC3B1"></label>
+                  <label style="display:flex;flex-direction:column;gap:6px;font-family:'Fredoka',sans-serif;font-weight:600;color:#232850;font-size:.92rem">E-mailadres<input type="email" required style="border:2px solid #EFE6CE;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-weight:600;font-size:1rem;color:#232850;outline:none" style-focus="border-color:#1FC3B1"></label>
+                </div>
+                <label style="display:flex;flex-direction:column;gap:6px;font-family:'Fredoka',sans-serif;font-weight:600;color:#232850;font-size:.92rem">Bericht<textarea required rows="4" style="border:2px solid #EFE6CE;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-weight:600;font-size:1rem;color:#232850;outline:none;resize:vertical" style-focus="border-color:#1FC3B1"></textarea></label>
+                <button type="submit" style="align-self:flex-start;border:none;cursor:pointer;background:#EE2A3C;color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem;padding:14px 28px;border-radius:999px;box-shadow:0 5px 0 #C81E2E;transition:transform .14s ease" style-hover="transform:translateY(2px)">Verstuur bericht</button>
+                <span style="color:#9A9FBC;font-weight:600;font-size:.78rem">We gebruiken je gegevens alleen om je vraag te beantwoorden.</span>
+              </form>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <dc-import name="SpiderCrossSell" hint-size="100%,560px"></dc-import>
+  </main>
+  <dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  componentDidMount() {
+    const p = this.getPage();
+    import('./seo.js').then(({ applySeo, breadcrumb, faqPage }) => {
+      const ld = [breadcrumb([{ name: 'Home', slug: '' }, { name: p.crumbName, slug: p.slug }])];
+      if (p.faq && p.faq.length) ld.push(faqPage(p.faq));
+      applySeo({ title: p.seoTitle, description: p.seoDesc, keywords: p.keywords, canonical: 'https://heldenshop.nl/' + p.slug, ogType: 'website', jsonLd: ld });
+    }).catch(() => {});
+  }
+  getPage() {
+    if (this._p) return this._p;
+    let key = 'over-ons';
+    try { key = new URLSearchParams(location.search).get('page') || key; } catch (e) {}
+    const map = this.pages();
+    this._p = map[key] || map['over-ons'];
+    return this._p;
+  }
+  pages() {
+    const mkSec = (arr) => arr.map((s) => ({ h: s.h, paras: s.paras, hasList: !!(s.list && s.list.length), list: s.list || [] }));
+    const M = {};
+    M['over-ons'] = {
+      slug: 'over-ons', crumbName: 'Over ons', eyebrow: 'Over Heldenshop', title: 'Over Heldenshop',
+      lead: 'Een onafhankelijke Nederlandse fansite voor superhelden-speelgoed, gemaakt door echte fans.',
+      sections: mkSec([
+        { h: 'Wie we zijn', paras: ['Heldenshop is opgericht door een klein team superheldenfans. We zijn zelf opgegroeid met Spider-Man en delen die liefde graag met een nieuwe generatie.'] },
+        { h: 'Wat we doen', paras: ['We zoeken het leukste superhelden-speelgoed uit en helpen ouders en kinderen kiezen. Geen eindeloze lijsten, maar een zorgvuldige selectie van toppers — curatie boven volume.', 'Spider-Man is op dit moment de populairste en meest actuele held, dus daar ligt nu de nadruk. Andere helden volgen.'] },
+        { h: 'Onafhankelijk en eerlijk', paras: ['We zijn geen webshop en verkopen zelf niets. Via onze links koop je bij externe winkels zoals bol. Lees meer in ons affiliate-beleid.'] }
+      ]),
+      seoTitle: 'Over Heldenshop — onafhankelijke fansite voor superhelden-speelgoed',
+      seoDesc: 'Heldenshop is een onafhankelijke Nederlandse fansite voor superhelden-speelgoed, gemaakt door echte fans. Lees wie we zijn en wat we doen.',
+      keywords: 'over heldenshop, superhelden fansite, spider-man fansite'
+    };
+    M['hoe-wij-kiezen'] = {
+      slug: 'hoe-wij-kiezen', crumbName: 'Hoe wij kiezen', eyebrow: 'Onze werkwijze', title: 'Hoe wij kiezen',
+      lead: 'Zo komen onze toppers tot stand — eerlijk, onafhankelijk en met liefde voor het spel.',
+      sections: mkSec([
+        { h: 'Onze selectiecriteria', paras: ['We kijken verder dan mooie plaatjes. Een product komt pas op onze lijst als het echt de moeite waard is.'], list: ['Speelplezier: is het leuk en houdbaar?', 'Prijs: vergeleken zodat je niet te veel betaalt', 'Officieel: alleen echte, officiële producten — geen namaak', 'Leeftijd: past het bij de doelgroep?'] },
+        { h: 'Curatie boven volume', paras: ['Liever een paar geweldige tips dan honderden middelmatige. We laten een duidelijke Top 3 zien, een kort rijtje extra favorieten en de rest als handige links.'] },
+        { h: 'Altijd actueel', paras: ['Prijzen schommelen, daarom tonen we richtprijzen en linken we naar de actuele prijs bij bol. Zo zie je altijd wat het op dit moment kost.'] }
+      ]),
+      seoTitle: 'Hoe wij kiezen — de werkwijze van Heldenshop',
+      seoDesc: 'Hoe stelt Heldenshop zijn toppers samen? Speelplezier, prijsvergelijking en alleen officiële producten. Curatie boven volume.',
+      keywords: 'hoe heldenshop kiest, speelgoed selectie, onafhankelijke reviews speelgoed'
+    };
+    M['affiliate-beleid'] = {
+      slug: 'affiliate-beleid', crumbName: 'Affiliate-beleid', eyebrow: 'Transparantie', title: 'Affiliate-beleid',
+      lead: 'Volledige openheid over hoe Heldenshop geld verdient.',
+      sections: mkSec([
+        { h: 'Hoe het werkt', paras: ['Heldenshop is een fansite, geen webshop. Klik je op een knop zoals "Bekijk bij bol", dan ga je naar een externe winkel. Koop je daar iets, dan ontvangen wij mogelijk een kleine commissie.'] },
+        { h: 'Jij betaalt niets extra', paras: ['De commissie wordt betaald door de winkel, niet door jou. De prijs blijft voor jou exact hetzelfde.'] },
+        { h: 'Onze belofte', paras: ['Onze tips zijn nooit te koop. We kiezen producten omdat we ze goed vinden, niet omdat ze ons meer opleveren. Affiliate-links herken je aan de melding bovenaan elke pagina.'] }
+      ]),
+      seoTitle: 'Affiliate-beleid — zo verdient Heldenshop geld',
+      seoDesc: 'Heldenshop verdient via affiliate-links een kleine commissie, zonder extra kosten voor jou. Lees ons volledige, transparante affiliate-beleid.',
+      keywords: 'affiliate beleid, affiliate disclosure, hoe verdient heldenshop geld'
+    };
+    M['redactie'] = {
+      slug: 'redactie', crumbName: 'Redactie & fans', eyebrow: 'Het team', title: 'Redactie & fans',
+      lead: 'Geschreven en samengesteld door mensen die zelf dol zijn op superhelden.',
+      sections: mkSec([
+        { h: 'Door fans, voor fans', paras: ['Onze gidsen en selecties worden gemaakt door een klein redactieteam van superheldenfans. We spelen, testen en bespreken alles voordat het op de site komt.'] },
+        { h: 'Meedoen?', paras: ['Ben je zelf een grote fan en wil je meeschrijven of een tip delen? We horen het graag via onze contactpagina.'] }
+      ]),
+      seoTitle: 'Redactie & fans — het team achter Heldenshop',
+      seoDesc: 'Maak kennis met het fan-team achter Heldenshop. Onze gidsen en tips worden gemaakt door echte superheldenfans.',
+      keywords: 'heldenshop redactie, over het team, superheldenfans'
+    };
+    M['contact'] = {
+      slug: 'contact', crumbName: 'Contact', eyebrow: 'Zeg hallo', title: 'Contact', hasForm: true,
+      lead: 'Een vraag, tip of opmerking? We horen graag van je.',
+      sections: mkSec([
+        { h: 'Stuur ons een bericht', paras: ['Gebruik het formulier hieronder of mail naar hallo@heldenshop.nl. We reageren meestal binnen 1-2 werkdagen.'] }
+      ]),
+      seoTitle: 'Contact — Heldenshop',
+      seoDesc: 'Neem contact op met Heldenshop. Vragen, tips of opmerkingen over superhelden-speelgoed? Stuur ons een bericht.',
+      keywords: 'contact heldenshop, heldenshop mailen'
+    };
+    const faq = [
+      { q: 'Is Heldenshop een webshop?', a: 'Nee. Heldenshop is een onafhankelijke fansite. We verkopen zelf niets en hebben geen winkelmandje. Je koopt bij externe winkels zoals bol.' },
+      { q: 'Hoe verdienen jullie geld?', a: 'Via affiliate-links. Koop je iets na het klikken op onze link, dan ontvangen wij een kleine commissie van de winkel.' },
+      { q: 'Betaal ik dan meer?', a: 'Nee, je betaalt exact dezelfde prijs. De commissie komt van de winkel, niet van jou.' },
+      { q: 'Zijn het officiële producten?', a: 'Ja. We linken alleen naar officiële producten bij betrouwbare winkels zoals bol.' },
+      { q: 'Kan ik bij jullie bestellen?', a: 'Nee, bestellen doe je bij de winkel waar we naartoe linken, zoals bol. Daar regel je betaling en levering.' },
+      { q: 'Kloppen de getoonde prijzen?', a: 'We tonen richtprijzen omdat prijzen schommelen. De actuele prijs zie je altijd bij bol via de knop.' }
+    ];
+    M['faq'] = {
+      slug: 'faq', crumbName: 'Veelgestelde vragen', eyebrow: 'Hulp', title: 'Veelgestelde vragen',
+      lead: 'De antwoorden op de vragen die we het vaakst krijgen.',
+      sections: mkSec(faq.map((x) => ({ h: x.q, paras: [x.a] }))), faq: faq,
+      seoTitle: 'Veelgestelde vragen (FAQ) — Heldenshop',
+      seoDesc: 'Veelgestelde vragen over Heldenshop: is het een webshop, hoe verdienen jullie geld, betaal ik meer en zijn het officiële producten?',
+      keywords: 'heldenshop faq, veelgestelde vragen, affiliate vragen'
+    };
+    M['privacy'] = {
+      slug: 'privacy', crumbName: 'Privacy', eyebrow: 'Jouw gegevens', title: 'Privacyverklaring',
+      lead: 'Kort en duidelijk: zo gaan we met jouw gegevens om.',
+      sections: mkSec([
+        { h: 'Welke gegevens', paras: ['We verzamelen zo min mogelijk. Schrijf je je in voor de nieuwsbrief, dan bewaren we alleen je e-mailadres. We vragen nooit gegevens van kinderen.'] },
+        { h: 'Waarvoor', paras: ['Je e-mailadres gebruiken we uitsluitend om je updates te sturen over nieuw speelgoed. Uitschrijven kan altijd met één klik.'] },
+        { h: 'Jouw rechten', paras: ['Je mag je gegevens altijd inzien of laten verwijderen. Stuur hiervoor een bericht via de contactpagina.'] }
+      ]),
+      seoTitle: 'Privacyverklaring — Heldenshop',
+      seoDesc: 'De privacyverklaring van Heldenshop. We verzamelen zo min mogelijk gegevens en vragen nooit gegevens van kinderen.',
+      keywords: 'heldenshop privacy, privacyverklaring, gegevens'
+    };
+    M['cookies'] = {
+      slug: 'cookies', crumbName: 'Cookies', eyebrow: 'Jouw gegevens', title: 'Cookiebeleid',
+      lead: 'Welke cookies we gebruiken en waarom.',
+      sections: mkSec([
+        { h: 'Functionele cookies', paras: ['Deze zijn nodig om de site goed te laten werken en kunnen niet worden uitgezet.'] },
+        { h: 'Affiliate- en statistiek-cookies', paras: ['Affiliate-cookies zorgen dat een aankoop bij bol aan ons wordt gekoppeld. Met statistiek-cookies meten we anoniem hoe de site wordt gebruikt, zodat we hem kunnen verbeteren.'], list: ['Functioneel: altijd actief', 'Affiliate: koppelt je aankoop bij de winkel', 'Statistiek: anonieme bezoekersaantallen'] },
+        { h: 'Jouw keuze', paras: ['Je bepaalt zelf welke niet-essentiële cookies je toestaat. Je kunt je keuze altijd aanpassen.'] }
+      ]),
+      seoTitle: 'Cookiebeleid — Heldenshop',
+      seoDesc: 'Het cookiebeleid van Heldenshop: welke functionele, affiliate- en statistiek-cookies we gebruiken en hoe je je keuze aanpast.',
+      keywords: 'heldenshop cookies, cookiebeleid, affiliate cookies'
+    };
+    return M;
+  }
+  renderVals() {
+    const p = this.getPage();
+    const onSend = (e) => { e.preventDefault(); this.setState({ sent: true }); };
+    return { crumbName: p.crumbName, eyebrow: p.eyebrow, title: p.title, lead: p.lead, sections: p.sections, hasForm: !!p.hasForm, onSend, sent: this.state.sent, notSent: !this.state.sent };
+  }
+}
+</script>
+</body>
+</html>

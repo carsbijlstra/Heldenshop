@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section aria-labelledby="x-spider-title" style="padding:clamp(36px,5vw,64px) clamp(16px,4vw,32px);background:#ffffff;border-top:2px solid #F3EAD2;border-bottom:2px solid #F3EAD2">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:clamp(18px,2.5vw,28px)">
+      <div style="width:clamp(56px,7vw,76px);height:clamp(68px,9vw,92px);flex:0 0 auto"><dc-import name="Vonk" hint-size="100%,100%" style="width:100%;height:100%"></dc-import></div>
+      <div>
+        <span style="font-family:'Fredoka',sans-serif;font-weight:600;color:#EE2A3C;letter-spacing:.04em;text-transform:uppercase;font-size:.82rem">Held van het moment</span>
+        <h2 id="x-spider-title" style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:clamp(1.4rem,3vw,2.1rem);color:#232850;margin:4px 0 0;line-height:1.05">Nu populair: Spider-Man 🕸️</h2>
+        <p style="color:#6A7099;font-weight:600;margin:6px 0 0;font-size:.95rem">De allernieuwste film maakt Spider-Man dé held van het moment.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(16px,2.2vw,24px)">
+      <sc-for list="{{ items }}" as="item" hint-placeholder-count="3">
+        <dc-import name="ProductCard" hint-size="100%,400px" style="width:100%;height:100%" variant="compact" badge="{{ item.badge }}" title="{{ item.title }}" price-label="{{ item.priceLabel }}" rating="{{ item.rating }}" reviews="{{ item.reviews }}" accent="{{ item.accent }}" img="{{ item.img }}" img-label="{{ item.imgLabel }}" alt="{{ item.alt }}" url="{{ item.url }}"></dc-import>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:clamp(22px,3vw,34px)">
+      <a href="Speelgoed.dc.html?p=spider-man-speelgoed" style="display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:999px;background:#EE2A3C;color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:clamp(1rem,1.5vw,1.1rem);text-decoration:none;box-shadow:0 6px 0 #C81E2E,0 12px 22px rgba(238,42,60,.22);transition:transform .14s ease,box-shadow .14s ease" style-hover="transform:translateY(2px);box-shadow:0 4px 0 #C81E2E" style-active="transform:translateY(5px);box-shadow:0 1px 0 #C81E2E">Bekijk al het Spider-Man speelgoed →</a>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:560}}">
+class Component extends DCLogic {
+  renderVals() {
+    const bol = (q) => 'https://www.bol.com/nl/nl/s/?searchtext=' + encodeURIComponent(q);
+    const items = [
+      { badge: 'Beste cadeau', title: "LEGO Marvel Spider-Man's auto en Doc Ock bouwset (10789)", priceLabel: '± €20', rating: 4.8, reviews: '1.2k', accent: '#2B54E0', imgLabel: 'LEGO 76226 — productfoto', alt: 'LEGO Marvel Spider-Man buildable figuur 76226 bouwfiguur speelgoed', url: 'https://www.bol.com/nl/nl/p/lego-marvel-spider-man-s-auto-en-doc-ock-bouwset-10789/9300000132639033/' },
+      { badge: 'Grootste favoriet', title: 'Spider-Man actiefiguur (klassiek)', priceLabel: '± €17', rating: 4.7, reviews: '2.3k', accent: '#EE2A3C', imgLabel: 'Spider-Man figuur — productfoto', alt: 'Spider-Man klassieke actiefiguur speelgoed', url: bol('Spider-Man actiefiguur klassiek') },
+      { badge: 'Voor de jongsten', title: 'Marvel Spidey pluche knuffel', priceLabel: '± €20', rating: 4.9, reviews: '1.7k', accent: '#1FC3B1', imgLabel: 'Spidey knuffel — productfoto', alt: 'Marvel Spidey pluche knuffel Spidey and his Amazing Friends speelgoed', url: bol('Marvel Spidey pluche knuffel') }
+    ];
+    return { items };
+  }
+}
+</script>
+</body>
+</html>
