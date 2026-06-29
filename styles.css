@@ -182,3 +182,9 @@ footer.site{background:var(--ink);color:#C7CCEA;padding-top:clamp(40px,5vw,60px)
 [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .5s ease, transform .5s ease}
 [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;scroll-behavior:auto!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+
+/* image helpers */
+.heroimg{width:100%;display:block;object-fit:cover;border-radius:20px;border:3px solid var(--ink);box-shadow:6px 8px 0 rgba(26,31,61,.16);background:#0e1430}
+.heroimg.cutout{object-fit:contain;border:none;box-shadow:none;background:none;filter:drop-shadow(5px 7px 0 rgba(26,31,61,.18))}
+.heroimg.poster{object-fit:contain;background:rgba(0,0,0,.22)}
+.guidecard .media img,.media img{width:100%;height:100%;object-fit:cover;display:block}
