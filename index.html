@@ -19,6 +19,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+@keyframes fxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fxBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes fxWiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes fxPop{0%{transform:scale(0) rotate(-14deg)}60%{transform:scale(1.15) rotate(7deg)}100%{transform:scale(1) rotate(-6deg)}}
+.fx-float{animation:fxFloat 4.5s ease-in-out infinite}
+.fx-bob{animation:fxBob 3s ease-in-out infinite}
+.fx-wiggle{animation:fxWiggle 2.6s ease-in-out infinite}
+.hero-fx{position:absolute;pointer-events:none;z-index:3}
+@media (max-width:640px){.home-h1{font-size:clamp(2.1rem,9vw,2.7rem)!important;line-height:1.03!important}}
+@media (prefers-reduced-motion:reduce){.fx-float,.fx-bob,.fx-wiggle,.hero-fx svg{animation:none!important}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Heldenshop","url":"https://heldenshop.nl/","inLanguage":"nl-NL"},{"@type":"ItemList","name":"Superhelden op Heldenshop","itemListElement":[{"@type":"ListItem","position":1,"name":"Spider-Man","url":"https://heldenshop.nl/spider-man"},{"@type":"ListItem","position":2,"name":"Batman","url":"https://heldenshop.nl/batman"},{"@type":"ListItem","position":3,"name":"Avengers","url":"https://heldenshop.nl/avengers"},{"@type":"ListItem","position":4,"name":"Hulk","url":"https://heldenshop.nl/hulk"},{"@type":"ListItem","position":5,"name":"Pokémon","url":"https://heldenshop.nl/pokemon"},{"@type":"ListItem","position":6,"name":"Super Mario","url":"https://heldenshop.nl/super-mario"},{"@type":"ListItem","position":7,"name":"Star Wars","url":"https://heldenshop.nl/star-wars"},{"@type":"ListItem","position":8,"name":"Frozen","url":"https://heldenshop.nl/frozen"},{"@type":"ListItem","position":9,"name":"Paw Patrol","url":"https://heldenshop.nl/paw-patrol"},{"@type":"ListItem","position":10,"name":"Harry Potter","url":"https://heldenshop.nl/harry-potter"}]}]}</script>
 </head>
 <body>
@@ -93,7 +105,7 @@
         <div class="hero-grid">
           <div>
             <span class="chip" style="background:#fff;color:var(--red)"><span class="dot-pulse" aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:var(--red)"></span> Held van het moment</span>
-            <h1 class="h1">Spider-Man swingt terug, in een <span class="hl">gloednieuwe film!</span></h1>
+            <h1 class="h1 home-h1">Spider-Man swingt terug, in een <span class="hl">gloednieuwe film!</span></h1>
             <p class="lead">Maak kennis met de vriendelijke held uit de buurt, ontdek al zijn krachten en tel met ons af naar <strong>Spider-Man: Brand New Day</strong>, in de bioscoop vanaf 31 juli 2026. Plus: leer alle andere superhelden kennen!</p>
             <div style="display:flex;gap:14px;flex-wrap:wrap">
               <a class="btn btn-red" href="spider-man.html">Ontdek Spider-Man</a>
@@ -102,8 +114,13 @@
           </div>
           <div style="position:relative;min-height:300px">
             <img class="heroimg" src="images/home-hero.jpg" alt="Spider-Man in actie, sfeerbeeld bij de nieuwe film Brand New Day" loading="eager" style="height:clamp(280px,38vw,380px)">
-            <svg class="mascot" style="position:absolute;left:-6px;bottom:-24px;width:clamp(120px,17vw,180px);height:clamp(150px,21vw,224px);overflow:visible" viewBox="0 0 200 240" role="img" aria-label="Held, de superheld-mascotte van Heldenshop"><use href="#held"></use></svg>
-            <div class="bubble" style="position:absolute;left:clamp(96px,15vw,152px);bottom:clamp(98px,14vw,150px)">Hoi! Ik ben Held! 👋</div>
+            <div class="hero-fx fx-float" style="top:-16px;right:4px;width:clamp(72px,13vw,104px);animation-duration:5.5s" aria-hidden="true">
+              <svg viewBox="0 0 100 100" style="overflow:visible;animation:fxPop .6s cubic-bezier(.2,1.4,.4,1) both"><polygon points="50,2 61.8,33.8 95.6,35.2 69,56.2 78.2,88.8 50,70 21.8,88.8 31,56.2 4.4,35.2 38.2,33.8" fill="#FFD23F" stroke="#1A1F3D" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="59" text-anchor="middle" font-family="'Luckiest Guy',cursive" font-size="21" fill="#EE2A3C">POW!</text></svg>
+            </div>
+            <div class="hero-fx fx-float" style="top:28%;left:-8px;width:18px;height:18px;border-radius:50%;background:#2B54E0;animation-duration:4.2s" aria-hidden="true"></div>
+            <div class="hero-fx fx-float" style="bottom:16%;right:-2px;width:13px;height:13px;border-radius:50%;background:#1FC3B1;animation-duration:3.6s;animation-delay:.5s" aria-hidden="true"></div>
+            <svg class="mascot fx-bob" style="position:absolute;left:-6px;bottom:-24px;width:clamp(120px,17vw,180px);height:clamp(150px,21vw,224px);overflow:visible" viewBox="0 0 200 240" role="img" aria-label="Held, de superheld-mascotte van Heldenshop"><use href="#held"></use></svg>
+            <div class="bubble fx-wiggle" style="position:absolute;left:clamp(96px,15vw,152px);bottom:clamp(98px,14vw,150px)">Hoi! Ik ben Held! 👋</div>
           </div>
         </div>
       </div>
