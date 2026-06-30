@@ -203,3 +203,10 @@ footer.site{background:var(--ink);color:#C7CCEA;padding-top:clamp(40px,5vw,60px)
 .teamup-card.discover .tu-name{color:#fff}
 .teamup-card.discover .tu-text{color:#AEB4DA}
 .teamup-card.discover:hover{border-color:#FFD23F}
+
+/* hero-beeld + must-have gadgets */
+.herofig img{display:block}
+.floatimg{animation:hsFloat 5.5s ease-in-out infinite;will-change:transform}
+@keyframes hsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.gadgets{padding-top:clamp(18px,2.6vw,28px)}
+@media (prefers-reduced-motion:reduce){.floatimg{animation:none}}
