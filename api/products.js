@@ -78,15 +78,34 @@ function extractUrl(obj) {
   return findFirst(obj, (k, v) => (/url/i.test(k) && typeof v === 'string' && /^https?:\/\//.test(v) && /bol\.com/.test(v)) ? v : undefined);
 }
 function extractImage(media) {
-  return findFirst(media, (k, v) => (typeof v === 'string' && /^https?:\/\//.test(v) && (/media\.s-bol\.com/i.test(v) || /\.(jpe?g|png|webp)(\?|$)/i.test(v))) ? v : undefined);
+  // bol shape: { images: [ { order, renditions: [ {width,height,url} ] } ] }
+  const images = media && media.images;
+  if (Array.isArray(images) && images.length) {
+    const sorted = images.slice().sort((a, b) => (a.order || 99) - (b.order || 99));
+    for (const img of sorted) {
+      const r = img && img.renditions;
+      if (Array.isArray(r) && r.length) {
+        // pick the rendition closest to ~600px wide (crisp, not huge)
+        const best = r.slice().sort((a, b) => Math.abs((a.width || 0) - 600) - Math.abs((b.width || 0) - 600))[0];
+        if (best && best.url) return best.url;
+      }
+    }
+  }
+  // fallback: any bol media URL
+  return findFirst(media, (k, v) => (typeof v === 'string' && /^https?:\/\/[^ ]*media\.s-bol\.com/i.test(v)) ? v : undefined) || null;
 }
 function extractPrice(offer) {
   return findFirst(offer, (k, v) => (/price/i.test(k) && typeof v === 'number' && v > 0) ? v : undefined);
 }
 function extractRating(ratings) {
-  const rating = findFirst(ratings, (k, v) => (/rating|average|score/i.test(k) && typeof v === 'number' && v >= 0 && v <= 5) ? v : undefined);
-  const count = findFirst(ratings, (k, v) => (/count|total|amount|number/i.test(k) && typeof v === 'number' && v >= 0) ? v : undefined);
-  return { rating: rating ?? null, count: count ?? null };
+  // bol shape: { averageRating, ratings: [ {rating, count} ] }
+  let avg = (ratings && typeof ratings.averageRating === 'number') ? ratings.averageRating : null;
+  let count = null;
+  if (ratings && Array.isArray(ratings.ratings)) {
+    count = ratings.ratings.reduce((s, x) => s + (Number(x && x.count) || 0), 0);
+  }
+  if (avg == null) avg = findFirst(ratings, (k, v) => (/rating|average|score/i.test(k) && typeof v === 'number' && v >= 0 && v <= 5) ? v : undefined) ?? null;
+  return { rating: avg, count: count };
 }
 function extractEan(conv) {
   if (typeof conv === 'string') return conv.replace(/[^0-9]/g, '') || null;
@@ -119,6 +138,7 @@ async function fetchProduct(bolId, token, debug) {
   out.url = (prod.ok && extractUrl(prod.json)) || (media.ok && extractUrl(media.json)) || null;
   out.image = media.ok ? (extractImage(media.json) || (prod.ok ? extractImage(prod.json) : null)) : (prod.ok ? extractImage(prod.json) : null);
   out.price = offer.ok ? (extractPrice(offer.json) ?? null) : null;
+  out.delivery = (offer.ok && offer.json && typeof offer.json.deliveryDescription === 'string') ? offer.json.deliveryDescription : null;
   const rt = ratings.ok ? extractRating(ratings.json) : { rating: null, count: null };
   out.rating = rt.rating;
   out.ratingCount = rt.count;
