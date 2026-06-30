@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>API-test — Heldenshop (intern)</title>
+<title>API-test, Heldenshop (intern)</title>
 <style>
   body{margin:0;font-family:'Nunito',system-ui,Segoe UI,sans-serif;background:#FFFBF2;color:#232850;padding:24px;line-height:1.5}
   .wrap{max-width:880px;margin:0 auto}
@@ -49,7 +49,7 @@
   </div>
 
   <p class="muted">Ruwe API-respons (stuur deze naar Cars):</p>
-  <pre id="out">— nog niets getest —</pre>
+  <pre id="out">nog niets getest,</pre>
 </div>
 
 <script>
@@ -79,7 +79,7 @@
         document.getElementById('ptitle').textContent = p.title || '(geen titel)';
         document.getElementById('pprice').textContent = p.price != null ? ('€ ' + Number(p.price).toFixed(2).replace('.', ',')) : '(geen prijs)';
         document.getElementById('prating').textContent = p.rating != null ? ('★ ' + p.rating + (p.ratingCount ? ' · ' + p.ratingCount + ' reviews' : '')) : '(geen beoordeling)';
-        document.getElementById('pean').textContent = 'EAN: ' + (p.ean || '—');
+        document.getElementById('pean').textContent = 'EAN: ' + (p.ean || ', ');
         var img = document.getElementById('pimg');
         if (p.image) { img.src = p.image; img.style.display=''; } else { img.style.display='none'; }
         var url = document.getElementById('purl');
