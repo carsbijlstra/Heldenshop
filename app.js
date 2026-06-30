@@ -36,6 +36,14 @@
     Array.prototype.forEach.call(forms, function (f) {
       f.addEventListener('submit', function (e) {
         e.preventDefault();
+        var to = f.getAttribute('data-mailto');
+        if (to) {
+          var val = function (sel) { var el = f.querySelector(sel); return el ? (el.value || '').trim() : ''; };
+          var naam = val('#naam'), mail = val('#mail'), ber = val('#ber');
+          var subject = 'Bericht via Heldenshop' + (naam ? ' van ' + naam : '');
+          var body = (ber || '') + '\\n\\n\u2014 ' + (naam || 'Bezoeker') + (mail ? ' (' + mail + ')' : '');
+          window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        }
         var msg = f.getAttribute('data-thanks') || 'Bedankt!';
         var box = document.createElement('div');
         box.className = 'form-done';
