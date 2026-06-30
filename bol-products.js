@@ -95,41 +95,53 @@
       '</div></article>';
   }
 
+  var DISC = '<p class="bol-disc">Prijzen zijn richtprijzen; de actuele prijs zie je bij bol. Via onze links verdienen wij een kleine commissie.</p>';
+
+  function renderShelf(shelf, products) {
+    var note = shelf.getAttribute('data-bol-note') || '';
+    var html = (products || []).map(function (p) { return realCard(p, note); }).join('');
+    shelf.innerHTML = html.replace(/\s/g, '') ? (html + DISC) : '';
+  }
+
   function init() {
-    var shelves = Array.prototype.slice.call(document.querySelectorAll('.bol-shelf[data-bol-ids]'));
+    var shelves = Array.prototype.slice.call(document.querySelectorAll('.bol-shelf[data-bol-ids],.bol-shelf[data-bol-query]'));
     if (!shelves.length) return;
     injectCSS();
 
+    var idShelves = [];
     var allIds = [];
     shelves.forEach(function (shelf) {
-      var ids = (shelf.getAttribute('data-bol-ids') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
-      shelf._ids = ids;
       var note = shelf.getAttribute('data-bol-note') || '';
-      shelf.innerHTML = ids.map(function () { return skeletonCard(note); }).join('');
-      ids.forEach(function (id) { if (allIds.indexOf(id) < 0) allIds.push(id); });
+      var query = (shelf.getAttribute('data-bol-query') || '').trim();
+      if (query) {
+        var max = parseInt(shelf.getAttribute('data-bol-max'), 10) || 3;
+        var sk = ''; for (var i = 0; i < max; i++) sk += skeletonCard(note);
+        shelf.innerHTML = sk;
+        fetch('/api/products?q=' + encodeURIComponent(query) + '&max=' + max)
+          .then(function (r) { return r.json(); })
+          .then(function (data) { renderShelf(shelf, data.products); })
+          .catch(function () { shelf.innerHTML = ''; });
+      } else {
+        var ids = (shelf.getAttribute('data-bol-ids') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+        shelf._ids = ids;
+        shelf.innerHTML = ids.map(function () { return skeletonCard(note); }).join('');
+        ids.forEach(function (id) { if (allIds.indexOf(id) < 0) allIds.push(id); });
+        idShelves.push(shelf);
+      }
     });
-    if (!allIds.length) return;
 
-    fetch('/api/products?ids=' + encodeURIComponent(allIds.join(',')))
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        var byId = {};
-        (data.products || []).forEach(function (p) { byId[p.id] = p; });
-        shelves.forEach(function (shelf) {
-          var note = shelf.getAttribute('data-bol-note') || '';
-          var html = shelf._ids.map(function (id) { return realCard(byId[id], note); }).join('');
-          if (html.replace(/\s/g, '')) {
-            shelf.innerHTML = html + '<p class="bol-disc">Prijzen zijn richtprijzen; de actuele prijs zie je bij bol. Via onze links verdienen wij een kleine commissie.</p>';
-          } else {
-            shelf.innerHTML = '';
-            shelf.removeAttribute('data-bol-ids');
-          }
-        });
-      })
-      .catch(function () {
-        // On failure: remove skeletons so nothing broken shows.
-        shelves.forEach(function (shelf) { shelf.innerHTML = ''; });
-      });
+    if (allIds.length) {
+      fetch('/api/products?ids=' + encodeURIComponent(allIds.join(',')))
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var byId = {};
+          (data.products || []).forEach(function (p) { byId[p.id] = p; });
+          idShelves.forEach(function (shelf) {
+            renderShelf(shelf, shelf._ids.map(function (id) { return byId[id]; }));
+          });
+        })
+        .catch(function () { idShelves.forEach(function (shelf) { shelf.innerHTML = ''; }); });
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
