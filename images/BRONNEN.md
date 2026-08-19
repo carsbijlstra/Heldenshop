@@ -61,4 +61,4 @@ Op 29 en 30 juni 2026 zijn 27 beeldbestanden geüpload (commits `4088866` en `a0
 
 ### Toegevoegd onder het beeldbeleid
 
-*(nog leeg — hier komt elk nieuw bestand met bron, maker en licentie)*
+`avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand, woestijn met bevroren golf* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 (webversie, 1816×750), origineel `Avengers_-Doomsday_st_2_jpg_sd-low_2026-CTMG-All-Rights-Reserved-2026-MARVEL.jpg` — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit "2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL." staat als bijschrift op de pagina; onbewerkt geplaatst — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026
