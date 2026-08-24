@@ -142,16 +142,26 @@
     });
 
     if (allIds.length) {
-      fetch('/api/products?ids=' + encodeURIComponent(allIds.join(',')))
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          var byId = {};
-          (data.products || []).forEach(function (p) { byId[p.id] = p; });
-          idShelves.forEach(function (shelf) {
-            renderShelf(shelf, shelf._ids.map(function (id) { return byId[id]; }));
-          });
-        })
-        .catch(function () { idShelves.forEach(function (shelf) { shelf.innerHTML = ''; }); });
+      // In porties van drie ophalen. De proxy doet per product vier aanvragen bij bol;
+      // zes ID's in een keer duurt daardoor te lang en levert een leeg antwoord op,
+      // waarna alle vastgezette schappen tegelijk leeg blijven. Drie past ruim.
+      var CHUNK = 3;
+      var groepen = [];
+      for (var g = 0; g < allIds.length; g += CHUNK) groepen.push(allIds.slice(g, g + CHUNK));
+      Promise.all(groepen.map(function (groep) {
+        return fetch('/api/products?ids=' + encodeURIComponent(groep.join(',')))
+          .then(function (r) { return r.json(); })
+          .then(function (data) { return (data && data.products) || []; })
+          .catch(function () { return []; });
+      })).then(function (delen) {
+        var byId = {};
+        delen.forEach(function (lijst) {
+          lijst.forEach(function (p) { if (p && p.id) byId[p.id] = p; });
+        });
+        idShelves.forEach(function (shelf) {
+          renderShelf(shelf, shelf._ids.map(function (id) { return byId[id]; }));
+        });
+      });
     }
   }
 
