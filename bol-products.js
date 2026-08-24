@@ -78,8 +78,19 @@
       '<a class="bol-card__btn" href="#" tabindex="-1">Laden\u2026</a></div></article>';
   }
 
+  // Een kaart is alleen bruikbaar als hij een naam heeft, een prijs heeft en naar een
+  // echte bol-productpagina wijst. De catalogus geeft soms een half record terug: geen
+  // titel en een link naar een losse afbeelding, of een product dat niet meer te
+  // bestellen is. Zo'n kaart oogt niet kapot maar leidt nergens heen; die tonen we niet.
+  function usable(p) {
+    if (!p || p.error) return false;
+    if (!p.title) return false;
+    if (p.price == null) return false;
+    return /^https?:\/\/(www\.)?bol\.com\//i.test(p.url || '');
+  }
+
   function realCard(p, note) {
-    if (!p || p.error || (!p.title && !p.image)) return '';
+    if (!usable(p)) return '';
     var href = affiliateHref(p);
     var img = p.image
       ? '<img class="bol-card__img" src="' + esc(p.image) + '" alt="' + esc(p.title || 'Productfoto') + ' kopen bij bol" loading="lazy">'
