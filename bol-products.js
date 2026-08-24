@@ -37,11 +37,48 @@
     '@keyframes bolpulse{0%,100%{opacity:1}50%{opacity:.55}}' +
     '@media (prefers-reduced-motion: reduce){.bol-card,.bol-shelf .bol-card__btn,.bol-skel{transition:none;animation:none}}';
 
+
+  // Redactionele keuzelijst: de tekst hoort bij het product en verdwijnt ermee.
+  var PICKCSS = '' +
+    '.bol-picktable{width:100%;border-collapse:separate;border-spacing:0;border:3px solid #1c2240;border-radius:18px;overflow:hidden;margin:22px 0;font-size:.94rem;background:#fff}' +
+    '.bol-picktable th,.bol-picktable td{padding:11px 13px;text-align:left;border-bottom:2px solid #e6e9f3;vertical-align:top}' +
+    '.bol-picktable thead th{background:#1c2240;color:#fff;font-family:"Fredoka",system-ui,sans-serif;font-weight:600;border-bottom:none;font-size:.9rem}' +
+    '.bol-picktable tbody tr:last-child th,.bol-picktable tbody tr:last-child td{border-bottom:none}' +
+    '.bol-picktable tbody th{font-family:"Fredoka",system-ui,sans-serif;font-weight:600;color:#1c2240;white-space:normal}' +
+    '.bol-picktable a{color:#0a50e6;font-weight:700}' +
+    '.bol-picktable .pt-price{font-family:"Fredoka",system-ui,sans-serif;font-weight:700;color:#EE2A3C;white-space:nowrap}' +
+    '.bol-picktable-wrap{overflow-x:auto}' +
+    '.bol-pick{display:block;background:#fff;border:3px solid #1c2240;border-radius:22px;box-shadow:6px 6px 0 rgba(28,34,64,.14);padding:16px;margin:20px 0;scroll-margin-top:90px}' +
+    '.bol-pick.is-ready{display:grid;grid-template-columns:150px 1fr;gap:16px}' +
+    '@media (max-width:620px){.bol-pick.is-ready{grid-template-columns:1fr}}' +
+    '.bol-pick__official{font-size:.82rem;color:#8a8fb0;font-weight:600;margin:0 0 8px;line-height:1.35}' +
+    '.bol-pick__figure{display:flex;align-items:flex-start;justify-content:center;background:radial-gradient(circle at 30% 25%,#fff 0,#eef1f8 100%);border:2px solid #1c2240;border-radius:14px;padding:10px;min-height:130px}' +
+    '.bol-pick__figure img{max-width:100%;max-height:190px;object-fit:contain;margin:0}' +
+    '.bol-pick__label{display:inline-block;background:var(--accent,#EE2A3C);color:#fff;font-family:"Fredoka",system-ui,sans-serif;font-weight:600;font-size:.76rem;padding:5px 12px;border-radius:999px;border:2px solid #1c2240;margin-bottom:8px}' +
+    '.bol-pick h3{font-family:"Fredoka",system-ui,sans-serif;font-weight:600;font-size:1.12rem;line-height:1.25;color:#1c2240;margin:0 0 6px}' +
+    '.bol-pick__meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 10px;font-size:.86rem;color:#6A7099;font-weight:700}' +
+    '.bol-pick__meta .bol-pick__price{font-family:"Fredoka",system-ui,sans-serif;font-size:1.3rem;color:#EE2A3C}' +
+    '.bol-pick__meta .bol-pick__deliv{color:#2E9E4F}' +
+    '.bol-pick__norating{color:#8a8fb0;font-weight:700}' +
+    '.bol-pick__why{margin:0 0 10px;line-height:1.55}' +
+    '.bol-pick__cols{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin:0 0 12px}' +
+    '@media (max-width:520px){.bol-pick__cols{grid-template-columns:1fr}}' +
+    '.bol-pick__cols h4{font-family:"Fredoka",system-ui,sans-serif;font-weight:600;font-size:.9rem;margin:0 0 4px;color:#1c2240}' +
+    '.bol-pick__cols ul{margin:0;padding-left:18px;font-size:.9rem;line-height:1.5}' +
+    '.bol-pick__cols li{margin:0 0 3px}' +
+    '.bol-pick__plus li::marker{content:"✓  ";color:#2E9E4F;font-weight:700}' +
+    '.bol-pick__min li::marker{content:"•  ";color:#c26a28;font-weight:700}' +
+    '.bol-pick__for{font-size:.88rem;color:#3c4267;font-weight:700;margin:0 0 12px}' +
+    '.bol-pick__btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none!important;background:#0a50e6;color:#fff!important;font-family:"Fredoka",system-ui,sans-serif;font-weight:600;font-size:.98rem;padding:11px 20px;border-radius:999px;border:2.5px solid #1c2240;box-shadow:0 4px 0 #1c2240;transition:transform .12s ease,box-shadow .12s ease}' +
+    '.bol-pick__btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #1c2240}' +
+    '.bol-picks-empty{display:none}' +
+    '@media (prefers-reduced-motion: reduce){.bol-pick__btn{transition:none}}';
+
   function injectCSS() {
     if (document.getElementById('bol-products-css')) return;
     var s = document.createElement('style');
     s.id = 'bol-products-css';
-    s.textContent = CSS;
+    s.textContent = CSS + PICKCSS;
     document.head.appendChild(s);
   }
 
@@ -114,9 +151,87 @@
     shelf.innerHTML = html.replace(/\s/g, '') ? (html + DISC) : '';
   }
 
+
+  // --- Redactionele keuzelijst -------------------------------------------------
+  // Een <article class="bol-pick" data-bol-id="..."> bevat de tekst van de redactie:
+  // waarom deze keuze, plussen, minnen en voor wie hij bedoeld is. Het script hangt
+  // daar de levende productgegevens omheen (foto, titel, sterren, prijs, knop).
+  // Valt het product bij bol weg, dan verdwijnt het hele blok inclusief die tekst.
+  // Zo kan er nooit een aanbeveling blijven staan bij een product dat er niet meer is.
+
+  function pickList(el, attr, kop, cls) {
+    var bron = el.querySelector('[' + attr + ']');
+    if (!bron) return '';
+    return '<div><h4>' + kop + '</h4><ul class="' + cls + '">' + bron.innerHTML + '</ul></div>';
+  }
+
+  function renderPick(el, p) {
+    if (!usable(p)) { el.parentNode && el.parentNode.removeChild(el); return false; }
+
+    var label = el.getAttribute('data-pick-label') || '';
+    var voor = el.getAttribute('data-pick-for') || '';
+    var naamEl = el.querySelector('[data-pick-name]');
+    var naam = naamEl ? naamEl.innerHTML : esc(p.title);
+    var whyEl = el.querySelector('[data-pick-why]');
+    var why = whyEl ? whyEl.innerHTML : '';
+    var plus = pickList(el, 'data-pick-plus', 'Pluspunten', 'bol-pick__plus');
+    var min = pickList(el, 'data-pick-min', 'Let op', 'bol-pick__min');
+
+    var beoordeling = (p.rating != null && p.ratingCount)
+      ? '<span>' + stars(p.rating, p.ratingCount) + '</span>'
+      : '<span class="bol-pick__norating">Nog geen beoordelingen bij bol</span>';
+
+    el.innerHTML =
+      '<div class="bol-pick__figure">' +
+        (p.image ? '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" loading="lazy">' : '') +
+      '</div>' +
+      '<div class="bol-pick__body">' +
+        (label ? '<span class="bol-pick__label">' + esc(label) + '</span>' : '') +
+        '<h3>' + naam + '</h3>' +
+        '<p class="bol-pick__official">Bij bol: ' + esc(p.title) + '</p>' +
+        '<div class="bol-pick__meta">' +
+          '<span class="bol-pick__price">' + euro(p.price) + '</span>' +
+          beoordeling +
+          (p.delivery ? '<span class="bol-pick__deliv">' + esc(p.delivery) + '</span>' : '') +
+        '</div>' +
+        (why ? '<p class="bol-pick__why">' + why + '</p>' : '') +
+        ((plus || min) ? '<div class="bol-pick__cols">' + plus + min + '</div>' : '') +
+        (voor ? '<p class="bol-pick__for">Past bij: ' + esc(voor) + '</p>' : '') +
+        '<a class="bol-pick__btn" href="' + esc(affiliateHref(p)) + '" target="_blank" rel="sponsored noopener" aria-label="Bekijk ' + esc(p.title) + ' bij bol (opent in nieuw tabblad)">Bekijk bij bol ↗</a>' +
+      '</div>';
+    el.className = 'bol-pick is-ready';
+    return true;
+  }
+
+  // De keuzehulp bovenaan wordt uit dezelfde gegevens gebouwd, zodat er nooit een
+  // prijs in de tekst staat die niet meer klopt.
+  function buildPickTable(byId) {
+    var tabel = document.querySelector('[data-pick-table]');
+    if (!tabel) return;
+    var picks = Array.prototype.slice.call(document.querySelectorAll('.bol-pick[data-bol-id]'));
+    var rijen = '';
+    picks.forEach(function (el, i) {
+      var p = byId[el.getAttribute('data-bol-id')];
+      if (!usable(p)) return;
+      var anker = 'keuze-' + (i + 1);
+      el.id = anker;
+      rijen += '<tr>' +
+        '<th scope="row"><a href="#' + anker + '">' + esc(el.getAttribute('data-pick-label') || p.title) + '</a></th>' +
+        '<td>' + esc(el.getAttribute('data-pick-for') || '') + '</td>' +
+        '<td>' + esc(el.getAttribute('data-pick-short') || '') + '</td>' +
+        '<td class="pt-price">' + euro(p.price) + '</td>' +
+        '</tr>';
+    });
+    if (!rijen) { tabel.style.display = 'none'; return; }
+    tabel.innerHTML = '<div class="bol-picktable-wrap"><table class="bol-picktable">' +
+      '<thead><tr><th scope="col">Onze keuze</th><th scope="col">Voor wie</th><th scope="col">Wat het is</th><th scope="col">Prijs</th></tr></thead>' +
+      '<tbody>' + rijen + '</tbody></table></div>';
+  }
+
   function init() {
     var shelves = Array.prototype.slice.call(document.querySelectorAll('.bol-shelf[data-bol-ids],.bol-shelf[data-bol-query]'));
-    if (!shelves.length) return;
+    var picks = Array.prototype.slice.call(document.querySelectorAll('.bol-pick[data-bol-id]'));
+    if (!shelves.length && !picks.length) return;
     injectCSS();
 
     var idShelves = [];
@@ -141,6 +256,11 @@
       }
     });
 
+    picks.forEach(function (el) {
+      var id = (el.getAttribute('data-bol-id') || '').trim();
+      if (id && allIds.indexOf(id) < 0) allIds.push(id);
+    });
+
     if (allIds.length) {
       // In porties van drie ophalen. De proxy doet per product vier aanvragen bij bol;
       // zes ID's in een keer duurt daardoor te lang en levert een leeg antwoord op,
@@ -161,6 +281,8 @@
         idShelves.forEach(function (shelf) {
           renderShelf(shelf, shelf._ids.map(function (id) { return byId[id]; }));
         });
+        buildPickTable(byId);
+        picks.forEach(function (el) { renderPick(el, byId[el.getAttribute('data-bol-id')]); });
       });
     }
   }
