@@ -127,6 +127,14 @@ section{padding-top:clamp(34px,5vw,64px);padding-bottom:clamp(34px,5vw,64px)}
 .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:2px;font-weight:700}
 .prose strong{color:var(--ink)}
 
+/* tabellen in tekst: het antwoord dat je kunt aanwijzen */
+.tablewrap{overflow-x:auto;margin:18px 0 22px;-webkit-overflow-scrolling:touch}
+.prose table{border-collapse:collapse;width:100%;min-width:460px;font-size:.98rem;font-weight:600;background:#fff;border:3px solid var(--ink);border-radius:16px;overflow:hidden}
+.prose thead th{background:#EEF2FF;color:var(--ink);font-family:var(--display);font-weight:400;letter-spacing:.3px;font-size:1rem;text-align:left;padding:11px 14px;border-bottom:3px solid var(--ink)}
+.prose tbody td{padding:11px 14px;border-bottom:2px dotted #DfE3F0;color:#2c3157;vertical-align:top;line-height:1.5}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even) td{background:#FAFBFF}
+
 /* callout boxes */
 .callout{border:3px solid var(--ink);border-radius:20px;box-shadow:var(--shadow-sm);padding:20px 22px;margin:22px 0}
 .callout .ct{font-family:var(--display);font-weight:400;letter-spacing:.4px;font-size:1.1rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
