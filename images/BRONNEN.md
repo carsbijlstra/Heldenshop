@@ -54,7 +54,6 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-brand-new-day-alles-wat-we-weten.jpg | Een dramatisch zijaanzicht van lege rode fluwelen stoelen in een schemerige theaterzaal | 38131980 | Atai Anarbek |
 | gidsen-de-bekendste-pokemon.jpg | Pokemon-kaarten in beschermhoezen | 8811594 | Erik Mclean |
 | gidsen-de-beste-spider-man-games.jpg | Een stapel gamehoesjes | 5553301 | Brett Jordan |
-| gidsen-de-pups-van-paw-patrol.jpg | Een hond speelt met een knuffel | 4080075 | Magda Ehlers |
 | gidsen-de-sterkste-avengers-figuren.jpg | Actiefiguren in een vitrinekast | 5795420 | Erik Mclean |
 | gidsen-het-beste-aquaman-speelgoed.jpg | Groene en gele rubberen eend speelgoed geïsoleerd op een witte achtergrond | 132464 | Anthony 🙂 |
 | gidsen-het-beste-black-panther-speelgoed.jpg | Close-up van een zwarte kat met groene ogen in een serene buitenomgeving | 28512411 | Sandin Redzo |
@@ -92,7 +91,6 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-waarom-wordt-de-hulk-groen.jpg | Vibrant abstract schilderij met groene en zwarte spatten op een gestructureerd oppervlak | 12134477 | Paul Blenkhorn @SensoryArtHouse |
 | gidsen-wat-is-het-spider-verse.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | 2854693 | Josh Hild |
 | gidsen-wat-is-star-wars.jpg | Iemand met een oplichtend zwaard in een donkere straat | 16904561 | Din |
-| gidsen-welke-paw-patrol-pup-ben-jij.jpg | Een jonge hond kijkt recht in de camera | 18074902 | Stijn Dijkstra |
 | gidsen-welke-superheld-past-bij-jou.jpg | Venetiaanse maskers in een winkel | 31397062 | Jacint Bofill |
 | gidsen-wie-is-aquaman.jpg | Serene uitzicht op de oceaan in Bali, Indonesië met verre boten op een kalme zee | 27506447 | novianadss |
 | gidsen-wie-is-batman.jpg | Iemand in een Batman-pak, 's avonds in de stad | 15511010 | Keith  Pottinger |
@@ -122,6 +120,12 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 `avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026
 
 `brand-new-day-still.jpg` — *Spider-Man zwiert in zijn nieuwe pak tussen twee wolkenkrabbers* — bron: https://www.filmdepot.nl/detail/36048/Spider-Man-Brand-New-Day — film-ID 36048, media-ID 207880 — maker: Marvel Studios / Columbia Pictures; distributie: Sony Pictures Releasing via Universal Pictures International — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 24 augustus 2026
+
+`paginas/gidsen-de-pups-van-paw-patrol.jpg` — *de pups op onderzoek in een vallei vol dino's* — bron: https://www.filmdepot.nl/detail/35581/Paw-Patrol-De-Dinofilm — film-ID 35581, media-ID 208584 — rechthebbende: Paramount Pictures (credit uit het depot: "2026 Paramount Pictures. All Rights Reserved.") — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt (alleen verkleind, niet bijgesneden: 1790×750 → 1600×670) — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 26 augustus 2026
+
+`paginas/gidsen-welke-paw-patrol-pup-ben-jij.jpg` — *een pup naast dino Rex* — bron: https://www.filmdepot.nl/detail/35581/Paw-Patrol-De-Dinofilm — film-ID 35581, media-ID 208582 — rechthebbende: Paramount Pictures (credit uit het depot: "2026 Paramount Pictures. All Rights Reserved.") — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt (alleen verkleind, niet bijgesneden: 1790×750 → 1600×670) — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 26 augustus 2026
+
+*Toestemming Cars (26 augustus 2026): Filmdepot-beeld mag ook op de franchisepagina's van Heldenshop staan (zoals de twee Paw Patrol-gidsen hierboven), niet alleen op de pagina over de film zelf. De depotvoorwaarden blijven onverkort gelden: onbewerkt, credit als bijschrift, registratie hier, en eraf zodra het materiaal uit het depot verdwijnt.*
 
 ## Regels in het kort
 
