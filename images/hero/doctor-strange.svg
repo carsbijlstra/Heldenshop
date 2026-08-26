@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" width="1600" height="780" role="img">
+<defs>
+<pattern id="ht" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="3" r="1.7" fill="#2A2F55" opacity=".10"/>
+</pattern>
+</defs>
+<rect width="1600" height="780" fill="#E6F4FB"/>
+<rect width="1600" height="780" fill="url(#ht)"/>
+<path d="M-20,42 L150,16" stroke="#2E9BD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,120 L172,94" stroke="#2E9BD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,198 L194,172" stroke="#2E9BD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,276 L216,250" stroke="#2E9BD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,354 L238,328" stroke="#2E9BD6" stroke-width="9" stroke-linecap="round" opacity=".22"/>
+
+<g transform="translate(800.0,405.6) rotate(-8) scale(1.35) translate(-100,-100)">
+<rect x="34" y="104" width="60" height="52" rx="7" fill="#2E9BD6" stroke="#2A2F55" stroke-width="7"/>
+<rect x="102" y="104" width="60" height="52" rx="7" fill="#FFC83D" stroke="#2A2F55" stroke-width="7"/>
+<rect x="68" y="46" width="60" height="52" rx="7" fill="#fff" stroke="#2A2F55" stroke-width="7"/>
+<g fill="none" stroke="#2A2F55" stroke-width="6" stroke-linecap="round"><path d="M50,104 V94 M78,104 V94 M118,104 V94 M146,104 V94 M84,46 V36 M112,46 V36"/></g>
+</g>
+</svg>

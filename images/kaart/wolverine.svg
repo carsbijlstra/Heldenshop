@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img">
+<defs>
+<pattern id="ht" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="3" r="1.7" fill="#2A2F55" opacity=".10"/>
+</pattern>
+</defs>
+<rect width="800" height="420" fill="#ECE7FB"/>
+<rect width="800" height="420" fill="url(#ht)"/>
+<path d="M-20,69 L150,43" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,147 L172,121" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,225 L194,199" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,303 L216,277" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,381 L238,355" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/>
+
+<g transform="translate(400.0,218.4) rotate(-8) scale(1.35) translate(-100,-100)">
+<path d="M40,92 C40,72 68,62 100,62 C132,62 160,72 160,92 C160,118 138,140 100,140 C62,140 40,118 40,92 Z" fill="#5A3FD6" stroke="#2A2F55" stroke-width="7" stroke-linejoin="round"/>
+<ellipse cx="76" cy="97" rx="17" ry="12" fill="#fff" stroke="#2A2F55" stroke-width="5"/>
+<ellipse cx="124" cy="97" rx="17" ry="12" fill="#fff" stroke="#2A2F55" stroke-width="5"/>
+<path d="M40,88 L14,74 M160,88 L186,74" stroke="#2A2F55" stroke-width="7" stroke-linecap="round"/>
+</g>
+</svg>

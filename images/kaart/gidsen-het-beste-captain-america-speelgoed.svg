@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img">
+<defs>
+<pattern id="ht" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="3" r="1.7" fill="#2A2F55" opacity=".10"/>
+</pattern>
+</defs>
+<rect width="800" height="420" fill="#ECE7FB"/>
+<rect width="800" height="420" fill="url(#ht)"/>
+<path d="M-20,62 L150,36" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,140 L172,114" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,218 L194,192" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,296 L216,270" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M-20,374 L238,348" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/>
+<polygon points="92.0,302.0 102.6,327.4 130.0,329.6 109.1,347.6 115.5,374.4 92.0,360.0 68.5,374.4 74.9,347.6 54.0,329.6 81.4,327.4" fill="#FFC83D" stroke="#2A2F55" stroke-width="5" stroke-linejoin="round" opacity=".95"/>
+<g transform="translate(463.99999999999994,226.8) rotate(4) scale(1.25) translate(-100,-100)">
+<rect x="34" y="104" width="60" height="52" rx="7" fill="#5A3FD6" stroke="#2A2F55" stroke-width="7"/>
+<rect x="102" y="104" width="60" height="52" rx="7" fill="#FFC83D" stroke="#2A2F55" stroke-width="7"/>
+<rect x="68" y="46" width="60" height="52" rx="7" fill="#fff" stroke="#2A2F55" stroke-width="7"/>
+<g fill="none" stroke="#2A2F55" stroke-width="6" stroke-linecap="round"><path d="M50,104 V94 M78,104 V94 M118,104 V94 M146,104 V94 M84,46 V36 M112,46 V36"/></g>
+</g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" width="1600" height="780" role="img">
+<defs>
+<pattern id="ht" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="3" r="1.7" fill="#2A2F55" opacity=".10"/>
+</pattern>
+</defs>
+<rect width="1600" height="780" fill="#ECE7FB"/>
+<rect width="1600" height="780" fill="url(#ht)"/>
+<path d="M1620,55 L1450,29" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M1620,133 L1428,107" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M1620,211 L1406,185" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M1620,289 L1384,263" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/><path d="M1620,367 L1362,341" stroke="#5A3FD6" stroke-width="9" stroke-linecap="round" opacity=".22"/>
+
+<g transform="translate(800.0,374.4) rotate(9) scale(1.42) translate(-100,-100)">
+<circle cx="100" cy="100" r="66" fill="#5A3FD6" stroke="#2A2F55" stroke-width="7"/>
+<path d="M78,80 C78,62 122,58 122,84 C122,102 100,102 100,120" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+<circle cx="100" cy="142" r="9" fill="#fff"/>
+</g>
+</svg>

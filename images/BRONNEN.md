@@ -10,6 +10,10 @@ Eén regel per bestand, in deze vorm:
 
 `bestandsnaam.jpg` — *wat het toont* — bron: URL — maker: naam — licentie: naam van de licentie — toegevoegd: datum
 
+## Naamsvermelding (besluit Cars, 26 augustus 2026)
+
+**Verplicht de licentie geen naamsvermelding, dan zetten we die er niet bij.** Dat geldt onder meer voor alles van Pexels. Wat wél altijd gebeurt is de registratie hier in dit bestand: dat is geen credit op de pagina maar de herkomstadministratie, en die is de enige manier om later te kunnen bewijzen waar een bestand vandaan komt. Vraagt een licentie wél om naamsvermelding (CC BY, CC BY-SA), dan komt die gewoon zichtbaar op de pagina te staan, anders mag het beeld er niet.
+
 ## Regels in het kort
 
 Vrij te gebruiken: eigen beeld (mascotte, datumkaarten, illustraties), productfoto's die via de bol-API binnenkomen (die worden niet in deze map opgeslagen), en beeld uit vrije beeldbanken — Unsplash, Pexels, Pixabay, Wikimedia Commons, Openverse.
@@ -33,34 +37,39 @@ Op 29 en 30 juni 2026 zijn 27 beeldbestanden geüpload (commits `4088866` en `a0
 
 | Bestand | Toont | Bron |
 |---|---|---|
-| aquaman-hero.jpg | Aquaman | onbekend |
-| avengers-hero.jpg | Avengers | onbekend |
-| batman-hero.jpg | Batman | onbekend |
-| black-panther-hero.jpg | Black Panther | onbekend |
-| captain-america-cut.png | Captain America (uitgeknipt) | onbekend |
-| doctor-strange-hero.jpg | Doctor Strange | onbekend |
-| frozen-hero.png | Frozen | onbekend |
-| geschiedenis-stan-lee.jpg | Stan Lee (herkenbaar persoon) met Spider-Man-kostuum | onbekend |
-| green-lantern-hero.jpg | Green Lantern | onbekend |
-| guide-films.jpg | gidsbeeld films | onbekend |
-| guide-geschiedenis.jpg | gidsbeeld geschiedenis | onbekend |
-| guide-krachten.jpg | gidsbeeld krachten | onbekend |
-| harry-potter-hero.jpg | Harry Potter | onbekend |
-| home-hero.jpg | homepage-beeld | onbekend |
-| hulk-hero.png | Hulk | onbekend |
-| iron-man-hero.jpg | Iron Man | onbekend |
-| paw-patrol-hero.jpg | Paw Patrol | onbekend |
-| pokemon-hero.png | Pokémon | onbekend |
-| star-wars-hero.jpg | Star Wars | onbekend |
-| super-mario-hero.jpg | Super Mario | onbekend |
-| supergirl-hero.jpg | Supergirl | onbekend |
-| superman-hero.jpg | Superman | onbekend |
-| the-flash-cut.png | The Flash (uitgeknipt) | onbekend |
-| thor-hero.jpg | Thor | onbekend |
-| wolverine-cut.png | Wolverine (uitgeknipt) | onbekend |
-| wonder-woman-cut.png | Wonder Woman, herkenbare actrice (uitgeknipt) | onbekend |
-
 ### Toegevoegd onder het beeldbeleid
+
+`hero/*.svg` (12 bestanden) — *eigen heropbeeld in de huisstijl, zelfde beeldtaal als de kaartbeelden maar in bannerformaat* — bron: eigen werk, gegenereerd met `gereedschap/kaartbeeld.py` — licentie: eigen werk Studio Bijlstra — **vervangt de laatste twaalf bestanden zonder bekende bron, waaronder de twee met een herkenbaar persoon in beeld (`geschiedenis-stan-lee.jpg` en `wonder-woman-cut.png`)** — toegevoegd: 26 augustus 2026
+
+`batman-hero.jpg` — *iemand in een Batman-pak met masker, 's avonds in de stad* — bron: https://www.pexels.com/nl-nl/foto/x-15511010/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`superman-hero.jpg` — *een Superman-beeld dat hoog tegen een gebouw omhoog kijkt* — bron: https://www.pexels.com/nl-nl/foto/x-28245751/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`supergirl-hero.jpg` — *een superheldenfiguur met cape bij rood neonlicht* — bron: https://www.pexels.com/nl-nl/foto/x-28245750/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`star-wars-hero.jpg` — *twee figuren in zwarte helmen en pantser, achter elkaar* — bron: https://www.pexels.com/nl-nl/foto/x-9482199/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`super-mario-hero.jpg` — *speelfiguren van Mario en Yoshi naast elkaar* — bron: https://www.pexels.com/nl-nl/foto/x-163077/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`pokemon-hero.jpg` — *pakjes Pokemon-kaarten uitgespreid op een blauwe ondergrond* — bron: https://www.pexels.com/nl-nl/foto/x-7708408/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`harry-potter-hero.jpg` — *een toverstok op tafel bij een brandende haard* — bron: https://www.pexels.com/nl-nl/foto/x-7979111/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`frozen-hero.jpg` — *laarzen in de sneeuw, van bovenaf gezien* — bron: https://www.pexels.com/nl-nl/foto/x-5690752/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`paw-patrol-hero.jpg` — *een jonge hond die recht in de camera kijkt* — bron: https://www.pexels.com/nl-nl/foto/x-18074902/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`avengers-hero.jpg` — *de skyline van een grote stad bij zonsopkomst* — bron: https://www.pexels.com/nl-nl/foto/x-33319401/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`home-hero.jpg` — *uitzicht over een stad bij schemering* — bron: https://www.pexels.com/nl-nl/foto/x-33143671/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`guide-geschiedenis.jpg` — *een stapel stripboeken naast elkaar* — bron: https://www.pexels.com/nl-nl/foto/x-5553301/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`guide-films.jpg` — *popcorn die omhoog springt voor een bioscooplicht* — bron: https://www.pexels.com/nl-nl/foto/x-35623662/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`guide-krachten.jpg` — *iemand met een oplichtend zwaard in een donkere straat* — bron: https://www.pexels.com/nl-nl/foto/x-16904561/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
+
+`kaart/*.svg` (105 bestanden) — *eigen kaartbeeld per pagina: platte comic-vlakken in de huisstijl met halftone, speedlines, POW-ster en een motief dat het onderwerp toont* — bron: eigen werk, gegenereerd met `gereedschap/kaartbeeld.py` uit de kennisbank; het beeld wordt afgeleid uit de paginanaam, dus elke pagina heeft er een eigen — licentie: eigen werk Studio Bijlstra — toegevoegd: 26 augustus 2026
 
 `spider-man-hero.jpg` — *iemand in een Spider-Man-kostuum zit op de rand van een dak en kijkt uit over een verlichte stad bij nacht; van achteren gefotografeerd, volledig masker, geen gezicht en geen andere herkenbare personen in beeld* — bron: https://www.pexels.com/nl-nl/foto/spider-man-bovenop-gebouw-2854693/ — maker: **Josh Hild** — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis te gebruiken, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht maar wij doen het toch — bewerking: bijgesneden van 1600×2000 naar een brede band van 1600×780 en gecomprimeerd voor het web — **vervangt het gelijknamige bestand van onbekende herkomst dat op 73 pagina's stond** — toegevoegd: 26 augustus 2026
 
