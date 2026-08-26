@@ -27,6 +27,8 @@ Verder: beeld wordt altijd hier in de repo gehost, nooit gehotlinkt naar een bee
 
 Op 29 en 30 juni 2026 zijn 27 beeldbestanden geüpload (commits `4088866` en `a0f53b2`), van vóór het beeldbeleid. Van geen van deze bestanden is de bron vastgelegd. Ze staan op 92 van de 95 pagina's, samen goed voor ongeveer 370 verwijzingen — dit is het hele visuele gezicht van de site. Vrijwel allemaal tonen ze een beschermd personage en een deel is duidelijk pers- of filmbeeld; bij `wonder-woman-cut.png` en `geschiedenis-stan-lee.jpg` is bovendien een herkenbare persoon in beeld.
 
+**Stand 26 augustus 2026: nog 26 van de 27 te vervangen.** `spider-man-hero.jpg` is die dag als eerste vervangen, en dat was meteen de grootste: dat bestand stond op 73 plekken.
+
 **Herstelspoor:** de wekelijkse ronde vervangt deze bestanden stapsgewijs door eigen beeldtaal (de stijl van de mascotte en de datumkaarten) — eerst de twee met herkenbare mensen, dan de duidelijke filmstills, daarna de rest. Een behapbaar deel per ronde, register in dezelfde commit bijwerken, en het verdringt nooit het seizoenswerk voor september. Tot een bestand vervangen is komt er in deze categorie niets bij.
 
 | Bestand | Toont | Bron |
@@ -49,7 +51,6 @@ Op 29 en 30 juni 2026 zijn 27 beeldbestanden geüpload (commits `4088866` en `a0
 | iron-man-hero.jpg | Iron Man | onbekend |
 | paw-patrol-hero.jpg | Paw Patrol | onbekend |
 | pokemon-hero.png | Pokémon | onbekend |
-| spider-man-hero.jpg | Spider-Man (beeld/kostuum) | onbekend |
 | star-wars-hero.jpg | Star Wars | onbekend |
 | super-mario-hero.jpg | Super Mario | onbekend |
 | supergirl-hero.jpg | Supergirl | onbekend |
@@ -60,6 +61,9 @@ Op 29 en 30 juni 2026 zijn 27 beeldbestanden geüpload (commits `4088866` en `a0
 | wonder-woman-cut.png | Wonder Woman, herkenbare actrice (uitgeknipt) | onbekend |
 
 ### Toegevoegd onder het beeldbeleid
+
+`spider-man-hero.jpg` — *iemand in een Spider-Man-kostuum zit op de rand van een dak en kijkt uit over een verlichte stad bij nacht; van achteren gefotografeerd, volledig masker, geen gezicht en geen andere herkenbare personen in beeld* — bron: https://www.pexels.com/nl-nl/foto/spider-man-bovenop-gebouw-2854693/ — maker: **Josh Hild** — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis te gebruiken, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht maar wij doen het toch — bewerking: bijgesneden van 1600×2000 naar een brede band van 1600×780 en gecomprimeerd voor het web — **vervangt het gelijknamige bestand van onbekende herkomst dat op 73 pagina's stond** — toegevoegd: 26 augustus 2026
+
 
 `avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand, woestijn met bevroren golf* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 (webversie, 1816×750), origineel `Avengers_-Doomsday_st_2_jpg_sd-low_2026-CTMG-All-Rights-Reserved-2026-MARVEL.jpg` — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit "2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL." staat als bijschrift op de pagina; onbewerkt geplaatst — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026
 
