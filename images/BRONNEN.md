@@ -2,78 +2,129 @@
 
 Elk beeldbestand in deze map hoort hier te staan, met de bron erbij. Doel: als iemand ooit vraagt waar een foto vandaan komt, is het antwoord binnen tien seconden te vinden en te bewijzen. Geen regel hier = het bestand hoort er niet.
 
-Aangelegd 19 augustus 2026, bij het beeldbeleid in `claude/mandaten.md` (v8) van de kennisbank.
-
-## Zo vul je het in
-
-Eén regel per bestand, in deze vorm:
-
-`bestandsnaam.jpg` — *wat het toont* — bron: URL — maker: naam — licentie: naam van de licentie — toegevoegd: datum
+Aangelegd 19 augustus 2026 bij het beeldbeleid in `claude/mandaten.md`; volledig herzien op 26 augustus 2026, toen de site overging op **één eigen beeld per pagina** (map `paginas/`, bestandsnaam = paginanaam).
 
 ## Naamsvermelding (besluit Cars, 26 augustus 2026)
 
-**Verplicht de licentie geen naamsvermelding, dan zetten we die er niet bij.** Dat geldt onder meer voor alles van Pexels. Wat wél altijd gebeurt is de registratie hier in dit bestand: dat is geen credit op de pagina maar de herkomstadministratie, en die is de enige manier om later te kunnen bewijzen waar een bestand vandaan komt. Vraagt een licentie wél om naamsvermelding (CC BY, CC BY-SA), dan komt die gewoon zichtbaar op de pagina te staan, anders mag het beeld er niet.
+**Verplicht de licentie geen naamsvermelding, dan zetten we die er niet bij.** Dat geldt voor alles van Pexels. De registratie hier blijft altijd: dit is geen credit maar herkomstadministratie. Vraagt een licentie wél om naamsvermelding (CC BY, CC BY-SA), dan komt die zichtbaar op de pagina, anders mag het beeld er niet op.
+
+## Teruggezette beelden (besluit Cars, 26 augustus 2026)
+
+De 27 beelden hieronder stonden vóór het beeldbeleid al op de site, zijn op 26 augustus 2026 kort vervangen geweest, en dezelfde dag **op uitdrukkelijke instructie van Cars teruggezet**: hij vindt ze het gezicht van de site en aanvaardt bewust het risico dat de herkomst onbekend is en dat ze beschermd materiaal tonen. De fansite-disclaimer staat op elke pagina. Herkomstonderzoek blijft een open punt; wordt van een beeld bekend dat het niet mag, dan gaat het er alsnog af.
+
+| Bestand (in `paginas/`) | Toont |
+|---|---|
+| aquaman.jpg | Aquaman in stripboekstijl |
+| avengers.jpg | De Avengers uit de films naast elkaar |
+| batman.jpg | Batman op de omslag van een stripboek |
+| black-panther.jpg | Black Panther met uitgestrekte klauwen |
+| captain-america.png | Captain America met zijn schild |
+| doctor-strange.jpg | Doctor Strange met een magische cirkel |
+| frozen.png | Elsa, Anna, Olaf, Kristoff en Sven uit Frozen |
+| gidsen-beste-spider-man-actiefiguren.jpg | Een Spider-Man actiefiguur |
+| gidsen-de-geschiedenis-van-spider-man.jpg | Stan Lee samen met Spider-Man |
+| gidsen-de-grootste-schurken-van-spider-man.jpg | Spider-Man vecht met een schurk op een stripomslag |
+| gidsen-de-krachten-van-spider-man.jpg | Spider-Man artwork |
+| green-lantern.jpg | Green Lantern met zijn gloeiende ring |
+| harry-potter.jpg | Het kasteel van Zweinstein |
+| hulk.png | De Hulk in stripboekstijl |
+| index.jpg | Spider-Man in rode rook |
+| iron-man.jpg | Iron Man in zijn harnas |
+| paw-patrol.jpg | De pups van Paw Patrol met Ryder |
+| pokemon.png | Squirtle, Bulbasaur en Charmander |
+| spider-man.jpg | Spider-Man kruipt over een richel |
+| star-wars.jpg | Een lichtzwaardduel uit Star Wars |
+| super-mario.jpg | Super Mario in zijn spelwereld |
+| supergirl.jpg | Supergirl met haar cape |
+| superman.jpg | Superman vliegt boven de stad |
+| the-flash.png | The Flash uit de tekenfilm |
+| thor.jpg | Thor met zijn hamer |
+| wolverine.png | Wolverine in stripboekstijl |
+| wonder-woman.png | Wonder Woman |
+
+## Pexels-beelden (per pagina)
+
+Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.com/license/) — gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht. Bewerking telkens: bijgesneden naar een brede band en gecomprimeerd voor het web. Toegevoegd: 26 augustus 2026. Bronpagina per foto: `https://www.pexels.com/nl-nl/foto/x-<id>/`.
+
+| Bestand (in `paginas/`) | Toont | Pexels-id | Fotograaf |
+|---|---|---|---|
+| gidsen-avengers-films-volgorde.jpg | Popcorn springt uit een bakje voor een bioscooplicht | 35623662 | Christopher Welsch Leveroni |
+| gidsen-batman-gadgets.jpg | Diverse steeksleutels in een cirkelvormig patroon met ruimte voor tekst | 6789021 | Dmitry Demidov |
+| gidsen-beginnen-met-pokemon-kaarten.jpg | Pakjes Pokemon-kaarten op een stapel | 7708408 | Caleb Oquendo |
+| gidsen-brand-new-day-alles-wat-we-weten.jpg | Een dramatisch zijaanzicht van lege rode fluwelen stoelen in een schemerige theaterzaal | 38131980 | Atai Anarbek |
+| gidsen-de-bekendste-pokemon.jpg | Pokemon-kaarten in beschermhoezen | 8811594 | Erik Mclean |
+| gidsen-de-beste-spider-man-games.jpg | Een stapel gamehoesjes | 5553301 | Brett Jordan |
+| gidsen-de-pups-van-paw-patrol.jpg | Een hond speelt met een knuffel | 4080075 | Magda Ehlers |
+| gidsen-de-sterkste-avengers-figuren.jpg | Actiefiguren in een vitrinekast | 5795420 | Erik Mclean |
+| gidsen-het-beste-aquaman-speelgoed.jpg | Groene en gele rubberen eend speelgoed geïsoleerd op een witte achtergrond | 132464 | Anthony 🙂 |
+| gidsen-het-beste-black-panther-speelgoed.jpg | Close-up van een zwarte kat met groene ogen in een serene buitenomgeving | 28512411 | Sandin Redzo |
+| gidsen-het-beste-captain-america-speelgoed.jpg | Buzz Lightyear en Zurg speelgoedfiguren op kunstgras omringd door stervormige decoraties | 5875642 | Dalila Dalprat |
+| gidsen-het-beste-doctor-strange-speelgoed.jpg | Gedetailleerd zicht op een hand die een waaier van speelkaarten binnenshuis toont, met foc | 3290047 | Kobe - |
+| gidsen-het-beste-green-lantern-speelgoed.jpg | Abstracte kunst met een levendig masker, verlicht door neon lichtstroken in een donkere om | 38599411 | Wandering Artist |
+| gidsen-het-beste-iron-man-speelgoed.jpg | Een levendig houten speelgoedrobot staat op een donkere ondergrond en toont heldere kleure | 4102557 | Ann H |
+| gidsen-het-beste-supergirl-speelgoed.jpg | Cosplayers in engel- en demonkostuums tegenover elkaar | 18569516 | Alfredo Flores |
+| gidsen-het-beste-superman-speelgoed.jpg | Kleurrijke superheldentaart met een fondant Superman figuur bovenop, perfect voor themafee | 10336820 | Helena Lopes |
+| gidsen-het-beste-the-flash-speelgoed.jpg | Een vintage koffer en speelgoedfiguren op het dak van een auto onder groene bomen in Tokio | 38647663 | Iban Lopez Luna |
+| gidsen-het-beste-thor-speelgoed.jpg | Een timmerman slaat een spijker in hout | 5974413 | Ono  Kosuki |
+| gidsen-het-beste-wolverine-speelgoed.jpg | Houten pop met een gele en blauwe cape in een dramatische pose binnen | 13417381 | Roman Skrypnyk |
+| gidsen-het-beste-wonder-woman-speelgoed.jpg | Een rode keizerskroon in bloei | 37605117 | Leyla Helvaci |
+| gidsen-het-coolste-batman-speelgoed.jpg | Close-up van verschillende cartoonfiguren op een moderne bureaustelling, perfect voor crea | 69314 | Lukas Horak |
+| gidsen-het-leukste-super-mario-speelgoed.jpg | Super Mario-spullen rond een spelcomputer | 17122728 | Mao Batista |
+| gidsen-het-verhaal-van-frozen.jpg | Laarzen in de sneeuw, van bovenaf | 5690752 | Annelies Brouw |
+| gidsen-lego-star-wars-voor-beginners.jpg | Close-up van een persoon gekleed als stormtrooper die deelneemt aan een buitenevenement vo | 9482200 | Otto Rascon |
+| gidsen-leukste-lego-superhelden-sets.jpg | Een berg kleurrijke bouwsteentjes | 4491711 | Polesie Toys |
+| gidsen-mario-power-ups.jpg | Close-up van een levendige vliegenzwam in een bosrijke omgeving in Feankleaster, Nederland | 18861539 | Lieke Boersma |
+| gidsen-spider-man-cadeau-per-leeftijd.jpg | Geef cadeaus die zijn ingepakt in milieuvriendelijk bruin papier met een feestelijk tintje | 35055477 | Cemrecan Yurtman |
+| gidsen-spider-man-films-op-een-rij.jpg | Gedetailleerde weergave van een vintage Super 8-filmprojector, met de mechanische onderdel | 35082512 | Ayudh Roy |
+| gidsen-spider-man-knutselen.jpg | Een gevarieerde collectie knutselspullen, waaronder scharen, linialen en papier met patron | 35822002 | Primitive Spaces |
+| gidsen-spider-man-maskers-en-verkleedpakken.jpg | Iemand in een Spider-Man-pak hurkt op een dak bij zonsondergang | 38691363 | Pedro H.  Novais |
+| gidsen-spider-man-verjaardagsfeestje.jpg | Een kleurrijke Spider-Man themaverjaardagsdecoratie met ballonnen en figuurtjes | 12689081 | Vidal Balielo Jr. |
+| gidsen-spider-man-web-shooter-gids.jpg | Iemand in een Spider-Man-pak in actie bij nacht | 38576014 | Pedro H.  Novais |
+| gidsen-star-wars-kijkvolgorde.jpg | Twee figuren in zwarte Star Wars-helmen | 9482199 | Otto Rascon |
+| gidsen-superhelden-cadeau-per-leeftijd.jpg | Handen houden ingepakte cadeaus vast | 35055478 | Cemrecan Yurtman |
+| gidsen-superhelden-cadeaus-sinterklaas.jpg | Een chocoladeletter S tussen de pepernoten | 35521677 | Ylanite Koppens |
+| gidsen-superhelden-kerstcadeaus.jpg | Ingepakte kerstcadeaus in een mand | 34784649 | betül nur akyürek |
+| gidsen-superhelden-quiz.jpg | Gloeiende vraagtekens op een donkere achtergrond | 12920835 | crazy motions |
+| gidsen-superhelden-schoencadeautjes.jpg | Pepernoten en snoepgoed bij een papieren zak | 5959469 | Ylanite Koppens |
+| gidsen-toveren-als-harry-potter.jpg | Een toverstok op tafel bij een brandende haard | 7979111 | RDNE Stock project |
+| gidsen-verkleed-als-de-hulk.jpg | Een arm wordt met groene verf beschilderd | 21630773 | nana |
+| gidsen-verkleed-als-elsa-of-anna.jpg | Gedetailleerde macro-opname van een sneeuwvlok die de schoonheid van de winter in Wenatche | 19907206 | Frank Cone |
+| gidsen-waarom-wordt-de-hulk-groen.jpg | Vibrant abstract schilderij met groene en zwarte spatten op een gestructureerd oppervlak | 12134477 | Paul Blenkhorn @SensoryArtHouse |
+| gidsen-wat-is-het-spider-verse.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | 2854693 | Josh Hild |
+| gidsen-wat-is-star-wars.jpg | Iemand met een oplichtend zwaard in een donkere straat | 16904561 | Din |
+| gidsen-welke-paw-patrol-pup-ben-jij.jpg | Een jonge hond kijkt recht in de camera | 18074902 | Stijn Dijkstra |
+| gidsen-welke-superheld-past-bij-jou.jpg | Venetiaanse maskers in een winkel | 31397062 | Jacint Bofill |
+| gidsen-wie-is-aquaman.jpg | Serene uitzicht op de oceaan in Bali, Indonesië met verre boten op een kalme zee | 27506447 | novianadss |
+| gidsen-wie-is-batman.jpg | Iemand in een Batman-pak, 's avonds in de stad | 15511010 | Keith  Pottinger |
+| gidsen-wie-is-black-panther.jpg | Een zwarte panter die in de buurt van een hek in zijn natuurlijke habitat rondsluipt en da | 38383494 | Alex Bian |
+| gidsen-wie-is-captain-america.jpg | Zwart-witfoto van de wapperende Amerikaanse vlag, genomen in een park in New York City | 34744924 | Marije Kouyzer |
+| gidsen-wie-is-doctor-strange.jpg | Fascinerend beeld van een hand die zich uitstrekt, omhuld door etherische rook tegen een z | 11355328 | Alberto Calleja |
+| gidsen-wie-is-green-goblin.jpg | Hemelse groene rook die wervelende patronen vormt tegen een donkere achtergrond | 29971698 | Paul Hudson |
+| gidsen-wie-is-green-lantern.jpg | Een figuur in een groen verlichte gang | 1694103 | Alex Fu |
+| gidsen-wie-is-iron-man.jpg | Een gestroomlijnde chroom robot sculptuur staat tegen een heldere blauwe lucht achtergrond | 31233586 | Sun God Apolo |
+| gidsen-wie-is-miles-morales.jpg | stockfoto met @buitenshuis, architectonische details, artistieke expressie | 39080576 | El Capra |
+| gidsen-wie-is-super-mario.jpg | Speelfiguren van Mario en Yoshi | 163077 | Pixabay |
+| gidsen-wie-is-supergirl.jpg | Een persoon in een rode cape tegen een dramatische bewolkte hemel, symbool voor vrijheid e | 37567179 | Melih ERŞAHİN |
+| gidsen-wie-is-superman.jpg | Een Superman-figuur klimt langs een gebouw bij neonlicht | 28245751 | Abigail Sylvester |
+| gidsen-wie-is-the-flash.jpg | Levendige witte en rode lichtsporen vastgelegd op de Autobahn van Berlijn 's nachts | 36700857 | Adrian Smarrelli |
+| gidsen-wie-is-thor.jpg | Schitterende foto van spinnenbliksem tijdens een nachtelijke storm in Campbelltown, Austra | 37968617 | Stuart  Robinson |
+| gidsen-wie-is-venom.jpg | Een superheld in een zwart pak in de regen | 38691336 | Pedro H.  Novais |
+| gidsen-wie-is-wolverine.jpg | Een veelvraat in een besneeuwd landschap, die zijn vacht en robuuste gelaatstrekken laat z | 36133017 | David Selbert |
+| gidsen-wie-is-wonder-woman.jpg | Een sereen silhouet van een vrouw die langs een meer wandelt tijdens een levendige zonsond | 37306372 | Cara Denison |
+| gidsen-wie-zijn-de-avengers.jpg | De skyline van een grote stad bij zonsondergang | 8569166 | Ivana Rodriguez |
+| gidsen-word-zelf-een-superheld.jpg | Iemand in een Superman-pak knielt op straat | 28245750 | Abigail Sylvester |
+| gidsen-zweinstein-afdelingen.jpg | Twee gekruiste toverstokken | 8391465 | Mikhail Nilov |
+| helden.jpg | Uitzicht over een stad bij schemering | 33143671 | Kerem Kaplan |
+| schurken.jpg | Een donkere figuur met capuchon | 19067420 | Karl Solano |
+
+## Toegevoegd onder het beeldbeleid (Filmdepot)
+
+`avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026
+
+`brand-new-day-still.jpg` — *Spider-Man zwiert in zijn nieuwe pak tussen twee wolkenkrabbers* — bron: https://www.filmdepot.nl/detail/36048/Spider-Man-Brand-New-Day — film-ID 36048, media-ID 207880 — maker: Marvel Studios / Columbia Pictures; distributie: Sony Pictures Releasing via Universal Pictures International — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 24 augustus 2026
 
 ## Regels in het kort
 
-Vrij te gebruiken: eigen beeld (mascotte, datumkaarten, illustraties), productfoto's die via de bol-API binnenkomen (die worden niet in deze map opgeslagen), en beeld uit vrije beeldbanken — Unsplash, Pexels, Pixabay, Wikimedia Commons, Openverse.
+Vrij te gebruiken: eigen beeld, productfoto's via de bol-API (worden niet in deze map opgeslagen), Pexels, en beeld uit vrije beeldbanken met een licentie zonder `-nc` en zonder `-nd` — mét zichtbare naamsvermelding waar de licentie dat vraagt.
 
-Twee dingen die een vrije licentie **niet** oplost, en die op deze site het snelst misgaan:
-
-1. **Wat er op de foto staat.** De fotograaf mag zijn foto weggeven, maar hij mag Spider-Man niet weggeven. Een vrij gelicentieerde foto van een LEGO-minifiguur, een Funko Pop, een filmposter aan de muur of een kostuum in een wassenbeeldenmuseum toont nog steeds een beschermd personage. Niet gebruiken.
-2. **Wie er op de foto staat.** Beeldbanken garanderen geen modelvrijgave. Herkenbare mensen — en zeker kinderen — niet gebruiken op een site met affiliate-links.
-
-Verder: beeld wordt altijd hier in de repo gehost, nooit gehotlinkt naar een beeldbank. Beeldbank-bestanden komen binnen via de map `beeld-inbox/` in de kennisbank (de werkplaats kan zelf niet downloaden van de beeldbanken). Altijd een beschrijvende `alt`-tekst, `loading="lazy"`, en let op de bestandsgrootte — beeld dat de pagina traag maakt kost meer dan het oplevert.
-
-## Register
-
-### Nog te herleiden — bestanden van vóór dit register
-
-Op 29 en 30 juni 2026 zijn 27 beeldbestanden geüpload (commits `4088866` en `a0f53b2`), van vóór het beeldbeleid. Van geen van deze bestanden is de bron vastgelegd. Ze staan op 92 van de 95 pagina's, samen goed voor ongeveer 370 verwijzingen — dit is het hele visuele gezicht van de site. Vrijwel allemaal tonen ze een beschermd personage en een deel is duidelijk pers- of filmbeeld; bij `wonder-woman-cut.png` en `geschiedenis-stan-lee.jpg` is bovendien een herkenbare persoon in beeld.
-
-**Stand 26 augustus 2026: nog 26 van de 27 te vervangen.** `spider-man-hero.jpg` is die dag als eerste vervangen, en dat was meteen de grootste: dat bestand stond op 73 plekken.
-
-**Herstelspoor:** de wekelijkse ronde vervangt deze bestanden stapsgewijs door eigen beeldtaal (de stijl van de mascotte en de datumkaarten) — eerst de twee met herkenbare mensen, dan de duidelijke filmstills, daarna de rest. Een behapbaar deel per ronde, register in dezelfde commit bijwerken, en het verdringt nooit het seizoenswerk voor september. Tot een bestand vervangen is komt er in deze categorie niets bij.
-
-| Bestand | Toont | Bron |
-|---|---|---|
-### Toegevoegd onder het beeldbeleid
-
-`hero/*.svg` (12 bestanden) — *eigen heropbeeld in de huisstijl, zelfde beeldtaal als de kaartbeelden maar in bannerformaat* — bron: eigen werk, gegenereerd met `gereedschap/kaartbeeld.py` — licentie: eigen werk Studio Bijlstra — **vervangt de laatste twaalf bestanden zonder bekende bron, waaronder de twee met een herkenbaar persoon in beeld (`geschiedenis-stan-lee.jpg` en `wonder-woman-cut.png`)** — toegevoegd: 26 augustus 2026
-
-`batman-hero.jpg` — *iemand in een Batman-pak met masker, 's avonds in de stad* — bron: https://www.pexels.com/nl-nl/foto/x-15511010/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`superman-hero.jpg` — *een Superman-beeld dat hoog tegen een gebouw omhoog kijkt* — bron: https://www.pexels.com/nl-nl/foto/x-28245751/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`supergirl-hero.jpg` — *een superheldenfiguur met cape bij rood neonlicht* — bron: https://www.pexels.com/nl-nl/foto/x-28245750/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`star-wars-hero.jpg` — *twee figuren in zwarte helmen en pantser, achter elkaar* — bron: https://www.pexels.com/nl-nl/foto/x-9482199/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`super-mario-hero.jpg` — *speelfiguren van Mario en Yoshi naast elkaar* — bron: https://www.pexels.com/nl-nl/foto/x-163077/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`pokemon-hero.jpg` — *pakjes Pokemon-kaarten uitgespreid op een blauwe ondergrond* — bron: https://www.pexels.com/nl-nl/foto/x-7708408/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`harry-potter-hero.jpg` — *een toverstok op tafel bij een brandende haard* — bron: https://www.pexels.com/nl-nl/foto/x-7979111/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`frozen-hero.jpg` — *laarzen in de sneeuw, van bovenaf gezien* — bron: https://www.pexels.com/nl-nl/foto/x-5690752/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`paw-patrol-hero.jpg` — *een jonge hond die recht in de camera kijkt* — bron: https://www.pexels.com/nl-nl/foto/x-18074902/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`avengers-hero.jpg` — *de skyline van een grote stad bij zonsopkomst* — bron: https://www.pexels.com/nl-nl/foto/x-33319401/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`home-hero.jpg` — *uitzicht over een stad bij schemering* — bron: https://www.pexels.com/nl-nl/foto/x-33143671/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`guide-geschiedenis.jpg` — *een stapel stripboeken naast elkaar* — bron: https://www.pexels.com/nl-nl/foto/x-5553301/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`guide-films.jpg` — *popcorn die omhoog springt voor een bioscooplicht* — bron: https://www.pexels.com/nl-nl/foto/x-35623662/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`guide-krachten.jpg` — *iemand met een oplichtend zwaard in een donkere straat* — bron: https://www.pexels.com/nl-nl/foto/x-16904561/ — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht — bewerking: bijgesneden naar een brede band van 1600×780 en gecomprimeerd — toegevoegd: 26 augustus 2026
-
-`kaart/*.svg` (105 bestanden) — *eigen kaartbeeld per pagina: platte comic-vlakken in de huisstijl met halftone, speedlines, POW-ster en een motief dat het onderwerp toont* — bron: eigen werk, gegenereerd met `gereedschap/kaartbeeld.py` uit de kennisbank; het beeld wordt afgeleid uit de paginanaam, dus elke pagina heeft er een eigen — licentie: eigen werk Studio Bijlstra — toegevoegd: 26 augustus 2026
-
-`spider-man-hero.jpg` — *iemand in een Spider-Man-kostuum zit op de rand van een dak en kijkt uit over een verlichte stad bij nacht; van achteren gefotografeerd, volledig masker, geen gezicht en geen andere herkenbare personen in beeld* — bron: https://www.pexels.com/nl-nl/foto/spider-man-bovenop-gebouw-2854693/ — maker: **Josh Hild** — licentie: Pexels-licentie (https://www.pexels.com/license/): gratis te gebruiken, commercieel toegestaan, bewerken toegestaan, naamsvermelding niet verplicht maar wij doen het toch — bewerking: bijgesneden van 1600×2000 naar een brede band van 1600×780 en gecomprimeerd voor het web — **vervangt het gelijknamige bestand van onbekende herkomst dat op 73 pagina's stond** — toegevoegd: 26 augustus 2026
-
-
-`avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand, woestijn met bevroren golf* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 (webversie, 1816×750), origineel `Avengers_-Doomsday_st_2_jpg_sd-low_2026-CTMG-All-Rights-Reserved-2026-MARVEL.jpg` — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit "2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL." staat als bijschrift op de pagina; onbewerkt geplaatst — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026
-
-`brand-new-day-still.jpg` — *Spider-Man zwiert in zijn nieuwe pak aan een web tussen twee wolkenkrabbers van New York door* — bron: https://www.filmdepot.nl/detail/36048/Spider-Man-Brand-New-Day — film-ID 36048, media-ID 207880 (webversie LR, 1790×750, 212 kB), origineel `Spider-Man_-Brand-New-Day_st_1_jpg_sd-low_2026-CTMG-All-Rights-Reserved-2026-MARVEL.jpg` — maker: Marvel Studios / Columbia Pictures; distributie: Sony Pictures Releasing via Universal Pictures International — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit "2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL." staat als bijschrift op de pagina; onbewerkt geplaatst op `spider-man-brand-new-day.html` — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 24 augustus 2026
+Wat nooit mag: een `-nc`- of `-nd`-licentie (naamsvermelding lost die niet op), **kinderen** op een site met affiliate-links, beeld binnen een productblok (`bol-pick`/schap: de Pexels-licentie verbiedt gesuggereerde endorsement), en hotlinken — altijd zelf hosten. Kijk vóór plaatsing altijd zelf naar de foto: een alt-tekst ziet geen gezicht.
