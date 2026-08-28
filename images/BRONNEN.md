@@ -58,24 +58,24 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-het-beste-aquaman-speelgoed.jpg | Groene en gele rubberen eend speelgoed geïsoleerd op een witte achtergrond | 132464 | Anthony 🙂 |
 | gidsen-het-beste-black-panther-speelgoed.jpg | Close-up van een zwarte kat met groene ogen in een serene buitenomgeving | 28512411 | Sandin Redzo |
 | gidsen-het-beste-captain-america-speelgoed.jpg | Buzz Lightyear en Zurg speelgoedfiguren op kunstgras omringd door stervormige decoraties | 5875642 | Dalila Dalprat |
-| gidsen-het-beste-doctor-strange-speelgoed.jpg | Gedetailleerd zicht op een hand die een waaier van speelkaarten binnenshuis toont, met foc | 3290047 | Kobe - |
-| gidsen-het-beste-green-lantern-speelgoed.jpg | Abstracte kunst met een levendig masker, verlicht door neon lichtstroken in een donkere om | 38599411 | Wandering Artist |
-| gidsen-het-beste-iron-man-speelgoed.jpg | Een levendig houten speelgoedrobot staat op een donkere ondergrond en toont heldere kleure | 4102557 | Ann H |
+| gidsen-het-beste-doctor-strange-speelgoed.jpg | Twee handen houden een uitgewaaierd pak speelkaarten vast tegen een donkere achtergrond | 3290047 | Kobe - |
+| gidsen-het-beste-green-lantern-speelgoed.jpg | Een felblauwe neonstreep krult boven een blauwgroen masker dat oplicht tegen een oranje achtergrond | 38599411 | Wandering Artist |
+| gidsen-het-beste-iron-man-speelgoed.jpg | Een houten speelgoedrobot met opwindsleutel en een oranje kuif staat tegen een zwarte achtergrond | 4102557 | Ann H |
 | gidsen-het-beste-supergirl-speelgoed.jpg | Cosplayers in engel- en demonkostuums tegenover elkaar | 18569516 | Alfredo Flores |
 | gidsen-het-beste-superman-speelgoed.jpg | Gele taart met het Superman-logo erop en een klein Superman-figuurtje van fondant bovenop | 10336820 | Helena Lopes |
-| gidsen-het-beste-the-flash-speelgoed.jpg | Een vintage koffer en speelgoedfiguren op het dak van een auto onder groene bomen in Tokio | 38647663 | Iban Lopez Luna |
+| gidsen-het-beste-the-flash-speelgoed.jpg | Een oude leren koffer met riemen op de dakdrager van een auto onder groene bomen, met een speelgoedfiguurtje eraan | 38647663 | Iban Lopez Luna |
 | gidsen-het-beste-thor-speelgoed.jpg | Een timmerman slaat een spijker in hout | 5974413 | Ono  Kosuki |
 | gidsen-het-beste-wolverine-speelgoed.jpg | Houten pop met een gele en blauwe cape in een dramatische pose binnen | 13417381 | Roman Skrypnyk |
 | gidsen-het-beste-wonder-woman-speelgoed.jpg | Een rode keizerskroon in bloei | 37605117 | Leyla Helvaci |
-| gidsen-het-coolste-batman-speelgoed.jpg | Close-up van verschillende cartoonfiguren op een moderne bureaustelling, perfect voor crea | 69314 | Lukas Horak |
+| gidsen-het-coolste-batman-speelgoed.jpg | Kleine verzamelfiguurtjes op een bureau: de Joker, twee witte konijnen en Batman voor een computerscherm | 69314 | Lukas Horak |
 | gidsen-het-leukste-super-mario-speelgoed.jpg | Super Mario-spullen rond een spelcomputer | 17122728 | Mao Batista |
 | gidsen-het-verhaal-van-frozen.jpg | Laarzen in de sneeuw, van bovenaf | 5690752 | Annelies Brouw |
-| gidsen-lego-star-wars-voor-beginners.jpg | Close-up van een persoon gekleed als stormtrooper die deelneemt aan een buitenevenement vo | 9482200 | Otto Rascon |
+| gidsen-lego-star-wars-voor-beginners.jpg | Iemand in een wit scout trooper-pak uit Star Wars op een evenement buiten, met een cameraman op de achtergrond | 9482200 | Otto Rascon |
 | gidsen-leukste-lego-superhelden-sets.jpg | Een berg kleurrijke bouwsteentjes | 4491711 | Polesie Toys |
-| gidsen-mario-power-ups.jpg | Close-up van een levendige vliegenzwam in een bosrijke omgeving in Feankleaster, Nederland | 18861539 | Lieke Boersma |
-| gidsen-spider-man-cadeau-per-leeftijd.jpg | Geef cadeaus die zijn ingepakt in milieuvriendelijk bruin papier met een feestelijk tintje | 35055477 | Cemrecan Yurtman |
-| gidsen-spider-man-films-op-een-rij.jpg | Gedetailleerde weergave van een vintage Super 8-filmprojector, met de mechanische onderdel | 35082512 | Ayudh Roy |
-| gidsen-spider-man-knutselen.jpg | Een gevarieerde collectie knutselspullen, waaronder scharen, linialen en papier met patron | 35822002 | Primitive Spaces |
+| gidsen-mario-power-ups.jpg | Een rode paddenstoel met witte stippen, een vliegenzwam, staat in het gras tussen gevallen blaadjes | 18861539 | Lieke Boersma |
+| gidsen-spider-man-cadeau-per-leeftijd.jpg | Iemand houdt een cadeau vast dat is ingepakt in bruin papier met een rood lint, met een kerstbal ernaast | 35055477 | Cemrecan Yurtman |
+| gidsen-spider-man-films-op-een-rij.jpg | Close-up van een filmspoel met film in een oude filmprojector | 35082512 | Ayudh Roy |
+| gidsen-spider-man-knutselen.jpg | Vellen knutselstickers met hartjes, een enveloppe en een beertje liggen naast een liniaal en houten stokjes | 35822002 | Primitive Spaces |
 | gidsen-spider-man-maskers-en-verkleedpakken.jpg | Iemand in een Spider-Man-pak hurkt op een dak bij zonsondergang | 38691363 | Pedro H.  Novais |
 | gidsen-spider-man-verjaardagsfeestje.jpg | Een kleurrijke Spider-Man themaverjaardagsdecoratie met ballonnen en figuurtjes | 12689081 | Vidal Balielo Jr. |
 | gidsen-spider-man-web-shooter-gids.jpg | Iemand in een Spider-Man-pak in actie bij nacht | 38576014 | Pedro H.  Novais |
@@ -87,28 +87,28 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-superhelden-schoencadeautjes.jpg | Pepernoten en snoepgoed bij een papieren zak | 5959469 | Ylanite Koppens |
 | gidsen-toveren-als-harry-potter.jpg | Een toverstok op tafel bij een brandende haard | 7979111 | RDNE Stock project |
 | gidsen-verkleed-als-de-hulk.jpg | Een arm wordt met groene verf beschilderd | 21630773 | nana |
-| gidsen-verkleed-als-elsa-of-anna.jpg | Gedetailleerde macro-opname van een sneeuwvlok die de schoonheid van de winter in Wenatche | 19907206 | Frank Cone |
+| gidsen-verkleed-als-elsa-of-anna.jpg | Close-up van een ijskristal in de vorm van een sneeuwvlok tegen een donkerblauwe achtergrond | 19907206 | Frank Cone |
 | gidsen-waarom-wordt-de-hulk-groen.jpg | Vibrant abstract schilderij met groene en zwarte spatten op een gestructureerd oppervlak | 12134477 | Paul Blenkhorn @SensoryArtHouse |
 | gidsen-wat-is-het-spider-verse.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | 2854693 | Josh Hild |
 | gidsen-wat-is-star-wars.jpg | Iemand met een oplichtend zwaard in een donkere straat | 16904561 | Din |
 | gidsen-welke-superheld-past-bij-jou.jpg | Venetiaanse maskers in een winkel | 31397062 | Jacint Bofill |
 | gidsen-wie-is-aquaman.jpg | Serene uitzicht op de oceaan in Bali, Indonesië met verre boten op een kalme zee | 27506447 | novianadss |
 | gidsen-wie-is-batman.jpg | Iemand in een Batman-pak, 's avonds in de stad | 15511010 | Keith  Pottinger |
-| gidsen-wie-is-black-panther.jpg | Een zwarte panter die in de buurt van een hek in zijn natuurlijke habitat rondsluipt en da | 38383494 | Alex Bian |
+| gidsen-wie-is-black-panther.jpg | Een zwarte panter loopt langs een hek in de schaduw van groene struiken | 38383494 | Alex Bian |
 | gidsen-wie-is-captain-america.jpg | Zwart-witfoto van de wapperende Amerikaanse vlag, genomen in een park in New York City | 34744924 | Marije Kouyzer |
-| gidsen-wie-is-doctor-strange.jpg | Fascinerend beeld van een hand die zich uitstrekt, omhuld door etherische rook tegen een z | 11355328 | Alberto Calleja |
+| gidsen-wie-is-doctor-strange.jpg | Witte rook kringelt omhoog tegen een zwarte achtergrond | 11355328 | Alberto Calleja |
 | gidsen-wie-is-green-goblin.jpg | Hemelse groene rook die wervelende patronen vormt tegen een donkere achtergrond | 29971698 | Paul Hudson |
 | gidsen-wie-is-green-lantern.jpg | Een figuur in een groen verlichte gang | 1694103 | Alex Fu |
-| gidsen-wie-is-iron-man.jpg | Een gestroomlijnde chroom robot sculptuur staat tegen een heldere blauwe lucht achtergrond | 31233586 | Sun God Apolo |
-| gidsen-wie-is-miles-morales.jpg | stockfoto met @buitenshuis, architectonische details, artistieke expressie | 39080576 | El Capra |
+| gidsen-wie-is-iron-man.jpg | Een glanzend chromen beeld van een figuur met een helm, tegen een blauwe lucht met wolken | 31233586 | Sun God Apolo |
+| gidsen-wie-is-miles-morales.jpg | Een muurschildering van een vliegende blauw-oranje vogel op de zijgevel van een oude schuur in een veld | 39080576 | El Capra |
 | gidsen-wie-is-super-mario.jpg | Speelfiguren van Mario en Yoshi | 163077 | Pixabay |
-| gidsen-wie-is-supergirl.jpg | Een persoon in een rode cape tegen een dramatische bewolkte hemel, symbool voor vrijheid e | 37567179 | Melih ERŞAHİN |
+| gidsen-wie-is-supergirl.jpg | Iemand in een lange rode cape die in de wind uitwaait, staand in een leeg veld onder een grijze lucht | 37567179 | Melih ERŞAHİN |
 | gidsen-wie-is-superman.jpg | Een Superman-figuur klimt langs een gebouw bij neonlicht | 28245751 | Abigail Sylvester |
 | gidsen-wie-is-the-flash.jpg | Levendige witte en rode lichtsporen vastgelegd op de Autobahn van Berlijn 's nachts | 36700857 | Adrian Smarrelli |
-| gidsen-wie-is-thor.jpg | Schitterende foto van spinnenbliksem tijdens een nachtelijke storm in Campbelltown, Austra | 37968617 | Stuart  Robinson |
+| gidsen-wie-is-thor.jpg | Een vertakte bliksemschicht licht op in een paarse nachthemel, met boomtakken als silhouet aan de rand | 37968617 | Stuart  Robinson |
 | gidsen-wie-is-venom.jpg | Een superheld in een zwart pak in de regen | 38691336 | Pedro H.  Novais |
-| gidsen-wie-is-wolverine.jpg | Een veelvraat in een besneeuwd landschap, die zijn vacht en robuuste gelaatstrekken laat z | 36133017 | David Selbert |
-| gidsen-wie-is-wonder-woman.jpg | Een sereen silhouet van een vrouw die langs een meer wandelt tijdens een levendige zonsond | 37306372 | Cara Denison |
+| gidsen-wie-is-wolverine.jpg | Een veelvraat staat in de sneeuw en kijkt opzij, met sneeuw op zijn snuit en vacht | 36133017 | David Selbert |
+| gidsen-wie-is-wonder-woman.jpg | Het silhouet van een wandelende vrouw langs het water bij een oranje zonsondergang | 37306372 | Cara Denison |
 | gidsen-wie-zijn-de-avengers.jpg | De skyline van een grote stad bij zonsondergang | 8569166 | Ivana Rodriguez |
 | gidsen-word-zelf-een-superheld.jpg | Iemand in een Superman-pak knielt op straat | 28245750 | Abigail Sylvester |
 | gidsen-zweinstein-afdelingen.jpg | Twee gekruiste toverstokken | 8391465 | Mikhail Nilov |
