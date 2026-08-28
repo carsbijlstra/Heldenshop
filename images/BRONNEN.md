@@ -62,7 +62,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-het-beste-green-lantern-speelgoed.jpg | Abstracte kunst met een levendig masker, verlicht door neon lichtstroken in een donkere om | 38599411 | Wandering Artist |
 | gidsen-het-beste-iron-man-speelgoed.jpg | Een levendig houten speelgoedrobot staat op een donkere ondergrond en toont heldere kleure | 4102557 | Ann H |
 | gidsen-het-beste-supergirl-speelgoed.jpg | Cosplayers in engel- en demonkostuums tegenover elkaar | 18569516 | Alfredo Flores |
-| gidsen-het-beste-superman-speelgoed.jpg | Kleurrijke superheldentaart met een fondant Superman figuur bovenop, perfect voor themafee | 10336820 | Helena Lopes |
+| gidsen-het-beste-superman-speelgoed.jpg | Gele taart met het Superman-logo erop en een klein Superman-figuurtje van fondant bovenop | 10336820 | Helena Lopes |
 | gidsen-het-beste-the-flash-speelgoed.jpg | Een vintage koffer en speelgoedfiguren op het dak van een auto onder groene bomen in Tokio | 38647663 | Iban Lopez Luna |
 | gidsen-het-beste-thor-speelgoed.jpg | Een timmerman slaat een spijker in hout | 5974413 | Ono  Kosuki |
 | gidsen-het-beste-wolverine-speelgoed.jpg | Houten pop met een gele en blauwe cape in een dramatische pose binnen | 13417381 | Roman Skrypnyk |
