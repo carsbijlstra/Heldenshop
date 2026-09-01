@@ -127,6 +127,16 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 
 *Toestemming Cars (26 augustus 2026): Filmdepot-beeld mag ook op de franchisepagina's van Heldenshop staan (zoals de twee Paw Patrol-gidsen hierboven), niet alleen op de pagina over de film zelf. De depotvoorwaarden blijven onverkort gelden: onbewerkt, credit als bijschrift, registratie hier, en eraf zodra het materiaal uit het depot verdwijnt.*
 
+## Eigen beeld uit `gereedschap/kaartbeeld.py`
+
+Beeld dat de studio zelf tekent: platte comicvlakken in de huisstijl, afgeleid uit de paginanaam, dus het verandert nooit bij een herbouw. Geen rechtenvraag en geen naamsvermelding nodig. Bron van het gereedschap: `gereedschap/kaartbeeld.py` in `carsbijlstra/studio-kennisbank`.
+
+| Bestand (in `paginas/`) | Toont | Gemaakt |
+|---|---|---|
+| gidsen-adventskalender-voor-kinderen.svg | Een ingepakt cadeau met een strik, in comicstijl op een warme achtergrond met speedlines | 1 september 2026 |
+
+**Open punt:** deze pagina gaat over adventskalenders en het beeld toont een cadeau. Openverse en Wikimedia Commons gaven op 1 september 2026 samen vijf bruikbare kandidaten voor "adventskalender", geen daarvan geschikt als hero; een Pexels-sleutel ontbreekt in `claude/sleutels-studio.md`, en juist Pexels is de bron waar dit onderwerp wél op te vinden is. Komt die sleutel er, dan is dit het eerste beeld om te vervangen.
+
 ## Regels in het kort
 
 Vrij te gebruiken: eigen beeld, productfoto's via de bol-API (worden niet in deze map opgeslagen), Pexels, en beeld uit vrije beeldbanken met een licentie zonder `-nc` en zonder `-nd` — mét zichtbare naamsvermelding waar de licentie dat vraagt.
