@@ -18,29 +18,29 @@ De 27 beelden hieronder stonden vóór het beeldbeleid al op de site, zijn op 26
 | avengers.jpg | De Avengers uit de films naast elkaar |
 | batman.jpg | Batman op de omslag van een stripboek |
 | black-panther.jpg | Black Panther met uitgestrekte klauwen |
-| captain-america.png | Captain America met zijn schild |
+| captain-america.webp | Captain America met zijn schild |
 | doctor-strange.jpg | Doctor Strange met een magische cirkel |
-| frozen.png | Elsa, Anna, Olaf, Kristoff en Sven uit Frozen |
+| frozen.webp | Elsa, Anna, Olaf, Kristoff en Sven uit Frozen |
 | gidsen-beste-spider-man-actiefiguren.jpg | Een Spider-Man actiefiguur |
 | gidsen-de-geschiedenis-van-spider-man.jpg | Stan Lee samen met Spider-Man |
 | gidsen-de-grootste-schurken-van-spider-man.jpg | Spider-Man vecht met een schurk op een stripomslag |
 | gidsen-de-krachten-van-spider-man.jpg | Spider-Man artwork |
 | green-lantern.jpg | Green Lantern met zijn gloeiende ring |
 | harry-potter.jpg | Het kasteel van Zweinstein |
-| hulk.png | De Hulk in stripboekstijl |
+| hulk.webp | De Hulk in stripboekstijl |
 | index.jpg | Spider-Man in rode rook |
 | iron-man.jpg | Iron Man in zijn harnas |
 | paw-patrol.jpg | De pups van Paw Patrol met Ryder |
-| pokemon.png | Squirtle, Bulbasaur en Charmander |
+| pokemon.webp | Squirtle, Bulbasaur en Charmander |
 | spider-man.jpg | Spider-Man kruipt over een richel |
 | star-wars.jpg | Een lichtzwaardduel uit Star Wars |
 | super-mario.jpg | Super Mario in zijn spelwereld |
 | supergirl.jpg | Supergirl met haar cape |
 | superman.jpg | Superman vliegt boven de stad |
-| the-flash.png | The Flash uit de tekenfilm |
+| the-flash.webp | The Flash uit de tekenfilm |
 | thor.jpg | Thor met zijn hamer |
-| wolverine.png | Wolverine in stripboekstijl |
-| wonder-woman.png | Wonder Woman |
+| wolverine.webp | Wolverine in stripboekstijl |
+| wonder-woman.webp | Wonder Woman |
 
 ## Pexels-beelden (per pagina)
 
