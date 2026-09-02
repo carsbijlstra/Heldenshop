@@ -96,6 +96,36 @@
     return '<span class="bol-star">' + s + '</span> <b>' + txt + '</b>' + (count ? ' \u00b7 ' + count + ' reviews' : '');
   }
 
+  // Studio, 2 september 2026: paginalabel (subid) voor de bol-rapportage. bol meldde
+  // elke klik als "(zonder subid)", dus was niet te zien welke pagina de klik of de
+  // order opleverde. Conventie (net als HaardhoutVergelijker): het paginapad zonder
+  // schuine strepen, kleine letters en koppeltekens, en de homepage heet "home".
+  // Dus /spider-man wordt "spider-man" en /gidsen/het-beste-thor-speelgoed wordt
+  // "gidsen-het-beste-thor-speelgoed". De site draait met cleanUrls, dus paden hebben
+  // geen .html meer; een oude .html-link halen we hier toch plat zodat beide vormen
+  // hetzelfde label geven. De proxy schoont de waarde daarna nog een keer op en zet
+  // hem alleen in de affiliate-URL, niet in de cachesleutel van de productdata.
+  function paginaSubid() {
+    var pad = '';
+    try { pad = decodeURIComponent((window.location && window.location.pathname) || ''); }
+    catch (e) { pad = (window.location && window.location.pathname) || ''; }
+    pad = pad.replace(/\.html?$/i, '').replace(/\/index$/i, '');
+    if (pad.normalize) pad = pad.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // accenten plat, net als in de proxy
+    var slug = pad
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 50)
+      .replace(/-+$/g, '');
+    return slug || 'home';
+  }
+
+  var SUBID = '';
+  function subidDeel() {
+    if (!SUBID) SUBID = paginaSubid();
+    return SUBID ? '&subid=' + encodeURIComponent(SUBID) : '';
+  }
+
   // The "Bekijk bij bol" link. The API returns the plain product URL; tracking
   // params are added centrally here so commission is always attributed.
   function affiliateHref(p) {
@@ -243,7 +273,7 @@
         var max = parseInt(shelf.getAttribute('data-bol-max'), 10) || 3;
         var sk = ''; for (var i = 0; i < max; i++) sk += skeletonCard(note);
         shelf.innerHTML = sk;
-        fetch('/api/products?q=' + encodeURIComponent(query) + '&max=' + max)
+        fetch('/api/products?q=' + encodeURIComponent(query) + '&max=' + max + subidDeel())
           .then(function (r) { return r.json(); })
           .then(function (data) { renderShelf(shelf, data.products); })
           .catch(function () { shelf.innerHTML = ''; });
@@ -269,7 +299,7 @@
       var groepen = [];
       for (var g = 0; g < allIds.length; g += CHUNK) groepen.push(allIds.slice(g, g + CHUNK));
       Promise.all(groepen.map(function (groep) {
-        return fetch('/api/products?ids=' + encodeURIComponent(groep.join(',')))
+        return fetch('/api/products?ids=' + encodeURIComponent(groep.join(',')) + subidDeel())
           .then(function (r) { return r.json(); })
           .then(function (data) { return (data && data.products) || []; })
           .catch(function () { return []; });

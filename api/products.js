@@ -16,9 +16,37 @@ const BASE = 'https://api.bol.com/marketing/catalog/v1';
 const SITE_ID = process.env.BOL_SITE_ID || '1528404';
 
 // Build a commission-tracked bol affiliate deeplink from a product URL + name.
-function buildAffiliateUrl(productUrl, name) {
+// subid = pagina-label voor de rapportage per pagina (Reporting API, veld subId).
+// Studio, 2 september 2026: subid toegevoegd op besluit van Cars. bol meldde alle
+// kliks als "(zonder subid)", waardoor niet te zien was welke pagina een klik of een
+// order opleverde en de meetlat van 1 januari 2027 niet aan een pagina te koppelen was.
+// Conventie (net als HaardhoutVergelijker): het paginapad zonder schuine strepen, in
+// kleine letters met koppeltekens, en de homepage heet "home". Dus /spider-man wordt
+// "spider-man" en /gidsen/het-beste-thor-speelgoed wordt "gidsen-het-beste-thor-speelgoed".
+// Alleen dit stuk van de link is veranderd: site-ID, volgorde en de rest van het
+// format blijven exact zoals ze waren.
+function buildAffiliateUrl(productUrl, name, subid) {
   if (!productUrl) return null;
-  return 'https://partner.bol.com/click/click?p=2&t=url&s=' + SITE_ID + '&f=TXL&url=' + encodeURIComponent(productUrl) + '&name=' + encodeURIComponent(name || '');
+  return 'https://partner.bol.com/click/click?p=2&t=url&s=' + SITE_ID + '&f=TXL' +
+    (subid ? '&subid=' + encodeURIComponent(subid) : '') +
+    '&url=' + encodeURIComponent(productUrl) + '&name=' + encodeURIComponent(name || '');
+}
+
+// De subid komt uit de browser en is dus niet te vertrouwen. Alleen kleine letters,
+// cijfers en koppeltekens blijven over: accenten worden platgeslagen, al het andere
+// wordt een koppelteken, dubbele koppeltekens vallen samen en koppeltekens aan de
+// randen gaan eraf. Maximaal 50 tekens; de langste paginaslug op de site is er 43.
+// Blijft er niets over, dan is de uitkomst null en zet de proxy helemaal geen subid
+// in de URL, nooit een lege of half opgeschoonde waarde.
+function schoonSubid(raw) {
+  const s = (raw == null ? '' : String(raw))
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 50)
+    .replace(/-+$/g, '');
+  return s || null;
 }
 
 let cachedToken = null; // { token, exp }
@@ -125,7 +153,44 @@ function extractEan(conv) {
   }) || null;
 }
 
-async function fetchByEan(ean, token, debug, idHint) {
+// Productgegevens (titel, foto, prijs, levertijd, sterren) hangen aan het EAN en niet
+// aan de pagina waar het blok staat. Daarom bewaren we ze hier op EAN alleen, zonder
+// de subid, en komt de subid er pas na de cachetreffer bij in buildAffiliateUrl. Zo
+// raakt het paginalabel uitsluitend de uitgaande affiliate-URL en niet de sleutel van
+// de productdata. Aan de CDN-kant blijft s-maxage=3600 ongewijzigd staan; die sleutel
+// is de hele query, dus elke pagina krijgt daar voortaan een eigen ingang die al haar
+// bezoekers samen delen. Deze cache zorgt dat die extra ingangen bol niet opnieuw vier
+// keer per product bevragen zolang dezelfde functie-instantie warm is.
+const PRODUCT_TTL_MS = 10 * 60 * 1000;
+const PRODUCT_MAX = 300;
+const productCache = new Map(); // ean -> { exp, data }; data staat er zonder affiliateUrl in
+const eanCache = new Map();     // bol-product-ID -> { exp, data: ean }
+
+function cacheGet(map, sleutel) {
+  const hit = map.get(sleutel);
+  if (!hit) return null;
+  if (hit.exp <= Date.now()) { map.delete(sleutel); return null; }
+  return hit.data;
+}
+
+function cacheSet(map, sleutel, data) {
+  if (map.size >= PRODUCT_MAX) {
+    const oudste = map.keys().next();
+    if (!oudste.done) map.delete(oudste.value);
+  }
+  map.set(sleutel, { exp: Date.now() + PRODUCT_TTL_MS, data: data });
+}
+
+async function fetchByEan(ean, token, debug, idHint, subid) {
+  if (!debug) {
+    const bewaard = cacheGet(productCache, ean);
+    if (bewaard) {
+      return Object.assign({}, bewaard, {
+        id: idHint || bewaard.id || null,
+        affiliateUrl: buildAffiliateUrl(bewaard.url, bewaard.title, subid)
+      });
+    }
+  }
   const out = { id: idHint || null, ean: ean };
   const [prod, media, offer, ratings] = await Promise.all([
     apiGet('/products/' + ean + '?country-code=NL', token),
@@ -138,7 +203,7 @@ async function fetchByEan(ean, token, debug, idHint) {
   }
   out.title = prod.ok ? (extractTitle(prod.json) || null) : null;
   out.url = (prod.ok && extractUrl(prod.json)) || (media.ok && extractUrl(media.json)) || (offer.ok && extractUrl(offer.json)) || null;
-  out.affiliateUrl = buildAffiliateUrl(out.url, out.title);
+  out.affiliateUrl = buildAffiliateUrl(out.url, out.title, subid);
   out.image = media.ok ? (extractImage(media.json) || (prod.ok ? extractImage(prod.json) : null)) : (prod.ok ? extractImage(prod.json) : null);
   out.price = offer.ok ? (extractPrice(offer.json) ?? null) : null;
   out.delivery = (offer.ok && offer.json && typeof offer.json.deliveryDescription === 'string') ? offer.json.deliveryDescription : null;
@@ -146,10 +211,20 @@ async function fetchByEan(ean, token, debug, idHint) {
   out.rating = rt.rating;
   out.ratingCount = rt.count;
   if (debug) out.debug = { product: prod, media: media, offer: offer, ratings: ratings };
+  else {
+    const zonderLink = Object.assign({}, out);
+    delete zonderLink.affiliateUrl; // de link is paginagebonden, de productdata niet
+    cacheSet(productCache, ean, zonderLink);
+  }
   return out;
 }
 
-async function fetchProduct(bolId, token, debug) {
+async function fetchProduct(bolId, token, debug, subid) {
+  // Het product-ID hoort vast bij een EAN, dus die vertaling bewaren we ook. Anders
+  // vraagt elke pagina met hetzelfde product hem opnieuw op, puur omdat haar subid
+  // verschilt; en juist dat moet de subid niet doen.
+  const bewaardEan = debug ? null : cacheGet(eanCache, bolId);
+  if (bewaardEan) return fetchByEan(bewaardEan, token, debug, bolId, subid);
   const conv = await apiGet('/products/' + encodeURIComponent(bolId) + '/to-ean?country-code=NL', token);
   const ean = conv.ok ? extractEan(conv.json) : null;
   if (!ean) {
@@ -157,7 +232,8 @@ async function fetchProduct(bolId, token, debug) {
     if (debug) out.debug = { convert: conv };
     return out;
   }
-  return fetchByEan(ean, token, debug, bolId);
+  if (!debug) cacheSet(eanCache, bolId, ean);
+  return fetchByEan(ean, token, debug, bolId, subid);
 }
 
 // Collect {ean,id} pairs from a bol search response (shape can vary — probe defensively).
@@ -177,7 +253,7 @@ function extractSearchHits(searchJson, max) {
   return hits.slice(0, max);
 }
 
-async function searchProducts(term, maxRaw, token, debug) {
+async function searchProducts(term, maxRaw, token, debug, subid) {
   const max = Math.min(Math.max(parseInt(maxRaw, 10) || 3, 1), 8);
   const search = await apiGet('/products/search?country-code=NL&search-term=' + encodeURIComponent(term), token);
   if (!search.ok) {
@@ -186,7 +262,7 @@ async function searchProducts(term, maxRaw, token, debug) {
   const hits = extractSearchHits(search.json, max);
   const products = [];
   for (const h of hits) {
-    try { products.push(await fetchByEan(h.ean, token, debug, h.id)); }
+    try { products.push(await fetchByEan(h.ean, token, debug, h.id, subid)); }
     catch (e) { products.push({ id: h.id, ean: h.ean, error: String(e && e.message || e) }); }
   }
   const result = { products: products };
@@ -199,6 +275,7 @@ module.exports = async (req, res) => {
   const debug = q.debug === '1' || q.debug === 'true';
   const term = (q.q || q.query || q.search || '').toString().trim();
   const idsRaw = (q.ids || q.id || '').toString();
+  const subid = schoonSubid(q.subid);
   const ids = idsRaw.split(',').map((s) => s.trim()).filter(Boolean).slice(0, 12);
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -212,13 +289,13 @@ module.exports = async (req, res) => {
   try {
     const token = await getToken();
     if (term) {
-      const result = await searchProducts(term, q.max, token, debug);
+      const result = await searchProducts(term, q.max, token, debug, subid);
       res.status(200).end(JSON.stringify(result, null, debug ? 2 : 0));
       return;
     }
     const products = [];
     for (const id of ids) {
-      try { products.push(await fetchProduct(id, token, debug)); }
+      try { products.push(await fetchProduct(id, token, debug, subid)); }
       catch (e) { products.push({ id, error: String(e && e.message || e) }); }
     }
     res.status(200).end(JSON.stringify({ products }, null, debug ? 2 : 0));
