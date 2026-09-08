@@ -134,6 +134,7 @@ Beeld dat de studio zelf tekent: platte comicvlakken in de huisstijl, afgeleid u
 | Bestand (in `paginas/`) | Toont | Gemaakt |
 |---|---|---|
 | gidsen-adventskalender-voor-kinderen.svg | Een ingepakt cadeau met een strik, in comicstijl op een warme achtergrond met speedlines | 1 september 2026 |
+| gidsen-superhelden-surprise-maken.svg | Een schild met een ster in het midden, in comicstijl op een warme achtergrond met speedlines | 8 september 2026 |
 
 **Open punt:** deze pagina gaat over adventskalenders en het beeld toont een cadeau. Openverse en Wikimedia Commons gaven op 1 september 2026 samen vijf bruikbare kandidaten voor "adventskalender", geen daarvan geschikt als hero; een Pexels-sleutel ontbreekt in `claude/sleutels-studio.md`, en juist Pexels is de bron waar dit onderwerp wél op te vinden is. Komt die sleutel er, dan is dit het eerste beeld om te vervangen.
 
