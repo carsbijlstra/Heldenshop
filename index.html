@@ -33,7 +33,6 @@
 .nu-item h3 a{color:var(--ink);text-decoration:none}
 .nu-item h3 a:hover{text-decoration:underline}
 .nu-item p{margin:0;font-weight:600;font-size:.95rem;line-height:1.5;color:#4a5077}
-.nu-aftel{margin:10px 0 0 !important;font-family:var(--display);font-weight:400;letter-spacing:.3px;font-size:1.02rem;color:var(--ink) !important;font-variant-numeric:tabular-nums}
 .deze-week{list-style:none;margin:20px 0 22px;padding:0;display:flex;flex-direction:column;gap:9px;max-width:52ch}
 .deze-week li{line-height:1.5}
 .dw-tag{display:inline-block;margin-right:9px;font-family:var(--body);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#fff;color:var(--red);border:2px solid var(--red);border-radius:999px;padding:2px 9px;vertical-align:1px}
@@ -159,6 +158,28 @@
     </div>
   </section>
 
+
+  <section id="aftellen" style="padding-top:0">
+    <div class="wrap">
+      <div class="panel film-panel halftone" style="--halftone:radial-gradient(rgba(255,255,255,.16) 1.6px,transparent 1.7px);background:linear-gradient(120deg,#2B0F4A 0%,#6E3FB0 58%,#A6357F 100%)">
+        <div class="film-grid">
+          <div>
+            <span class="chip" style="background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5)">&#127916; De grote film van dit jaar</span>
+            <h2 class="display" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin:14px 0 10px">Avengers: Doomsday</h2>
+            <p style="color:#EBDDFF;line-height:1.5;margin:0 0 22px;font-weight:600;max-width:40ch">Alle helden samen tegen Doctor Doom. Vanaf <strong style="color:var(--yellow)">16 december 2026</strong> in de Nederlandse bioscoop. Bekijk de trailer en tel met Held mee af. &#127871;</p>
+            <a class="btn btn-yellow" href="/avengers-doomsday">Alles over Doomsday &rarr;</a>
+          </div>
+          <div class="count" id="countdown" data-target="2026-12-16T00:00:00+01:00" aria-label="Aftellen naar de bioscooprelease op 16 december 2026">
+            <div class="cell"><div class="num" id="cd-d">--</div><div class="lbl">dagen</div></div>
+            <div class="cell"><div class="num" id="cd-h">--</div><div class="lbl">uren</div></div>
+            <div class="cell"><div class="num" id="cd-m">--</div><div class="lbl">min</div></div>
+            <div class="cell"><div class="num" id="cd-s">--</div><div class="lbl">sec</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="nu" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head" style="text-align:center">
@@ -186,12 +207,6 @@
           <span class="nu-tag" style="background:#ECE7FB;color:#3E2A9B;border-color:#3E2A9B">&#127917; Straks in de bioscoop</span>
           <h3><a href="/clayface">Clayface, 22 oktober</a></h3>
           <p>Een film over de schurk uit Gotham City die van klei is. Aangekondigd als horrorfilm, dus ook deze is niet voor jonge kinderen.</p>
-        </li>
-        <li class="nu-item">
-          <span class="nu-tag" style="background:#E7EEF6;color:#1E3A6B;border-color:#1E3A6B">&#9203; Waar we naar aftellen</span>
-          <h3><a href="/avengers-doomsday">Avengers: Doomsday, 16 december</a></h3>
-          <p>De grote film van dit jaar, met alle helden tegen Doctor Doom.</p>
-          <p class="nu-aftel" id="countdown" data-target="2026-12-16T00:00:00+01:00">Nog <strong id="cd-d">--</strong> dagen, <span id="cd-h">--</span>:<span id="cd-m">--</span>:<span id="cd-s">--</span></p>
         </li>
       </ul>
     </div>
