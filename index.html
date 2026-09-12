@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Heldenshop, alles over je favoriete superhelden &amp; films</title>
-<meta name="description" content="Het vrolijke superheldenplatform door echte fans: wie Spider-Man, Batman en de Hulk zijn, wat er nu draait en streamt, Avengers: Doomsday, en cadeautips voor Sinterklaas en Kerst.">
+<title>Heldenshop: alles over superhelden, elke week bijgewerkt</title>
+<meta name="description" content="Alles over superhelden, elke week bijgewerkt: wie Spider-Man, Batman en de Hulk zijn, wat er nu in de bioscoop draait en op streaming staat, en eerlijke cadeautips voor Sinterklaas en Kerst.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#EE2A3C">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.heldenshop.nl/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Heldenshop">
-<meta property="og:title" content="Heldenshop, alles over je favoriete superhelden &amp; films">
-<meta property="og:description" content="Het vrolijke superheldenplatform door echte fans: wie Spider-Man, Batman en de Hulk zijn, wat er nu draait en streamt, Avengers: Doomsday, en cadeautips voor Sinterklaas en Kerst.">
+<meta property="og:title" content="Heldenshop: alles over superhelden, elke week bijgewerkt">
+<meta property="og:description" content="Alles over superhelden, elke week bijgewerkt: wie Spider-Man, Batman en de Hulk zijn, wat er nu in de bioscoop draait en op streaming staat, en eerlijke cadeautips voor Sinterklaas en Kerst.">
 <meta property="og:url" content="https://www.heldenshop.nl/">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:image" content="https://www.heldenshop.nl/images/paginas/index.jpg">
@@ -32,7 +32,20 @@
 .nu-item h3{font-family:var(--display);font-weight:400;letter-spacing:.3px;font-size:1.12rem;line-height:1.2;margin:11px 0 6px}
 .nu-item h3 a{color:var(--ink);text-decoration:none}
 .nu-item h3 a:hover{text-decoration:underline}
-.nu-item p{margin:0;font-weight:600;font-size:.95rem;line-height:1.5;color:#4a5077}</style>
+.nu-item p{margin:0;font-weight:600;font-size:.95rem;line-height:1.5;color:#4a5077}
+.nu-aftel{margin:10px 0 0 !important;font-family:var(--display);font-weight:400;letter-spacing:.3px;font-size:1.02rem;color:var(--ink) !important;font-variant-numeric:tabular-nums}
+.deze-week{list-style:none;margin:20px 0 22px;padding:0;display:flex;flex-direction:column;gap:9px;max-width:52ch}
+.deze-week li{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.dw-tag{flex:none;font-family:var(--body);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#fff;color:var(--red);border:2px solid var(--red);border-radius:999px;padding:2px 9px}
+.deze-week a{font-weight:700;font-size:.98rem;line-height:1.4;color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px;text-decoration-color:rgba(26,31,61,.3)}
+.deze-week a:hover{text-decoration-color:var(--red)}
+.nieuw-lijst{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.nieuw-item{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:#fff;border:3px solid var(--ink);border-radius:16px;box-shadow:4px 5px 0 rgba(26,31,61,.12);padding:13px 16px}
+.nieuw-datum{flex:none;font-family:var(--body);font-weight:700;font-size:.76rem;color:#6a7099}
+.nieuw-soort{flex:none;font-family:var(--body);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#ECEEF6;color:#3A4061;border-radius:999px;padding:2px 9px}
+.nieuw-soort.nieuw{background:#FFE4E8;color:#C2283A}
+.nieuw-item a{font-weight:700;font-size:.96rem;line-height:1.35;color:var(--ink);text-decoration:none}
+.nieuw-item a:hover{text-decoration:underline}</style>
 <style>
 @keyframes fxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes fxBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
@@ -112,19 +125,23 @@
   </nav>
 </header>
 <main>
-
   <section class="hero">
     <div class="wrap">
       <div class="panel hero-panel halftone">
         <svg class="speedlines" viewBox="0 0 190 190" fill="none" stroke="#2B54E0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M188 6 L120 70"></path><path d="M188 36 L132 92"></path><path d="M188 66 L150 104"></path><path d="M170 4 L96 64"></path></svg>
         <div class="hero-grid">
           <div>
-            <span class="chip" style="background:#fff;color:var(--red)"><span class="dot-pulse" aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:var(--red)"></span> Held van het moment</span>
-            <h1 class="h1 home-h1">Spider-Man swingt terug, in een <span class="hl">gloednieuwe film!</span></h1>
-            <p class="lead">Maak kennis met de vriendelijke held uit de buurt, ontdek al zijn krachten en lees alles over <strong>Spider-Man: Brand New Day</strong>, nú te zien in de bioscoop. Plus: leer alle andere superhelden kennen!</p>
+            <span class="chip" style="background:#fff;color:var(--red)"><span class="dot-pulse" aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:var(--red)"></span> Bijgewerkt op 12 september 2026</span>
+            <h1 class="h1 home-h1">Alles over superhelden, <span class="hl">elke week bijgewerkt</span></h1>
+            <p class="lead">Wie is welke held, welke film of serie is de moeite waard, en wat is een goed cadeau. Wij leggen het simpel uit voor kinderen en hun ouders, en zeggen er eerlijk bij voor wie iets niet bedoeld is.</p>
+            <ul class="deze-week" aria-label="Deze week nieuw">
+              <li><span class="dw-tag">Deze week</span><a href="/lanterns">Lanterns op HBO Max, aflevering 4 van 8 staat online</a></li>
+              <li><span class="dw-tag">Nieuw</span><a href="/clayface">Clayface komt op 22 oktober in de bioscoop</a></li>
+              <li><span class="dw-tag">Bijgewerkt</span><a href="/gidsen/het-beste-green-lantern-speelgoed">De koopgids met het beste Green Lantern speelgoed</a></li>
+            </ul>
             <div style="display:flex;gap:14px;flex-wrap:wrap">
-              <a class="btn btn-red" href="/spider-man">Ontdek Spider-Man</a>
-              <a class="btn btn-white" href="/spider-man-brand-new-day">🎬 De nieuwe film</a>
+              <a class="btn btn-red" href="#nu">Wat speelt er nu &darr;</a>
+              <a class="btn btn-white" href="/spider-man">Ontdek Spider-Man</a>
             </div>
           </div>
           <div style="position:relative;min-height:300px">
@@ -136,46 +153,6 @@
             <div class="hero-fx fx-float" style="bottom:16%;right:-2px;width:13px;height:13px;border-radius:50%;background:#1FC3B1;animation-duration:3.6s;animation-delay:.5s" aria-hidden="true"></div>
             <svg class="mascot fx-bob" style="position:absolute;left:-6px;bottom:-24px;width:clamp(120px,17vw,180px);height:clamp(150px,21vw,224px);overflow:visible" viewBox="0 0 200 240" role="img" aria-label="Held, de superheld-mascotte van Heldenshop"><use href="#held"></use></svg>
             <div class="bubble fx-wiggle" style="position:absolute;left:clamp(96px,15vw,152px);bottom:clamp(98px,14vw,150px)">Hoi! Ik ben Held! 👋</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="panel film-panel halftone" style="--halftone:radial-gradient(rgba(255,255,255,.16) 1.6px,transparent 1.7px)">
-        <div class="film-grid">
-          <div>
-            <span class="chip" style="background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5)">🎬 Nu in de bioscoop</span>
-            <h2 class="display" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin:14px 0 10px">Spider-Man: Brand New Day</h2>
-            <p style="color:#D7E0FF;line-height:1.5;margin:0 0 22px;font-weight:600;max-width:38ch">Een nieuw avontuur, een nieuw pak! Nú te zien <strong style="color:var(--yellow)">in de bioscoop</strong>. 🎉</p>
-            <a class="btn btn-yellow" href="/spider-man-brand-new-day">Lees alles over de film →</a>
-          </div>
-          <div class="count" aria-label="De film is nu te zien in de bioscoop">
-            <div class="cell" style="grid-column:1/-1"><div class="num">🍿 NU TE ZIEN</div><div class="lbl">in de bioscoop</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="panel film-panel halftone" style="--halftone:radial-gradient(rgba(255,255,255,.16) 1.6px,transparent 1.7px);background:linear-gradient(120deg,#2B0F4A 0%,#6E3FB0 58%,#A6357F 100%)">
-        <div class="film-grid">
-          <div>
-            <span class="chip" style="background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5)">&#127916; Straks in de bioscoop</span>
-            <h2 class="display" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin:14px 0 10px">Avengers: Doomsday</h2>
-            <p style="color:#EBDDFF;line-height:1.5;margin:0 0 22px;font-weight:600;max-width:38ch">Alle helden samen tegen Doctor Doom. Vanaf <strong style="color:var(--yellow)">16 december 2026</strong> in de Nederlandse bioscoop. Bekijk de trailer en tel met Held mee af. &#127871;</p>
-            <p style="color:#EBDDFF;line-height:1.5;margin:0 0 22px;font-weight:600;max-width:38ch">Kun je niet wachten? <strong style="color:var(--yellow)">Avengers: Endgame</strong> draait op <strong style="color:var(--yellow)">23 september 2026</strong> nog een keer in de bioscoop, als Endgame Encore. Ruim drie uur lang, en de beste voorbereiding op Doomsday. <a href="/avengers" style="color:#fff;text-decoration:underline">Alles over de Avengers &rarr;</a></p>
-            <a class="btn btn-yellow" href="/avengers-doomsday">Alles over Doomsday &rarr;</a>
-          </div>
-          <div class="count" id="countdown" data-target="2026-12-16T00:00:00+01:00" aria-label="Aftellen naar de bioscooprelease op 16 december 2026">
-            <div class="cell"><div class="num" id="cd-d">--</div><div class="lbl">dagen</div></div>
-            <div class="cell"><div class="num" id="cd-h">--</div><div class="lbl">uren</div></div>
-            <div class="cell"><div class="num" id="cd-m">--</div><div class="lbl">min</div></div>
-            <div class="cell"><div class="num" id="cd-s">--</div><div class="lbl">sec</div></div>
           </div>
         </div>
       </div>
@@ -213,9 +190,29 @@
         <li class="nu-item">
           <span class="nu-tag" style="background:#E7EEF6;color:#1E3A6B;border-color:#1E3A6B">&#9203; Waar we naar aftellen</span>
           <h3><a href="/avengers-doomsday">Avengers: Doomsday, 16 december</a></h3>
-          <p>De grote film van dit jaar. De aftelklok hierboven telt de dagen af.</p>
+          <p>De grote film van dit jaar, met alle helden tegen Doctor Doom.</p>
+          <p class="nu-aftel" id="countdown" data-target="2026-12-16T00:00:00+01:00">Nog <strong id="cd-d">--</strong> dagen, <span id="cd-h">--</span>:<span id="cd-m">--</span>:<span id="cd-s">--</span></p>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section id="nieuw" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head" style="text-align:center">
+        <span class="eyebrow" style="color:var(--blue)">De studio werkt door</span>
+        <h2 class="sec-title">Nieuw op Heldenshop</h2>
+        <p class="sec-intro" style="margin:8px auto 0">Wat er de afgelopen weken bij is gekomen of opnieuw is geschreven. De koopgidsen lopen we na op producten die bij bol zijn weggevallen, dus wat er staat is ook echt te koop.</p>
+      </div>
+      <ul class="nieuw-lijst">
+        <li class="nieuw-item"><span class="nieuw-datum">11 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-beste-green-lantern-speelgoed">Het beste Green Lantern speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-datum">8 september</span><span class="nieuw-soort nieuw">Nieuw</span><a href="/gidsen/superhelden-surprise-maken">Superhelden surprise maken, zes ideeen met stappenplan</a></li>
+        <li class="nieuw-item"><span class="nieuw-datum">8 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-leukste-super-mario-speelgoed">Het leukste Super Mario speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-coolste-batman-speelgoed">Het coolste Batman speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-beste-supergirl-speelgoed">Het beste Supergirl speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-beste-doctor-strange-speelgoed">Het beste Doctor Strange speelgoed</a></li>
+      </ul>
+      <p style="text-align:center;margin:18px 0 0"><a class="btn btn-white" href="/gidsen">Alle gidsen bekijken &rarr;</a></p>
     </div>
   </section>
 
