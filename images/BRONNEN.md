@@ -48,6 +48,10 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 
 | Bestand (in `paginas/`) | Toont | Pexels-id | Fotograaf |
 |---|---|---|---|
+| lanterns.jpg | Silhouet van een persoon in het donker voor een fel groen licht in de mist | 6276690 | Victor de Dompablo |
+| clayface.jpg | Een kleigezicht in een atelier, met een hand en een lusgereedschap ervoor | 6714798 | Tima Miroshnichenko |
+| gidsen-adventskalender-voor-kinderen.jpg | Houten adventskalender met genummerde chocolaatjes en een kerstmannetje van suiker | 965623 | Markus Spiske |
+| gidsen-superhelden-surprise-maken.jpg | Een hand zet met een lijmpistool een rode kartonnen koker in elkaar | 7509503 | cottonbro studio |
 | gidsen-avengers-films-volgorde.jpg | Popcorn springt uit een bakje voor een bioscooplicht | 35623662 | Christopher Welsch Leveroni |
 | gidsen-batman-gadgets.jpg | Diverse steeksleutels in een cirkelvormig patroon met ruimte voor tekst | 6789021 | Dmitry Demidov |
 | gidsen-beginnen-met-pokemon-kaarten.jpg | Pakjes Pokemon-kaarten op een stapel | 7708408 | Caleb Oquendo |
@@ -133,12 +137,14 @@ Beeld dat de studio zelf tekent: platte comicvlakken in de huisstijl, afgeleid u
 
 | Bestand (in `paginas/`) | Toont | Gemaakt |
 |---|---|---|
-| gidsen-adventskalender-voor-kinderen.svg | Een ingepakt cadeau met een strik, in comicstijl op een warme achtergrond met speedlines | 1 september 2026 |
-| gidsen-superhelden-surprise-maken.svg | Een schild met een ster in het midden, in comicstijl op een warme achtergrond met speedlines | 8 september 2026 |
-| lanterns.svg | Een grote ster in comicstijl op een warme achtergrond met speedlines | 12 september 2026 |
-| clayface.svg | Een oogmasker in comicstijl op een lichtblauwe achtergrond met speedlines | 12 september 2026 |
+| ~~gidsen-adventskalender-voor-kinderen.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 1 september 2026 |
+| ~~gidsen-superhelden-surprise-maken.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 8 september 2026 |
+| ~~lanterns.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 12 september 2026 |
+| ~~clayface.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 12 september 2026 |
 
-**Open punt:** deze pagina gaat over adventskalenders en het beeld toont een cadeau. Openverse en Wikimedia Commons gaven op 1 september 2026 samen vijf bruikbare kandidaten voor "adventskalender", geen daarvan geschikt als hero; een Pexels-sleutel ontbreekt in `claude/sleutels-studio.md`, en juist Pexels is de bron waar dit onderwerp wél op te vinden is. Komt die sleutel er, dan is dit het eerste beeld om te vervangen.
+**Opruimen:** deze vier bestanden staan nog in `paginas/` en worden nergens meer gebruikt. De shell in de gekoppelde map mag niet verwijderen, dus ze gaan eraf op de eerstvolgende techniek- en opruimnacht op Boris.
+
+~~**Open punt:** deze pagina gaat over adventskalenders en het beeld toont een cadeau.~~ **Opgelost op 12 september 2026.** De aanname dat er een Pexels-sleutel nodig was, klopte niet: de sleutel is alleen nodig voor de API in `gereedschap/beeldzoeker.py`, en de werkende route staat al sinds 27 augustus in `claude/beeldregels.md` stap 2 en 4, namelijk de Pexels-zoekpagina in de ingelogde Chrome op Boris, waar downloaden zonder account kan en het bestand vanzelf in `beeld-inbox/` landt. Vier pagina's met een getekend beeld hebben daarmee alsnog een foto gekregen.
 
 ## Regels in het kort
 
