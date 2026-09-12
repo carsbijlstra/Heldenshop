@@ -33,17 +33,23 @@
 .nu-item h3 a{color:var(--ink);text-decoration:none}
 .nu-item h3 a:hover{text-decoration:underline}
 .nu-item p{margin:0;font-weight:600;font-size:.95rem;line-height:1.5;color:#4a5077}
-.deze-week{list-style:none;margin:20px 0 22px;padding:0;display:flex;flex-direction:column;gap:9px;max-width:52ch}
-.deze-week li{line-height:1.5}
-.dw-tag{display:inline-block;margin-right:9px;font-family:var(--body);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#fff;color:var(--red);border:2px solid var(--red);border-radius:999px;padding:2px 9px;vertical-align:1px}
-.deze-week a{font-weight:700;font-size:.98rem;line-height:1.4;color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px;text-decoration-color:rgba(26,31,61,.3)}
-.deze-week a:hover{text-decoration-color:var(--red)}
+.deze-week{list-style:none;margin:20px 0 24px;padding:0;display:flex;flex-direction:column;gap:4px;max-width:56ch}
+.deze-week a{display:grid;grid-template-columns:6.6rem 1fr;align-items:center;gap:13px;padding:8px 12px;margin-left:-12px;border-radius:14px;text-decoration:none;transition:background .15s ease}
+.deze-week a:hover{background:rgba(255,255,255,.72)}
+.dw-tag{justify-self:stretch;text-align:center;font-family:var(--body);font-weight:800;font-size:.63rem;text-transform:uppercase;letter-spacing:.09em;color:#fff;border-radius:999px;padding:5px 4px;white-space:nowrap;line-height:1}
+.dw-nu{background:var(--red)}
+.dw-nieuw{background:#2B54E0}
+.dw-bij{background:#3A4061}
+.dw-tekst{font-weight:700;font-size:1rem;line-height:1.4;color:var(--ink);text-underline-offset:3px;text-decoration-thickness:2px}
+.deze-week a:hover .dw-tekst{text-decoration:underline;text-decoration-color:var(--red)}
+@media (max-width:440px){.deze-week a{grid-template-columns:1fr;gap:5px;padding:9px 12px}.dw-tag{justify-self:start;padding:5px 10px}}
 .nieuw-lijst{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.nieuw-item{line-height:1.5;background:#fff;border:3px solid var(--ink);border-radius:16px;box-shadow:4px 5px 0 rgba(26,31,61,.12);padding:13px 16px}
-.nieuw-datum{display:inline-block;margin-right:8px;font-family:var(--body);font-weight:700;font-size:.76rem;color:#6a7099}
-.nieuw-soort{display:inline-block;margin-right:8px;vertical-align:1px;font-family:var(--body);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#ECEEF6;color:#3A4061;border-radius:999px;padding:2px 9px}
+.nieuw-item{background:#fff;border:3px solid var(--ink);border-radius:16px;box-shadow:4px 5px 0 rgba(26,31,61,.12);padding:14px 16px;display:flex;flex-direction:column;gap:7px}
+.nieuw-kop{display:flex;align-items:center;gap:9px}
+.nieuw-datum{font-family:var(--body);font-weight:700;font-size:.76rem;color:#6a7099}
+.nieuw-soort{font-family:var(--body);font-weight:800;font-size:.63rem;text-transform:uppercase;letter-spacing:.09em;background:#ECEEF6;color:#3A4061;border-radius:999px;padding:4px 9px;line-height:1}
 .nieuw-soort.nieuw{background:#FFE4E8;color:#C2283A}
-.nieuw-item a{font-weight:700;font-size:.96rem;line-height:1.35;color:var(--ink);text-decoration:none}
+.nieuw-item a{font-weight:700;font-size:1rem;line-height:1.35;color:var(--ink);text-decoration:none}
 .nieuw-item a:hover{text-decoration:underline}</style>
 <style>
 @keyframes fxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
@@ -134,9 +140,9 @@
             <h1 class="h1 home-h1">Alles over superhelden, <span class="hl">elke week bijgewerkt</span></h1>
             <p class="lead">Wie is welke held, welke film of serie is de moeite waard, en wat is een goed cadeau. Wij leggen het simpel uit voor kinderen en hun ouders, en zeggen er eerlijk bij voor wie iets niet bedoeld is.</p>
             <ul class="deze-week" aria-label="Deze week nieuw">
-              <li><span class="dw-tag">Deze week</span><a href="/lanterns">Lanterns op HBO Max, aflevering 4 van 8 staat online</a></li>
-              <li><span class="dw-tag">Nieuw</span><a href="/clayface">Clayface komt op 22 oktober in de bioscoop</a></li>
-              <li><span class="dw-tag">Bijgewerkt</span><a href="/gidsen/het-beste-green-lantern-speelgoed">De koopgids met het beste Green Lantern speelgoed</a></li>
+              <li><a href="/lanterns"><span class="dw-tag dw-nu">Deze week</span><span class="dw-tekst">Lanterns op HBO Max, aflevering 4 van 8 staat online</span></a></li>
+              <li><a href="/clayface"><span class="dw-tag dw-nieuw">Nieuw</span><span class="dw-tekst">Clayface komt op 22 oktober in de bioscoop</span></a></li>
+              <li><a href="/gidsen/het-beste-green-lantern-speelgoed"><span class="dw-tag dw-bij">Bijgewerkt</span><span class="dw-tekst">De koopgids met het beste Green Lantern speelgoed</span></a></li>
             </ul>
             <div style="display:flex;gap:14px;flex-wrap:wrap">
               <a class="btn btn-red" href="#nu">Wat speelt er nu &darr;</a>
@@ -220,12 +226,12 @@
         <p class="sec-intro" style="margin:8px auto 0">Wat er de afgelopen weken bij is gekomen of opnieuw is geschreven. De koopgidsen lopen we na op producten die bij bol zijn weggevallen, dus wat er staat is ook echt te koop.</p>
       </div>
       <ul class="nieuw-lijst">
-        <li class="nieuw-item"><span class="nieuw-datum">11 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-beste-green-lantern-speelgoed">Het beste Green Lantern speelgoed</a></li>
-        <li class="nieuw-item"><span class="nieuw-datum">8 september</span><span class="nieuw-soort nieuw">Nieuw</span><a href="/gidsen/superhelden-surprise-maken">Superhelden surprise maken, zes ideeen met stappenplan</a></li>
-        <li class="nieuw-item"><span class="nieuw-datum">8 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-leukste-super-mario-speelgoed">Het leukste Super Mario speelgoed</a></li>
-        <li class="nieuw-item"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-coolste-batman-speelgoed">Het coolste Batman speelgoed</a></li>
-        <li class="nieuw-item"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-beste-supergirl-speelgoed">Het beste Supergirl speelgoed</a></li>
-        <li class="nieuw-item"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span><a href="/gidsen/het-beste-doctor-strange-speelgoed">Het beste Doctor Strange speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-kop"><span class="nieuw-datum">11 september</span><span class="nieuw-soort">Bijgewerkt</span></span><a href="/gidsen/het-beste-green-lantern-speelgoed">Het beste Green Lantern speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-kop"><span class="nieuw-datum">8 september</span><span class="nieuw-soort nieuw">Nieuw</span></span><a href="/gidsen/superhelden-surprise-maken">Superhelden surprise maken, zes ideeen met stappenplan</a></li>
+        <li class="nieuw-item"><span class="nieuw-kop"><span class="nieuw-datum">8 september</span><span class="nieuw-soort">Bijgewerkt</span></span><a href="/gidsen/het-leukste-super-mario-speelgoed">Het leukste Super Mario speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-kop"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span></span><a href="/gidsen/het-coolste-batman-speelgoed">Het coolste Batman speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-kop"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span></span><a href="/gidsen/het-beste-supergirl-speelgoed">Het beste Supergirl speelgoed</a></li>
+        <li class="nieuw-item"><span class="nieuw-kop"><span class="nieuw-datum">7 september</span><span class="nieuw-soort">Bijgewerkt</span></span><a href="/gidsen/het-beste-doctor-strange-speelgoed">Het beste Doctor Strange speelgoed</a></li>
       </ul>
       <p style="text-align:center;margin:18px 0 0"><a class="btn btn-white" href="/gidsen">Alle gidsen bekijken &rarr;</a></p>
     </div>
