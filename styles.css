@@ -229,12 +229,3 @@ footer.site{background:var(--ink);color:#C7CCEA;padding-top:clamp(40px,5vw,60px)
 @keyframes hsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .gadgets{padding-top:clamp(18px,2.6vw,28px)}
 @media (prefers-reduced-motion:reduce){.floatimg{animation:none}}
-
-/* Wat speelt er nu, het wekelijkse blok op de homepage (12 september 2026) */
-.nu-lijst{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.nu-item{background:#fff;border:3px solid var(--ink);border-radius:20px;box-shadow:5px 6px 0 rgba(26,31,61,.14);padding:18px 20px}
-.nu-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--body);font-weight:700;font-size:.78rem;padding:5px 11px;border-radius:999px;border:2px solid var(--ink)}
-.nu-item h3{font-family:var(--display);font-weight:400;letter-spacing:.3px;font-size:1.12rem;line-height:1.2;margin:11px 0 6px}
-.nu-item h3 a{color:var(--ink);text-decoration:none}
-.nu-item h3 a:hover{text-decoration:underline}
-.nu-item p{margin:0;font-weight:600;font-size:.95rem;line-height:1.5;color:#4a5077}
