@@ -36,7 +36,12 @@ def loc_naar_bestand(loc):
 
 
 def git(args, cwd):
-    return subprocess.run(["git"] + args, cwd=cwd,
+    # --no-optional-locks: verplicht in de gekoppelde map op Boris. De sandbox
+    # mag daar geen bestanden verwijderen, dus een gewone git-aanroep laat
+    # .git/index.lock staan en daarna kan de publicatiewacht in deze repo niets
+    # meer committen (claude/publicatiewacht.md, 13 september 2026). Toegevoegd
+    # 14 september 2026 door de contentscan, onder mandaat 5.
+    return subprocess.run(["git", "--no-optional-locks"] + args, cwd=cwd,
                           capture_output=True, text=True).stdout.strip()
 
 
