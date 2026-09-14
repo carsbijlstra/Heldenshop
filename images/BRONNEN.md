@@ -141,6 +141,7 @@ Beeld dat de studio zelf tekent: platte comicvlakken in de huisstijl, afgeleid u
 | ~~gidsen-superhelden-surprise-maken.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 8 september 2026 |
 | ~~lanterns.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 12 september 2026 |
 | ~~clayface.svg~~ | vervangen door een foto op 12 september 2026, niet meer in gebruik | 12 september 2026 |
+| avengers-endgame-encore.svg | Een schild met een ster erop, in de huisstijl, op de pagina over Avengers: Endgame Encore | 14 september 2026 |
 
 **Opruimen:** deze vier bestanden staan nog in `paginas/` en worden nergens meer gebruikt. De shell in de gekoppelde map mag niet verwijderen, dus ze gaan eraf op de eerstvolgende techniek- en opruimnacht op Boris.
 
