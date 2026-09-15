@@ -52,6 +52,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | clayface.jpg | Een kleigezicht in een atelier, met een hand en een lusgereedschap ervoor | 6714798 | Tima Miroshnichenko |
 | gidsen-adventskalender-voor-kinderen.jpg | Houten adventskalender met genummerde chocolaatjes en een kerstmannetje van suiker | 965623 | Markus Spiske |
 | gidsen-superhelden-surprise-maken.jpg | Een hand zet met een lijmpistool een rode kartonnen koker in elkaar | 7509503 | cottonbro studio |
+| gidsen-sinterklaasgedicht-superhelden.jpg | Een hand schrijft met een zwarte pen op een vel geschept papier | 5425602 | Anna Tarazevich |
 | gidsen-avengers-films-volgorde.jpg | Popcorn springt uit een bakje voor een bioscooplicht | 35623662 | Christopher Welsch Leveroni |
 | gidsen-batman-gadgets.jpg | Diverse steeksleutels in een cirkelvormig patroon met ruimte voor tekst | 6789021 | Dmitry Demidov |
 | gidsen-beginnen-met-pokemon-kaarten.jpg | Pakjes Pokemon-kaarten op een stapel | 7708408 | Caleb Oquendo |
