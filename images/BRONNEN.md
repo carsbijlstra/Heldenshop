@@ -24,7 +24,7 @@ De 27 beelden hieronder stonden vóór het beeldbeleid al op de site, zijn op 26
 | gidsen-beste-spider-man-actiefiguren.jpg | Een Spider-Man actiefiguur |
 | gidsen-de-geschiedenis-van-spider-man.jpg | Stan Lee samen met Spider-Man |
 | gidsen-de-grootste-schurken-van-spider-man.jpg | Spider-Man vecht met een schurk op een stripomslag |
-| gidsen-de-krachten-van-spider-man.jpg | Spider-Man artwork |
+| gidsen-de-krachten-van-spider-man.jpg | Illustratie van Spider-Man in zijn rood-blauwe pak, met om hem heen wegspattende rode en zwarte scherven op een lichte achtergrond |
 | green-lantern.jpg | Green Lantern met zijn gloeiende ring |
 | harry-potter.jpg | Het kasteel van Zweinstein |
 | hulk.webp | De Hulk in stripboekstijl |
