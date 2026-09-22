@@ -51,6 +51,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | lanterns.jpg | Silhouet van een persoon in het donker voor een fel groen licht in de mist | 6276690 | Victor de Dompablo |
 | clayface.jpg | Een kleigezicht in een atelier, met een hand en een lusgereedschap ervoor | 6714798 | Tima Miroshnichenko |
 | gidsen-adventskalender-voor-kinderen.jpg | Houten adventskalender met genummerde chocolaatjes en een kerstmannetje van suiker | 965623 | Markus Spiske |
+| gidsen-welke-lego-adventskalender-2026.jpg | Twee gebouwen van bouwsteentjes in een etalage, met een kerstboompje en verlichte sterren erboven (toegevoegd 22 september 2026; bewust boven de twee bordjes met het LEGO-logo uitgesneden, zodat er geen merklogo in beeld staat) | 29806648 | Alexis B |
 | gidsen-superhelden-surprise-maken.jpg | Een hand zet met een lijmpistool een rode kartonnen koker in elkaar | 7509503 | cottonbro studio |
 | gidsen-sinterklaasgedicht-superhelden.jpg | Een hand schrijft met een zwarte pen op een vel geschept papier | 5425602 | Anna Tarazevich |
 | gidsen-avengers-films-volgorde.jpg | Popcorn springt uit een bakje voor een bioscooplicht | 35623662 | Christopher Welsch Leveroni |
