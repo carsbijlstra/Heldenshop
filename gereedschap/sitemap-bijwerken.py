@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 sitemap-bijwerken.py - zet in sitemap.xml per URL de datum waarop de pagina
-echt voor het laatst is gewijzigd.
+echt voor het laatst inhoudelijk is gewijzigd.
 
 Waarom dit bestaat (nachtploeg 26 augustus 2026). De sitemap van Heldenshop
 stond op 65 URL's met lastmod 2026-06-29 en op 35 URL's zonder lastmod, terwijl
@@ -11,9 +11,17 @@ een mechanische rem op de indexdekking, en die hoort niet met de hand
 bijgehouden te worden.
 
 Wat het doet: voor elke <loc> in sitemap.xml het bijbehorende .html-bestand
-zoeken, de datum van de laatste commit op dat bestand opvragen, en die als
-<lastmod> wegschrijven. Staat het bestand op dit moment gewijzigd in de
+zoeken, de datum van de laatste inhoudelijke commit op dat bestand opvragen, en
+die als <lastmod> wegschrijven. Staat het bestand op dit moment gewijzigd in de
 werkmap, dan wordt het vandaag. loc, changefreq en priority blijven ongemoeid.
+
+Sitebrede sweeps tellen niet mee (5 oktober 2026). Een commit die meer dan
+DREMPEL bestanden raakt en in dit bestand minder dan MINREGELS regels verandert,
+is een sweep (kop, voet, canonicals) en geen nieuwe inhoud. Zonder deze regel
+zette elke sitebrede wijziging alle sitemapdatums op dezelfde dag, en dat
+bederft het lastmod-signaal (dossier 4m). Het is dezelfde zeef als in
+gereedschap/nieuwste-paginas.py. Heeft een bestand alleen sweeps gehad, dan
+telt de datum van zijn oudste commit (de dag dat de inhoud erop kwam).
 
 Draaien vanuit de hoofdmap van de repo, voor de commit:
 
@@ -28,6 +36,8 @@ import subprocess
 import sys
 
 BASIS = "https://www.heldenshop.nl/"
+DREMPEL = 15
+MINREGELS = 20
 
 
 def loc_naar_bestand(loc):
@@ -45,6 +55,37 @@ def git(args, cwd):
                           capture_output=True, text=True).stdout.strip()
 
 
+def historie(root):
+    """Per bestand de commits (nieuwste eerst) met datum, of het een sweep was."""
+    ruw = git(["log", "--numstat", "--format=%x01%H%x02%as"], root)
+    commits = []
+    huidig = None
+    for regel in ruw.split("\n"):
+        if regel.startswith("\x01"):
+            h, d = regel[1:].split("\x02")
+            huidig = {"datum": d, "bestanden": {}}
+            commits.append(huidig)
+        elif regel.strip() and huidig is not None:
+            delen = regel.split("\t")
+            if len(delen) == 3:
+                plus, min_, pad = delen
+                n = (int(plus) if plus.isdigit() else 0) + (int(min_) if min_.isdigit() else 0)
+                huidig["bestanden"][pad] = n
+    per_bestand = {}
+    for c in commits:
+        sweep_commit = len(c["bestanden"]) > DREMPEL
+        for pad, n in c["bestanden"].items():
+            per_bestand.setdefault(pad, []).append((c["datum"], sweep_commit and n < MINREGELS))
+    return per_bestand
+
+
+def inhoudsdatum(rijen):
+    for datum, is_sweep in rijen:
+        if not is_sweep:
+            return datum
+    return rijen[-1][0] if rijen else ""
+
+
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     pad = os.path.join(root, "sitemap.xml")
@@ -59,6 +100,7 @@ def main():
         naam = regel[3:].strip().strip('"')
         if naam.endswith(".html"):
             gewijzigd.add(naam)
+    hist = historie(root)
 
     tekst = open(pad, encoding="utf-8").read()
     ontbreekt = []
@@ -73,7 +115,7 @@ def main():
         if bestand in gewijzigd:
             datum = vandaag
         else:
-            datum = git(["log", "-1", "--format=%as", "--", bestand], root)
+            datum = inhoudsdatum(hist.get(bestand, []))
         if not datum:
             ontbreekt.append(loc)
             return blok
