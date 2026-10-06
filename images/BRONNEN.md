@@ -61,7 +61,8 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-brand-new-day-alles-wat-we-weten.jpg | Een dramatisch zijaanzicht van lege rode fluwelen stoelen in een schemerige theaterzaal | 38131980 | Atai Anarbek |
 | gidsen-de-bekendste-pokemon.jpg | Pokemon-kaarten in beschermhoezen | 8811594 | Erik Mclean |
 | gidsen-de-beste-spider-man-games.jpg | Een stapel gamehoesjes | 5553301 | Brett Jordan |
-| gidsen-de-sterkste-avengers-figuren.jpg | Actiefiguren in een vitrinekast | 5795420 | Erik Mclean |
+| gidsen-avengers-speelgoed.jpg | Actiefiguren in een vitrinekast | 5795420 | Erik Mclean |
+| gidsen-de-sterkste-avengers-figuren.jpg | Actiefiguren in een vitrinekast (pagina vervallen 6 okt 2026, doorverwezen naar avengers-speelgoed) | 5795420 | Erik Mclean |
 | gidsen-het-beste-aquaman-speelgoed.jpg | Groene en gele rubberen eend speelgoed geïsoleerd op een witte achtergrond | 132464 | Anthony 🙂 |
 | gidsen-het-beste-black-panther-speelgoed.jpg | Close-up van een zwarte kat met groene ogen in een serene buitenomgeving | 28512411 | Sandin Redzo |
 | gidsen-het-beste-captain-america-speelgoed.jpg | Buzz Lightyear en Zurg speelgoedfiguren op kunstgras omringd door stervormige decoraties | 5875642 | Dalila Dalprat |
