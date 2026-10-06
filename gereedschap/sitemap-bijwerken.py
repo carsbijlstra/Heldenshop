@@ -23,6 +23,11 @@ bederft het lastmod-signaal (dossier 4m). Het is dezelfde zeef als in
 gereedschap/nieuwste-paginas.py. Heeft een bestand alleen sweeps gehad, dan
 telt de datum van zijn oudste commit (de dag dat de inhoud erop kwam).
 
+Berichtpagina's onder /nieuws/ slaat dit script over (6 oktober 2026). Hun datum
+zet gereedschap/nieuws-bouwen.py, uit de datum van het bericht of de regel
+'bijgewerkt'. Een bericht verandert namelijk ook als het menu of de voet van de
+site verandert, en dat is geen nieuwe inhoud.
+
 Draaien vanuit de hoofdmap van de repo, voor de commit:
 
     python3 gereedschap/sitemap-bijwerken.py
@@ -108,6 +113,8 @@ def main():
 
     def vervang(m):
         blok, loc = m.group(0), m.group(1)
+        if loc.startswith(BASIS + "nieuws/"):
+            return blok
         bestand = loc_naar_bestand(loc)
         if not os.path.exists(os.path.join(root, bestand)):
             ontbreekt.append(loc)

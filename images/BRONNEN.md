@@ -123,6 +123,20 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | helden.jpg | Uitzicht over een stad bij schemering | 33143671 | Kerem Kaplan |
 | schurken.jpg | Een donkere figuur met capuchon | 19067420 | Karl Solano |
 
+## Nieuwsberichten (sinds 6 oktober 2026)
+
+Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg` (16:9, 1200 breed, ook het deelbeeld), plus drie uitsneden die `gereedschap/nieuws-bouwen.py` uit dezelfde foto maakt: `-4x3.jpg` en `-1x1.jpg` (voor de gestructureerde data van Google) en `-klein.jpg` (de kaart op de homepage en `/nieuws`). Die uitsneden horen bij de regel van het hoofdbeeld en staan hier niet apart. Licentie: zie de bronfoto. Een nieuw bericht krijgt hier in dezelfde klus zijn regel; zonder regel waarschuwt het gereedschap.
+
+| Bestand (in `paginas/`) | Toont | Bron | Fotograaf |
+|---|---|---|---|
+| nieuws-kaartverkoop-avengers-doomsday.jpg | Lege rode fluwelen stoelen in een schemerige bioscoopzaal, van opzij gezien | Pexels 38131980 (zelfde foto als gidsen-brand-new-day-alles-wat-we-weten.jpg) | Atai Anarbek |
+| nieuws-nieuwe-wonder-woman-film.jpg | Het silhouet van een wandelende vrouw langs het water bij een oranje zonsondergang | Pexels 37306372 (zelfde foto als gidsen-wie-is-wonder-woman.jpg) | Cara Denison |
+| nieuws-spider-man-brand-new-day-thuis-kijken.jpg | Close-up van een filmspoel met film in een oude filmprojector | Pexels 35082512 (zelfde foto als gidsen-spider-man-films-op-een-rij.jpg) | Ayudh Roy |
+| nieuws-lanterns-alle-afleveringen-online.jpg | Een silhouet van een persoon in het donker, voor een fel groen licht in de mist | Pexels 6276690 (zelfde foto als lanterns.jpg) | Victor de Dompablo |
+| nieuws-endgame-weer-best-verdienende-film.jpg | Popcorn springt uit een bakje voor een bioscooplicht | Pexels 35623662 (zelfde foto als gidsen-avengers-films-volgorde.jpg) | Christopher Welsch Leveroni |
+| nieuws-superman-2025-op-netflix.jpg | Een Superman-figuur klimt langs een gebouw bij neonlicht | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
+| nieuws-supergirl-op-hbo-max.jpg | Iemand in een lange rode cape die in de wind uitwaait, staand in een leeg veld onder een grijze lucht | Pexels 37567179 (zelfde foto als gidsen-wie-is-supergirl.jpg) | Melih ERŞAHİN |
+
 ## Toegevoegd onder het beeldbeleid (Filmdepot)
 
 `avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026 — **creditregel op 2 september 2026 eerst veranderd en daarna teruggezet:** die ochtend heb ik het bijschrift van "© 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL." veranderd in een Disney-regel, omdat CTMG de distributeur van Spider-Man: Brand New Day is en dat voor een Disney-titel onlogisch leek. Dat was een gevolgtrekking van mij, geen bron. Later diezelfde ochtend is het depot nagekeken en blijkt de rechtenregel gewoon in de bestandsnaam te staan die Filmdepot meelevert: `Avengers_-Doomsday_st_2_jpg_sd-low_2026-CTMG-All-Rights-Reserved-2026-MARVEL.jpg`, en alle acht de stills van deze film dragen dezelfde regel. Het oorspronkelijke bijschrift was dus correct en is teruggezet. **Waar de creditregel staat, voor de volgende keer:** niet op de detailpagina en niet in de metadata-export (die kent alleen Filmtitel tot en met Links, geen rechtenveld), maar in het attribuut `data-infoname` van het mediablok — daar staat de rechtenhouder achter de resolutie-aanduiding. Neem die regel letterlijk over en leid nooit zelf een distributeur af.

@@ -1,0 +1,123 @@
+{
+ "uitleg": "Agenda van de homepage en /nieuws. 'nu': wat nu te zien is, op versheid (bovenaan wat het laatst begon of het meest in het nieuws is); met 'tot' (jjjj-mm-dd) gaat een item na die dag vanzelf van de site. 'binnenkort': met 'datum' (jjjj-mm-dd) en 'land' NL of VS; een datum die voorbij is, gaat vanzelf van de site en moet dan naar 'nu' als hij nu te zien is. 'link' mag leeg blijven als we nog geen pagina hebben.",
+ "nu": [
+  {
+   "waar": "Thuis",
+   "titel": "Spider-Man: Brand New Day",
+   "link": "/nieuws/spider-man-brand-new-day-thuis-kijken",
+   "tekst": "Vanaf 6 oktober te huren en te koop.",
+   "leeftijd": "Kijkwijzer 12"
+  },
+  {
+   "waar": "HBO Max",
+   "titel": "Lanterns",
+   "link": "/lanterns",
+   "tekst": "Alle acht afleveringen staan online.",
+   "leeftijd": "HBO Max zet er 16+ bij"
+  },
+  {
+   "waar": "Bioscoop",
+   "titel": "Avengers: Endgame Encore",
+   "link": "/avengers-endgame-encore",
+   "tekst": "Nog tot en met 7 oktober. Ruim drie uur.",
+   "leeftijd": "Kijkwijzer 12",
+   "tot": "2026-10-07"
+  },
+  {
+   "waar": "Bioscoop",
+   "titel": "Paw Patrol: De Dinofilm",
+   "link": "/paw-patrol",
+   "tekst": "Nog tot en met 7 oktober.",
+   "leeftijd": "Voor de jongste kijkers",
+   "tot": "2026-10-07"
+  },
+  {
+   "waar": "Netflix",
+   "titel": "Superman (2025)",
+   "link": "/nieuws/superman-2025-op-netflix",
+   "tekst": "Sinds 19 september.",
+   "leeftijd": "Kijkwijzer 12"
+  },
+  {
+   "waar": "HBO Max",
+   "titel": "Supergirl (2026)",
+   "link": "/nieuws/supergirl-op-hbo-max",
+   "tekst": "Sinds 10 september.",
+   "leeftijd": "Kijkwijzer 12"
+  }
+ ],
+ "binnenkort": [
+  {
+   "datum": "2026-10-14",
+   "land": "NL",
+   "titel": "VisionQuest",
+   "link": "",
+   "tekst": "Nieuwe Marvel-serie op Disney+, met Vision en Ultron.",
+   "waar": "Disney+",
+   "leeftijd": "Leeftijd nog niet bekend"
+  },
+  {
+   "datum": "2026-10-21",
+   "land": "NL",
+   "titel": "Wonder Woman wordt 85",
+   "link": "/nieuws/nieuwe-wonder-woman-film",
+   "tekst": "Precies 85 jaar na haar eerste stripverhaal.",
+   "waar": "Stripboeken",
+   "leeftijd": "Voor iedereen"
+  },
+  {
+   "datum": "2026-10-22",
+   "land": "NL",
+   "titel": "Clayface",
+   "link": "/clayface",
+   "tekst": "Horrorfilm over de schurk van klei.",
+   "waar": "Bioscoop",
+   "leeftijd": "Horror, niet voor kinderen"
+  },
+  {
+   "datum": "2026-12-16",
+   "land": "NL",
+   "titel": "Avengers: Doomsday",
+   "link": "/avengers-doomsday",
+   "tekst": "De kaartjes zijn al te koop.",
+   "waar": "Bioscoop",
+   "leeftijd": "Kijkwijzer nog niet bekend"
+  },
+  {
+   "datum": "2027-06-18",
+   "land": "VS",
+   "titel": "Spider-Man: Beyond the Spider-Verse",
+   "link": "/gidsen/wat-is-het-spider-verse",
+   "tekst": "De tekenfilm met Miles Morales.",
+   "waar": "Bioscoop",
+   "leeftijd": "Tekenfilm, leeftijd nog niet bekend"
+  },
+  {
+   "datum": "2027-07-09",
+   "land": "VS",
+   "titel": "Man of Tomorrow",
+   "link": "/superman",
+   "tekst": "Het vervolg op Superman.",
+   "waar": "Bioscoop",
+   "leeftijd": "Leeftijd nog niet bekend"
+  },
+  {
+   "datum": "2027-12-17",
+   "land": "VS",
+   "titel": "Avengers: Secret Wars",
+   "link": "/gidsen/avengers-films-volgorde",
+   "tekst": "Het vervolg op Doomsday.",
+   "waar": "Bioscoop",
+   "leeftijd": "Leeftijd nog niet bekend"
+  },
+  {
+   "datum": "2028-02-18",
+   "land": "VS",
+   "titel": "The Batman Part II",
+   "link": "/batman",
+   "tekst": "Verschoven naar februari 2028.",
+   "waar": "Bioscoop",
+   "leeftijd": "Leeftijd nog niet bekend"
+  }
+ ]
+}
