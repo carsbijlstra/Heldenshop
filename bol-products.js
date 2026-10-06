@@ -128,8 +128,16 @@
 
   // The "Bekijk bij bol" link. The API returns the plain product URL; tracking
   // params are added centrally here so commission is always attributed.
+  // Studio, 6 oktober 2026 (kl-1, recept M7 uit de affiliate-doorlichting van 28 september):
+  // een partnerlink loopt via /api/uit op het eigen domein, dat de klik in het eigen kliklog
+  // van de datakraan zet en dan met een 302 naar precies dezelfde partnerlink doorstuurt.
+  // Een gewone bol-url (geen partnerlink) gaat rechtstreeks. Leesregel voor de studio:
+  // /api/uit?naar=... is een partnerlink; lezen mag, openen niet.
+  function uitLink(href) {
+    return (href && href.indexOf('https://partner.bol.com/') === 0) ? '/api/uit?naar=' + encodeURIComponent(href) : href;
+  }
   function affiliateHref(p) {
-    return p.affiliateUrl || p.url || '#';
+    return uitLink(p.affiliateUrl || p.url || '#');
   }
 
   function esc(t) {

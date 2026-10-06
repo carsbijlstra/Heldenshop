@@ -638,7 +638,7 @@ def artikel_html(b, alle, chrome, vandaag):
         '<div class="prose nb-prose">\n%s\n<p class="nb-bron">Bron: %s</p>\n</div>\n' % (b["body"], b["bron"]),
         ond_html + "\n</div></article>\n", meer, "\n</main>\n",
         voet_met_tekst(chrome["voet"], voettekst), "\n", chrome["onder"], "\n",
-        '<script src="/app.js" defer></script>\n<script defer src="/_vercel/insights/script.js"></script>\n'
+        '<script src="/app.js" defer></script>\n<script src="/eigen-bezoek.js"></script>\n<script defer src="/_vercel/insights/script.js"></script>\n'
         '<script defer src="/_vercel/speed-insights/script.js"></script>\n</body>\n</html>\n',
     ]
     return "".join(delen)
