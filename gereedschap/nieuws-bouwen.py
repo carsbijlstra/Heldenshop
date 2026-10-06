@@ -184,6 +184,17 @@ def lees_bericht(pad, fouten, waarschuwingen):
     for k in VERPLICHT:
         if not b.get(k):
             fouten.append("%s: verplicht veld '%s' ontbreekt" % (naam, k))
+    # Productschap (6 oktober 2026, affiliate-doorlichting): een bericht mag een schap met
+    # hooguit drie bol-producten dragen, met een eigen kop en zin. De ID's staan in het
+    # bronbestand pas nadat ze via /api/products?ids= zijn nagemeten (regel 2 van de
+    # affiliate-regels); het gereedschap controleert hier alleen de vorm.
+    if b.get("schap_ids"):
+        ids = [x.strip() for x in b["schap_ids"].split(",") if x.strip()]
+        if not ids or len(ids) > 3 or any(not re.match(r"^\d{7,16}$", x) for x in ids):
+            fouten.append("%s: schap_ids moet 1 tot 3 bol-product-ID's (alleen cijfers) bevatten, gescheiden door komma's" % naam)
+        if not b.get("schap_kop") or not b.get("schap_tekst"):
+            fouten.append("%s: een schap heeft schap_kop en schap_tekst nodig (waarom horen deze producten bij dit bericht)" % naam)
+        b["schap_ids"] = ",".join(ids)
     try:
         b["d"] = datetime.date.fromisoformat(b.get("datum", ""))
     except ValueError:
@@ -595,6 +606,16 @@ def artikel_html(b, alle, chrome, vandaag):
             '<ul class="nb-kaarten">%s</ul></div></section>') % "".join(kaart_html(x) for x in eerder) if eerder else ""
     voettekst = ('%s Heldenshop is een onafhankelijke Nederlandse fansite over superhelden, voor kinderen en hun ouders, '
                  'met het laatste <a href="/nieuws">superheldennieuws</a>, weetjes en eerlijke cadeautips.') % esc(b["samenvatting"])
+    # Productschap bij het bericht (6 oktober 2026): onze eigen kop en zin staan in de HTML,
+    # de kaarten (foto, titel, prijs, levertijd, beoordeling) komen bij het laden uit
+    # /api/products via bol-products.js, met als subid het pad van het bericht
+    # (nieuws-<slug>), zodat per bericht te zien is wat het oplevert.
+    schap_html, schap_script = "", ""
+    if b.get("schap_ids"):
+        schap_html = ('<section class="nb-schap prose" aria-labelledby="bij-dit-nieuws" style="margin-top:28px"><h2 id="bij-dit-nieuws">%s</h2><p>%s</p>'
+                      '<div class="bol-shelf" data-bol-ids="%s" data-bol-max="3" data-bol-note="Bij dit nieuws"></div></section>\n') % (
+            esc(b["schap_kop"]), esc(b["schap_tekst"]), esc(b["schap_ids"]))
+        schap_script = '<script src="/bol-products.js?v=20261006" defer></script>\n'
     delen = [
         "<!doctype html>\n<html lang=\"nl\">\n<head>\n<meta charset=\"utf-8\">\n",
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n',
@@ -636,9 +657,9 @@ def artikel_html(b, alle, chrome, vandaag):
             b["img"]["16x9"], esc(b["beeld_alt"]), w, h),
         feiten + "\n",
         '<div class="prose nb-prose">\n%s\n<p class="nb-bron">Bron: %s</p>\n</div>\n' % (b["body"], b["bron"]),
-        ond_html + "\n</div></article>\n", meer, "\n</main>\n",
+        schap_html, ond_html + "\n</div></article>\n", meer, "\n</main>\n",
         voet_met_tekst(chrome["voet"], voettekst), "\n", chrome["onder"], "\n",
-        '<script src="/app.js" defer></script>\n<script src="/eigen-bezoek.js"></script>\n<script defer src="/_vercel/insights/script.js"></script>\n'
+        '<script src="/app.js" defer></script>\n' + schap_script + '<script src="/eigen-bezoek.js"></script>\n<script defer src="/_vercel/insights/script.js"></script>\n'
         '<script defer src="/_vercel/speed-insights/script.js"></script>\n</body>\n</html>\n',
     ]
     return "".join(delen)

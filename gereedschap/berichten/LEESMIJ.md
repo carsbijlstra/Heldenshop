@@ -37,6 +37,9 @@ Tussen twee regels `---`, een veld per regel, `naam: waarde`. Platte tekst, gewo
 | `zoekwoorden` | nee | Extra woorden voor de zoekfunctie van de site. |
 | `feit` | nee, wel aangeraden | `Label \| Waarde`, een regel per feit. Samen het kader "In het kort" bovenaan: wanneer, waar, voor wie, hoe lang. |
 | `bron` | ja | Waar het vandaan komt, met datum. |
+| `schap_ids` | nee | Een tot drie bol-product-ID's, gescheiden door komma's, voor een productschap onder het bericht (sinds 6 oktober 2026). Alleen ID's die je via `/api/products?ids=` hebt nagemeten (prijs én levertijd terug), nooit uit de zoekroute. Het schap krijgt als subid `nieuws-<slug>`, dus per bericht is te zien wat het oplevert. |
+| `schap_kop` | bij een schap | De H2 boven het schap, in gewone taal: waarom horen deze producten bij dit nieuws. |
+| `schap_tekst` | bij een schap | Een of twee zinnen onder die kop; eindig met dat prijs en levertijd van bol komen. Geen prijs in de tekst. |
 
 ## De tekst
 
