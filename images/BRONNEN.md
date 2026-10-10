@@ -129,6 +129,7 @@ Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg
 
 | Bestand (in `paginas/`) | Toont | Bron | Fotograaf |
 |---|---|---|---|
+| nieuws-visionquest-disney-plus-14-oktober.jpg | De skyline van een grote stad bij zonsondergang | Pexels 8569166 (zelfde foto als gidsen-wie-zijn-de-avengers.jpg) | Ivana Rodriguez |
 | nieuws-kaartverkoop-avengers-doomsday.jpg | Lege rode fluwelen stoelen in een schemerige bioscoopzaal, van opzij gezien | Pexels 38131980 (zelfde foto als gidsen-brand-new-day-alles-wat-we-weten.jpg) | Atai Anarbek |
 | nieuws-nieuwe-wonder-woman-film.jpg | Het silhouet van een wandelende vrouw langs het water bij een oranje zonsondergang | Pexels 37306372 (zelfde foto als gidsen-wie-is-wonder-woman.jpg) | Cara Denison |
 | nieuws-spider-man-brand-new-day-thuis-kijken.jpg | Close-up van een filmspoel met film in een oude filmprojector | Pexels 35082512 (zelfde foto als gidsen-spider-man-films-op-een-rij.jpg) | Ayudh Roy |
