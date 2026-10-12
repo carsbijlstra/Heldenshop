@@ -129,6 +129,7 @@ Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg
 
 | Bestand (in `paginas/`) | Toont | Bron | Fotograaf |
 |---|---|---|---|
+| nieuws-your-friendly-neighborhood-spider-man-seizoen-2.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | Pexels 2854693 (zelfde foto als gidsen-wat-is-het-spider-verse.jpg) | Josh Hild |
 | nieuws-visionquest-disney-plus-14-oktober.jpg | De skyline van een grote stad bij zonsondergang | Pexels 8569166 (zelfde foto als gidsen-wie-zijn-de-avengers.jpg) | Ivana Rodriguez |
 | nieuws-kaartverkoop-avengers-doomsday.jpg | Lege rode fluwelen stoelen in een schemerige bioscoopzaal, van opzij gezien | Pexels 38131980 (zelfde foto als gidsen-brand-new-day-alles-wat-we-weten.jpg) | Atai Anarbek |
 | nieuws-nieuwe-wonder-woman-film.jpg | Het silhouet van een wandelende vrouw langs het water bij een oranje zonsondergang | Pexels 37306372 (zelfde foto als gidsen-wie-is-wonder-woman.jpg) | Cara Denison |
