@@ -2,6 +2,13 @@
  "uitleg": "Agenda van de homepage en /nieuws. 'nu': wat nu te zien is, op versheid (bovenaan wat het laatst begon of het meest in het nieuws is); met 'tot' (jjjj-mm-dd) gaat een item na die dag vanzelf van de site. 'binnenkort': met 'datum' (jjjj-mm-dd) en 'land' NL of VS; een datum die voorbij is, gaat vanzelf van de site en moet dan naar 'nu' als hij nu te zien is. 'link' mag leeg blijven als we nog geen pagina hebben.",
  "nu": [
   {
+   "waar": "Disney+",
+   "titel": "VisionQuest",
+   "link": "/nieuws/visionquest-disney-plus-14-oktober",
+   "tekst": "Sinds 14 oktober, elke woensdag nieuwe afleveringen tot 11 november.",
+   "leeftijd": "Leeftijd nog niet bekend"
+  },
+  {
    "waar": "Thuis",
    "titel": "Spider-Man: Brand New Day",
    "link": "/nieuws/spider-man-brand-new-day-thuis-kijken",
@@ -38,15 +45,6 @@
   }
  ],
  "binnenkort": [
-  {
-   "datum": "2026-10-14",
-   "land": "NL",
-   "titel": "VisionQuest",
-   "link": "/nieuws/visionquest-disney-plus-14-oktober",
-   "tekst": "Nieuwe Marvel-serie over Vision, met Ultron. Twee afleveringen tegelijk.",
-   "waar": "Disney+",
-   "leeftijd": "Leeftijd nog niet bekend"
-  },
   {
    "datum": "2026-10-21",
    "land": "NL",
