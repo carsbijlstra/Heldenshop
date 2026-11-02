@@ -130,6 +130,7 @@ Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg
 
 | Bestand (in `paginas/`) | Toont | Bron | Fotograaf |
 |---|---|---|---|
+| nieuws-avengers-doomsday-voorverkoop.jpg | Actiefiguren van superhelden naast elkaar in een vitrinekast | Pexels 5795420 (zelfde foto als gidsen-avengers-speelgoed.jpg) | Erik Mclean |
 | nieuws-nieuwe-beelden-avengers-doomsday.jpg | Een vertakte bliksemschicht licht op in een paarse nachthemel, met boomtakken als silhouet aan de rand | Pexels 37968617 (zelfde foto als gidsen-wie-is-thor.jpg) | Stuart  Robinson |
 | nieuws-clayface-kijkwijzer-16.jpg | Een kleigezicht in een atelier, met een hand en een lusgereedschap ervoor | Pexels 6714798 (zelfde foto als clayface.jpg) | Tima Miroshnichenko |
 | nieuws-your-friendly-neighborhood-spider-man-seizoen-2.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | Pexels 2854693 (zelfde foto als gidsen-wat-is-het-spider-verse.jpg) | Josh Hild |
