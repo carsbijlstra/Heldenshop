@@ -106,11 +106,13 @@ function findFirst(obj, pred, depth) {
 function extractTitle(product) {
   return findFirst(product, (k, v) => (/title|name/i.test(k) && typeof v === 'string' && v.trim().length > 2) ? v.trim() : undefined);
 }
+// Alleen een echte productpagina op www.bol.com telt als productlink (studio, 8 november
+// 2026, ja van Cars). Faalde bij bol alleen de productaanroep, bijvoorbeeld door een 429,
+// dan pakte de oude regel hier een afbeelding van media.s-bol.com en kreeg de bezoeker een
+// partnerlink naar een plaatje. Een beeldadres is daarom nooit een productlink.
+const BOL_PRODUCTPAGINA = /^https?:\/\/(www\.)?bol\.com\/[a-z]{2}\/[a-z]{2}\/p\//i;
 function extractUrl(obj) {
-  // prefer a bol product URL
-  const productUrl = findFirst(obj, (k, v) => (typeof v === 'string' && /^https?:\/\/[^ ]*bol\.com\/.*\/p(roduct)?s?\//i.test(v)) ? v : undefined);
-  if (productUrl) return productUrl;
-  return findFirst(obj, (k, v) => (/url/i.test(k) && typeof v === 'string' && /^https?:\/\//.test(v) && /bol\.com/.test(v)) ? v : undefined);
+  return findFirst(obj, (k, v) => (typeof v === 'string' && BOL_PRODUCTPAGINA.test(v)) ? v : undefined);
 }
 function extractImage(media) {
   // bol shape: { images: [ { order, renditions: [ {width,height,url} ] } ] }
@@ -203,10 +205,15 @@ async function fetchByEan(ean, token, debug, idHint, subid) {
   }
   out.title = prod.ok ? (extractTitle(prod.json) || null) : null;
   out.url = (prod.ok && extractUrl(prod.json)) || (media.ok && extractUrl(media.json)) || (offer.ok && extractUrl(offer.json)) || null;
+  // Geen productadres in de antwoorden, wel een product-ID: dan de vaste productpagina van bol.
+  if (!out.url && out.id && /^\d+$/.test(String(out.id))) out.url = 'https://www.bol.com/nl/nl/p/-/' + out.id + '/';
   out.affiliateUrl = buildAffiliateUrl(out.url, out.title, subid);
   out.image = media.ok ? (extractImage(media.json) || (prod.ok ? extractImage(prod.json) : null)) : (prod.ok ? extractImage(prod.json) : null);
   out.price = offer.ok ? (extractPrice(offer.json) ?? null) : null;
   out.delivery = (offer.ok && offer.json && typeof offer.json.deliveryDescription === 'string') ? offer.json.deliveryDescription : null;
+  // Zonder titel is het record half: de productaanroep faalde. Dan geen prijs, zodat het blok de
+  // kaart verbergt in plaats van een kaart zonder naam te tonen; de volgende aanroep probeert opnieuw.
+  if (!out.title) { out.price = null; out.delivery = null; out.incompleet = true; }
   const rt = ratings.ok ? extractRating(ratings.json) : { rating: null, count: null };
   out.rating = rt.rating;
   out.ratingCount = rt.count;
@@ -214,7 +221,7 @@ async function fetchByEan(ean, token, debug, idHint, subid) {
   else {
     const zonderLink = Object.assign({}, out);
     delete zonderLink.affiliateUrl; // de link is paginagebonden, de productdata niet
-    cacheSet(productCache, ean, zonderLink);
+    if (!out.incompleet) cacheSet(productCache, ean, zonderLink); // een half record niet bewaren (studio, 8 nov 2026)
   }
   return out;
 }
@@ -270,6 +277,12 @@ async function searchProducts(term, maxRaw, token, debug, subid) {
   return result;
 }
 
+// Een antwoord met een half of mislukt product mag niet in de CDN blijven staan (studio,
+// 8 november 2026): dan krijgt de volgende bezoeker gewoon een nieuwe poging bij bol.
+function onvolledig(lijst) {
+  return (lijst || []).some((p) => !p || p.error || p.incompleet);
+}
+
 module.exports = async (req, res) => {
   const q = req.query || {};
   const debug = q.debug === '1' || q.debug === 'true';
@@ -290,6 +303,7 @@ module.exports = async (req, res) => {
     const token = await getToken();
     if (term) {
       const result = await searchProducts(term, q.max, token, debug, subid);
+      if (result.error || onvolledig(result.products)) res.setHeader('Cache-Control', 'no-store');
       res.status(200).end(JSON.stringify(result, null, debug ? 2 : 0));
       return;
     }
@@ -298,8 +312,10 @@ module.exports = async (req, res) => {
       try { products.push(await fetchProduct(id, token, debug, subid)); }
       catch (e) { products.push({ id, error: String(e && e.message || e) }); }
     }
+    if (onvolledig(products)) res.setHeader('Cache-Control', 'no-store');
     res.status(200).end(JSON.stringify({ products }, null, debug ? 2 : 0));
   } catch (e) {
+    res.setHeader('Cache-Control', 'no-store');
     res.status(e.code === 'NO_CREDENTIALS' ? 500 : 502).end(JSON.stringify({
       error: String(e && e.message || e), code: e && e.code || null, detail: e && e.detail || null
     }, null, 2));
