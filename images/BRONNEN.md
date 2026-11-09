@@ -66,7 +66,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-de-sterkste-avengers-figuren.jpg | Star Wars-figuren (Darth Maul en Darth Vader) in een vitrinekast; niet meer in gebruik, de pagina is sinds 6 oktober 2026 een doorverwijzing naar avengers-speelgoed | 5795420 | Erik Mclean |
 | gidsen-het-beste-aquaman-speelgoed.jpg | Groene en gele rubberen eend speelgoed geïsoleerd op een witte achtergrond | 132464 | Anthony 🙂 |
 | gidsen-het-beste-black-panther-speelgoed.jpg | Close-up van een zwarte kat met groene ogen in een serene buitenomgeving | 28512411 | Sandin Redzo |
-| gidsen-het-beste-captain-america-speelgoed.jpg | Het schild van Captain America met de witte ster op een natte straat, van bovenaf, naast iemand met een zwarte paraplu (vervangen op 9 november 2026: daarvoor Buzz Lightyear en Zurg uit Toy Story, Pexels 5875642) | 39302525 | Luk Sauvage |
+| gidsen-het-beste-captain-america-speelgoed.jpg | Twee paraplu's op een natte straat, van bovenaf gezien: een zwarte en een met het schild van Captain America erop (vervangen op 9 november 2026: daarvoor Buzz Lightyear en Zurg uit Toy Story, Pexels 5875642) | 39302525 | Luk Sauvage |
 | gidsen-het-beste-doctor-strange-speelgoed.jpg | Twee handen houden een uitgewaaierd pak speelkaarten vast tegen een donkere achtergrond | 3290047 | Kobe - |
 | gidsen-het-beste-green-lantern-speelgoed.jpg | Een felblauwe neonstreep krult boven een blauwgroen masker dat oplicht tegen een oranje achtergrond | 38599411 | Wandering Artist |
 | gidsen-het-beste-iron-man-speelgoed.jpg | Een houten speelgoedrobot met opwindsleutel en een oranje kuif staat tegen een zwarte achtergrond | 4102557 | Ann H |
