@@ -316,6 +316,9 @@ def maak_beelden(b, manifest, schrijf, waarschuwingen, fouten, gewijzigd):
         fouten.append("Pillow ontbreekt: pip install pillow")
         return
     sha = hashlib.sha256(open(bron, "rb").read()).hexdigest()[:16]
+    # Versie in de URL (9 november 2026): beelden krijgen max-age=86400, dus een vervangen beeld
+    # onder dezelfde naam blijft een dag lang het oude in de browser van wie de pagina al zag.
+    b["img_v"] = sha[:8] + ("p" if b.get("persbeeld") else "")
     if b.get("persbeeld"):
         # Persbeeld uit Filmdepot: licentieregel, nooit bijsnijden. Alleen verkleinen, en geen
         # 4:3 of 1:1 (dat zouden uitsneden zijn). De sleutels '16x9' en 'klein' blijven de namen
@@ -535,6 +538,11 @@ ARTIKEL_CSS = """
 """
 
 
+def img_url(b, v):
+    """Pad van een berichtbeeld met de versie erachter, zonder voorloopstreep."""
+    return "%s?v=%s" % (b["img"][v].replace(os.sep, "/"), b.get("img_v", "1"))
+
+
 def pers_klasse(b):
     """Persbeeld krijgt overal object-fit:contain: een kaart mag het niet bijsnijden."""
     return ' class="nb-pers"' if b.get("persbeeld") else ""
@@ -574,7 +582,7 @@ def kaart_html(b, kopniveau="h3", beeld_laden="lazy", met_id=False):
     return ('<li class="nb-kaart"%s><a href="/nieuws/%s"><img%s%s src="/%s" alt="%s" width="640" height="360" loading="%s">'
             '<span class="nk-body"><span class="nb-meta">%s<time datetime="%s">%s</time></span>'
             '<%s>%s</%s><p>%s</p></span></a></li>') % (
-        idattr, b["slug"], pers_klasse(b), pers_titel(b), b["img"]["klein"], esc(b["beeld_alt"]), beeld_laden,
+        idattr, b["slug"], pers_klasse(b), pers_titel(b), img_url(b, "klein"), esc(b["beeld_alt"]), beeld_laden,
         tag_html(b), d.isoformat(), datum_kort(d), kopniveau, esc(b["kop"]), kopniveau, esc(b["samenvatting"]))
 
 
@@ -586,7 +594,7 @@ def lead_html(b, sticker="Topnieuws", kopniveau="h2", knop="Lees het hele berich
             '<div class="nb-lead-tekst"><p class="nb-meta">%s<time datetime="%s">%s</time></p>'
             '<%s class="nb-lead-kop"><a href="/nieuws/%s">%s</a></%s><p>%s</p>'
             '<a class="btn btn-red" href="/nieuws/%s">%s &rarr;</a>%s</div></article>') % (
-        b["slug"], pers_klasse(b), b["img"]["16x9"], esc(b["beeld_alt"]), w, h, esc(sticker),
+        b["slug"], pers_klasse(b), img_url(b, "16x9"), esc(b["beeld_alt"]), w, h, esc(sticker),
         tag_html(b), d.isoformat(), datum_lang(d), kopniveau, b["slug"], esc(b["kop"]), kopniveau,
         esc(b["samenvatting"]), b["slug"], esc(knop),
         ('<p class="nb-credit">%s</p>' % esc(pers_bijschrift(b))) if b.get("persbeeld") else "")
@@ -646,17 +654,17 @@ def artikel_html(b, alle, chrome, vandaag):
         titel += " | Heldenshop"
     w, h = b.get("img_wh", (1200, 675))
     varianten = ("16x9",) if b.get("persbeeld") else ("16x9", "4x3", "1x1")
-    beelden = ["%s/%s" % (BASIS, b["img"][v]) for v in varianten]
+    beelden = ["%s/%s" % (BASIS, img_url(b, v)) for v in varianten]
     ld_beeld = beelden
     figuur = '<figure class="nb-beeld"><img src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high"></figure>\n' % (
-        b["img"]["16x9"], esc(b["beeld_alt"]), w, h)
+        img_url(b, "16x9"), esc(b["beeld_alt"]), w, h)
     if b.get("persbeeld"):
         # Persbeeld: het hele beeld, met de creditregel van het depot eronder (licentievoorwaarde 3).
         ld_beeld = [{"@type": "ImageObject", "url": beelden[0], "width": w, "height": h,
                      "caption": pers_bijschrift(b), "creditText": "Filmdepot",
                      "copyrightNotice": pers_credit(b)}]
         figuur = ('<figure class="nb-beeld"><img class="nb-pers" src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high">'
-                  '<figcaption>%s</figcaption></figure>\n') % (b["img"]["16x9"], esc(b["beeld_alt"]), w, h, esc(pers_bijschrift(b)))
+                  '<figcaption>%s</figcaption></figure>\n') % (img_url(b, "16x9"), esc(b["beeld_alt"]), w, h, esc(pers_bijschrift(b)))
     kruimel = b.get("kort") or b["kop"]
     kruimel = kruimel[0].upper() + kruimel[1:]
     ld = {"@context": "https://schema.org", "@graph": [
@@ -850,7 +858,7 @@ def bouw_home(index, alle, top, ag, vandaag, fouten):
     rijen = "".join(
         '<li><a href="/nieuws/%s"><img%s%s src="/%s" alt="" width="640" height="360" loading="lazy">'
         '<span class="hn-l-tekst"><span class="nb-meta">%s<time datetime="%s">%s</time></span><h3>%s</h3></span></a></li>' % (
-            b["slug"], pers_klasse(b), pers_titel(b), b["img"]["klein"], tag_html(b), b["d"].isoformat(), datum_kort(b["d"]), esc(b["kop"]))
+            b["slug"], pers_klasse(b), pers_titel(b), img_url(b, "klein"), tag_html(b), b["d"].isoformat(), datum_kort(b["d"]), esc(b["kop"]))
         for b in rest[:MAX_NET_BINNEN])
     index = vervang_blok(index, "lijst", '<ul class="hn-lijst">%s</ul>%s' % (rijen, credits_regel(rest[:MAX_NET_BINNEN])), "index.html", fouten)
     index = vervang_blok(index, "agenda", agenda_home(ag, vandaag), "index.html", fouten)
@@ -880,7 +888,7 @@ def bouw_feed(alle):
             "<category>%s</category><description>%s</description>"
             "<enclosure url=\"%s/%s\" type=\"image/jpeg\" length=\"%d\"/></item>" % (
                 esc(b["kop"]), url, url, rfc822(dt), esc(b["soort"]),
-                esc(b["samenvatting"]), BASIS, b["img"]["16x9"],
+                esc(b["samenvatting"]), BASIS, img_url(b, "16x9").replace("&", "&amp;"),
                 os.path.getsize(b["img"]["16x9"]) if os.path.exists(b["img"]["16x9"]) else 0))
     laatst = rfc822(datetime.datetime.fromisoformat(iso_tijd(nu["d"], nu.get("tijd") or "08:00")))
     return ('<?xml version="1.0" encoding="utf-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>'
