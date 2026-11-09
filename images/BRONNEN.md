@@ -62,17 +62,17 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-brand-new-day-alles-wat-we-weten.jpg | Een dramatisch zijaanzicht van lege rode fluwelen stoelen in een schemerige theaterzaal | 38131980 | Atai Anarbek |
 | gidsen-de-bekendste-pokemon.jpg | Pokemon-kaarten in beschermhoezen | 8811594 | Erik Mclean |
 | gidsen-de-beste-spider-man-games.jpg | Een stapel gamehoesjes | 5553301 | Brett Jordan |
-| gidsen-avengers-speelgoed.jpg | Actiefiguren in een vitrinekast | 5795420 | Erik Mclean |
-| gidsen-de-sterkste-avengers-figuren.jpg | Actiefiguren in een vitrinekast (pagina vervallen 6 okt 2026, doorverwezen naar avengers-speelgoed) | 5795420 | Erik Mclean |
+| gidsen-avengers-speelgoed.jpg | Knuffels van Captain America en Iron Man liggen samen in een doos (vervangen op 9 november 2026: tot die dag stond hier Pexels 5795420, en die toonde Star Wars-figuren, Darth Maul en Darth Vader) | 20072294 | Cien Nguyen |
+| gidsen-de-sterkste-avengers-figuren.jpg | Star Wars-figuren (Darth Maul en Darth Vader) in een vitrinekast; niet meer in gebruik, de pagina is sinds 6 oktober 2026 een doorverwijzing naar avengers-speelgoed | 5795420 | Erik Mclean |
 | gidsen-het-beste-aquaman-speelgoed.jpg | Groene en gele rubberen eend speelgoed geïsoleerd op een witte achtergrond | 132464 | Anthony 🙂 |
 | gidsen-het-beste-black-panther-speelgoed.jpg | Close-up van een zwarte kat met groene ogen in een serene buitenomgeving | 28512411 | Sandin Redzo |
-| gidsen-het-beste-captain-america-speelgoed.jpg | Buzz Lightyear en Zurg speelgoedfiguren op kunstgras omringd door stervormige decoraties | 5875642 | Dalila Dalprat |
+| gidsen-het-beste-captain-america-speelgoed.jpg | Het schild van Captain America met de witte ster op een natte straat, van bovenaf, naast iemand met een zwarte paraplu (vervangen op 9 november 2026: daarvoor Buzz Lightyear en Zurg uit Toy Story, Pexels 5875642) | 39302525 | Luk Sauvage |
 | gidsen-het-beste-doctor-strange-speelgoed.jpg | Twee handen houden een uitgewaaierd pak speelkaarten vast tegen een donkere achtergrond | 3290047 | Kobe - |
 | gidsen-het-beste-green-lantern-speelgoed.jpg | Een felblauwe neonstreep krult boven een blauwgroen masker dat oplicht tegen een oranje achtergrond | 38599411 | Wandering Artist |
 | gidsen-het-beste-iron-man-speelgoed.jpg | Een houten speelgoedrobot met opwindsleutel en een oranje kuif staat tegen een zwarte achtergrond | 4102557 | Ann H |
-| gidsen-het-beste-supergirl-speelgoed.jpg | Cosplayers in engel- en demonkostuums tegenover elkaar | 18569516 | Alfredo Flores |
+| gidsen-het-beste-supergirl-speelgoed.jpg | Een wit T-shirt met de opdruk Superheroes en Batgirl, Wonder Woman en Supergirl in stripstijl (vervangen op 9 november 2026: daarvoor cosplayers in engel- en demonkostuums met nepbloed, Pexels 18569516) | 701771 | Kristina Paukshtite |
 | gidsen-het-beste-superman-speelgoed.jpg | Gele taart met het Superman-logo erop en een klein Superman-figuurtje van fondant bovenop | 10336820 | Helena Lopes |
-| gidsen-het-beste-the-flash-speelgoed.jpg | Een oude leren koffer met riemen op de dakdrager van een auto onder groene bomen, met een speelgoedfiguurtje eraan | 38647663 | Iban Lopez Luna |
+| gidsen-het-beste-the-flash-speelgoed.jpg | Een speelgoedfiguur van The Flash in zijn rode pak op een balkon hoog boven een stad (vervangen op 9 november 2026: daarvoor een koffer met een Woody-pop uit Toy Story, Pexels 38647663) | 327719 | Joe Chen |
 | gidsen-het-beste-thor-speelgoed.jpg | Een timmerman slaat een spijker in hout | 5974413 | Ono  Kosuki |
 | gidsen-het-beste-wolverine-speelgoed.jpg | Houten pop met een gele en blauwe cape in een dramatische pose binnen | 13417381 | Roman Skrypnyk |
 | gidsen-het-beste-wonder-woman-speelgoed.jpg | Een rode keizerskroon in bloei | 37605117 | Leyla Helvaci |
@@ -98,7 +98,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-verkleed-als-de-hulk.jpg | Een arm wordt met groene verf beschilderd | 21630773 | nana |
 | gidsen-verkleed-als-elsa-of-anna.jpg | Close-up van een ijskristal in de vorm van een sneeuwvlok tegen een donkerblauwe achtergrond | 19907206 | Frank Cone |
 | gidsen-waarom-wordt-de-hulk-groen.jpg | Vibrant abstract schilderij met groene en zwarte spatten op een gestructureerd oppervlak | 12134477 | Paul Blenkhorn @SensoryArtHouse |
-| gidsen-wat-is-het-spider-verse.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | 2854693 | Josh Hild |
+| gidsen-wat-is-het-spider-verse.jpg | Verlichte kantoortorens in een stad bij nacht (de Spider-Man uit de oorspronkelijke foto valt buiten de uitsnede; alt-tekst rechtgezet op 9 november 2026) | 2854693 | Josh Hild |
 | gidsen-wat-is-star-wars.jpg | Iemand met een oplichtend zwaard in een donkere straat | 16904561 | Din |
 | gidsen-welke-superheld-past-bij-jou.jpg | Venetiaanse maskers in een winkel | 31397062 | Jacint Bofill |
 | gidsen-wie-is-aquaman.jpg | Serene uitzicht op de oceaan in Bali, Indonesië met verre boten op een kalme zee | 27506447 | novianadss |
@@ -122,7 +122,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-word-zelf-een-superheld.jpg | Iemand in een Superman-pak knielt op straat | 28245750 | Abigail Sylvester |
 | gidsen-zweinstein-afdelingen.jpg | Twee gekruiste toverstokken | 8391465 | Mikhail Nilov |
 | helden.jpg | Uitzicht over een stad bij schemering | 33143671 | Kerem Kaplan |
-| schurken.jpg | Een donkere figuur met capuchon | 19067420 | Karl Solano |
+| schurken.jpg | Een glanzend zwart helmmasker in het donker (beschrijving rechtgezet op 9 november 2026; er stond een figuur met capuchon) | 19067420 | Karl Solano |
 
 ## Nieuwsberichten (sinds 6 oktober 2026)
 
@@ -130,20 +130,22 @@ Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg
 
 | Bestand (in `paginas/`) | Toont | Bron | Fotograaf |
 |---|---|---|---|
-| nieuws-avengers-doomsday-voorverkoop.jpg | Actiefiguren van superhelden naast elkaar in een vitrinekast | Pexels 5795420 (zelfde foto als gidsen-avengers-speelgoed.jpg) | Erik Mclean |
-| nieuws-nieuwe-beelden-avengers-doomsday.jpg | Een vertakte bliksemschicht licht op in een paarse nachthemel, met boomtakken als silhouet aan de rand | Pexels 37968617 (zelfde foto als gidsen-wie-is-thor.jpg) | Stuart  Robinson |
+| nieuws-avengers-doomsday-voorverkoop.jpg | Doctor Doom in zijn zilveren masker en groene kap spreidt zijn armen, met twee reusachtige robots achter zich | Filmdepot, film-ID 34711, media-ID 215046 (Avengers: Doomsday): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/avengers-doomsday-voorverkoop.jpg` | 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL. |
+| nieuws-nieuwe-beelden-avengers-doomsday.jpg | Een man en een vrouw staan voorhoofd tegen voorhoofd in een schemerige kamer | Filmdepot, film-ID 34711, media-ID 215038 (Avengers: Doomsday): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/nieuwe-beelden-avengers-doomsday.jpg` | 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL. |
 | nieuws-clayface-kijkwijzer-16.jpg | Een kleigezicht in een atelier, met een hand en een lusgereedschap ervoor | Pexels 6714798 (zelfde foto als clayface.jpg) | Tima Miroshnichenko |
-| nieuws-your-friendly-neighborhood-spider-man-seizoen-2.jpg | Iemand in een Spider-Man-pak op de rand van een dak boven de verlichte stad | Pexels 2854693 (zelfde foto als gidsen-wat-is-het-spider-verse.jpg) | Josh Hild |
+| nieuws-your-friendly-neighborhood-spider-man-seizoen-2.jpg | Verlichte kantoortorens in een stad bij nacht | Pexels 2854693 (zelfde foto als gidsen-wat-is-het-spider-verse.jpg) | Josh Hild |
 | nieuws-visionquest-disney-plus-14-oktober.jpg | De skyline van een grote stad bij zonsondergang | Pexels 8569166 (zelfde foto als gidsen-wie-zijn-de-avengers.jpg) | Ivana Rodriguez |
-| nieuws-kaartverkoop-avengers-doomsday.jpg | Lege rode fluwelen stoelen in een schemerige bioscoopzaal, van opzij gezien | Pexels 38131980 (zelfde foto als gidsen-brand-new-day-alles-wat-we-weten.jpg) | Atai Anarbek |
+| nieuws-kaartverkoop-avengers-doomsday.jpg | Thor met zijn hamer en rode cape staat tegenover een man met een uitgestoken arm in een ruimteschip | Filmdepot, film-ID 34711, media-ID 215044 (Avengers: Doomsday): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/kaartverkoop-avengers-doomsday.jpg` | 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL. |
 | nieuws-nieuwe-wonder-woman-film.jpg | Het silhouet van een wandelende vrouw langs het water bij een oranje zonsondergang | Pexels 37306372 (zelfde foto als gidsen-wie-is-wonder-woman.jpg) | Cara Denison |
-| nieuws-spider-man-brand-new-day-thuis-kijken.jpg | Close-up van een filmspoel met film in een oude filmprojector | Pexels 35082512 (zelfde foto als gidsen-spider-man-films-op-een-rij.jpg) | Ayudh Roy |
+| nieuws-spider-man-brand-new-day-thuis-kijken.jpg | Spider-Man springt boven de daken van een stad, met een groep vechters in rode gewaden achter zich aan | Filmdepot, film-ID 36048, media-ID 207882 (Spider-Man: Brand New Day): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/spider-man-brand-new-day-thuis-kijken.jpg` | 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL. |
 | nieuws-lanterns-alle-afleveringen-online.jpg | Een silhouet van een persoon in het donker, voor een fel groen licht in de mist | Pexels 6276690 (zelfde foto als lanterns.jpg) | Victor de Dompablo |
-| nieuws-endgame-weer-best-verdienende-film.jpg | Popcorn springt uit een bakje voor een bioscooplicht | Pexels 35623662 (zelfde foto als gidsen-avengers-films-volgorde.jpg) | Christopher Welsch Leveroni |
+| nieuws-endgame-weer-best-verdienende-film.jpg | Vier Avengers lopen 's avonds over het gras voor het hoofdkwartier met het A-logo | Filmdepot, film-ID 19803, media-ID 215496 (Avengers: Endgame Encore): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/endgame-weer-best-verdienende-film.jpg` | Copyright 2026 Marvel |
 | nieuws-superman-2025-op-netflix.jpg | Een Superman-figuur klimt langs een gebouw bij neonlicht | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
-| nieuws-supergirl-op-hbo-max.jpg | Iemand in een lange rode cape die in de wind uitwaait, staand in een leeg veld onder een grijze lucht | Pexels 37567179 (zelfde foto als gidsen-wie-is-supergirl.jpg) | Melih ERŞAHİN |
+| nieuws-supergirl-op-hbo-max.jpg | Supergirl in haar blauwe pak met de rode S glimlacht tegen een lichte lucht | Filmdepot, film-ID 35742, media-ID 203466 (Supergirl): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/supergirl-op-hbo-max.jpg` | 2026 Warner Bros. Ent. All Rights Reserved Photo Credit: Courtesy of DC Studios and Warner Bros. Pictures. |
 
 ## Toegevoegd onder het beeldbeleid (Filmdepot)
+
+*Sinds 9 november 2026 dragen ook nieuwsberichten over een film die in Filmdepot staat officieel persbeeld (vraag van Cars: "heldenshop.nl kan toch ook gewoon bij de beeldbank van filmdepot?", nadat het topnieuws over Avengers: Doomsday een foto van Star Wars-figuren had). Zes berichten, geregistreerd in de tabel Nieuwsberichten hierboven met film- en media-ID. `gereedschap/nieuws-bouwen.py` verkleint ze alleen, maakt geen 4:3- of 1:1-uitsnede, toont ze op kaarten met object-fit:contain en zet de creditregel eronder. De oude bestanden `nieuws-<slug>-4x3.jpg` en `-1x1.jpg` van die zes berichten worden nergens meer gebruikt.*
 
 `avengers-doomsday-still.jpg` — *krijgers van Wakanda schudden The Thing (Fantastic Four) de hand* — bron: https://www.filmdepot.nl/detail/34711/Avengers-Doomsday — film-ID 34711, media-ID 215035 — maker: Marvel Studios; distributie: The Walt Disney Company Netherlands — licentie: officieel Filmdepot-persmateriaal (geautoriseerd account Studio Bijlstra); credit staat als bijschrift op de pagina; onbewerkt — **voorwaarde: verwijderen zodra het materiaal uit het depot gaat; de wekelijkse ronde controleert dit** — toegevoegd: 19 augustus 2026 — **creditregel op 2 september 2026 eerst veranderd en daarna teruggezet:** die ochtend heb ik het bijschrift van "© 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL." veranderd in een Disney-regel, omdat CTMG de distributeur van Spider-Man: Brand New Day is en dat voor een Disney-titel onlogisch leek. Dat was een gevolgtrekking van mij, geen bron. Later diezelfde ochtend is het depot nagekeken en blijkt de rechtenregel gewoon in de bestandsnaam te staan die Filmdepot meelevert: `Avengers_-Doomsday_st_2_jpg_sd-low_2026-CTMG-All-Rights-Reserved-2026-MARVEL.jpg`, en alle acht de stills van deze film dragen dezelfde regel. Het oorspronkelijke bijschrift was dus correct en is teruggezet. **Waar de creditregel staat, voor de volgende keer:** niet op de detailpagina en niet in de metadata-export (die kent alleen Filmtitel tot en met Links, geen rechtenveld), maar in het attribuut `data-infoname` van het mediablok — daar staat de rechtenhouder achter de resolutie-aanduiding. Neem die regel letterlijk over en leid nooit zelf een distributeur af.
 

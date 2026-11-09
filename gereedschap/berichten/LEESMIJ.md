@@ -6,8 +6,12 @@
 
 1. Kopieer `_sjabloon.html` naar `<slug>.html`. De slug is de URL: kleine letters, cijfers en koppeltekens, met de woorden waarop mensen zoeken (`clayface-kijkwijzer-bekend`, niet `nieuws-22-oktober`). Een slug verandert nooit meer.
 2. Vul de kopregels in (hieronder) en schrijf de tekst eronder in gewone HTML.
-3. Kies het beeld. Past de foto van de pagina over het onderwerp (`images/paginas/<pagina>.jpg`), gebruik die. Anders een eigen Pexels-foto via Chrome op Boris, die je in `beeld/<slug>.jpg` zet. Nooit een Filmdepot-still, nooit kinderen, en minstens 1200 px breed.
-4. Zet de regel voor `nieuws-<slug>.jpg` in `images/BRONNEN.md` (kopje "Nieuwsberichten").
+3. Kies het beeld, en kijk er zelf naar voordat je het kiest (open het bestand; een alt-tekst, bestandsnaam of registerregel is geen keuring).
+   - **Gaat het bericht over een film die in Filmdepot staat** (een bioscoopfilm, ook als hij nu thuis of op streaming te zien is), neem dan officieel persbeeld uit het depot: zet de still in `beeld/<slug>.jpg`, hooguit verkleind en **nooit bijgesneden of bewerkt**, en vul `persbeeld: ja`, `persbeeld_film`, `persbeeld_credit` en `persbeeld_id` in (tabel hieronder). Kies een still die een kind niet bang maakt, zonder wapen in beeld, en die nog op geen andere pagina staat. Sinds 9 november 2026, vraag van Cars: "heldenshop.nl kan toch ook gewoon bij de beeldbank van filmdepot?"
+   - Anders de foto van de pagina over het onderwerp (`images/paginas/<pagina>.jpg`), maar alleen als de held of franchise van het bericht erop staat. Op 9 november 2026 stond er zo een foto van Star Wars-figuren boven Avengers-nieuws, geleend van een gids waar hij al maanden verkeerd stond.
+   - Past die niet, dan een eigen Pexels-foto via Chrome op Boris in `beeld/<slug>.jpg`.
+   - Nooit kinderen, en minstens 1200 px breed.
+4. Zet de regel voor `nieuws-<slug>.jpg` in `images/BRONNEN.md` (kopje "Nieuwsberichten"). Bij persbeeld staan daarin `Filmdepot`, het film-ID en het media-ID; zonder die regel schrijft het gereedschap niets.
 5. Draai vanuit de hoofdmap van de repo: `python3 gereedschap/nieuws-bouwen.py --paden`. Dat bouwt alles en drukt de gewijzigde paden af voor de klus. Met `--controle` kijkt hij alleen.
 
 ## De kopregels
@@ -30,7 +34,11 @@ Tussen twee regels `---`, een veld per regel, `naam: waarde`. Platte tekst, gewo
 | `samenvatting` | ja | Een of twee zinnen voor de kaarten en de intro onder de kop. |
 | `beeld` | ja | Pad vanaf de hoofdmap, bijvoorbeeld `images/paginas/lanterns.jpg` of `gereedschap/berichten/beeld/<slug>.jpg`. |
 | `beeld_alt` | ja | Wat er echt op de foto staat. |
-| `beeld_focus` | nee | `x,y` tussen 0 en 1, het punt waar de uitsnede omheen moet (standaard `0.5,0.5`). |
+| `beeld_focus` | nee | `x,y` tussen 0 en 1, het punt waar de uitsnede omheen moet (standaard `0.5,0.5`). Doet niets bij persbeeld. |
+| `persbeeld` | nee | `ja` als het beeld officieel persbeeld uit Filmdepot is. Dan maakt het gereedschap geen uitsneden: het beeld wordt alleen verkleind, op kaarten in zijn geheel getoond (`object-fit:contain`) en krijgt de creditregel eronder. |
+| `persbeeld_film` | bij persbeeld | De titel zoals Filmdepot hem noemt, bijvoorbeeld `Avengers: Doomsday`. Komt in het bijschrift. |
+| `persbeeld_credit` | bij persbeeld | De creditregel letterlijk uit het depot: attribuut `data-infocopyright` van het mediablok (controle: de bestandsnaam in `data-infoname`). Nooit zelf een rechthebbende afleiden. |
+| `persbeeld_id` | bij persbeeld | `film-ID/media-ID`, bijvoorbeeld `34711/215046`. Hetzelfde media-ID staat in de registerregel; de wekelijkse contentscan controleert of het nog in het depot staat. |
 | `onderwerp` | ja | De pagina over het onderwerp, bijvoorbeeld `/clayface`. Daar komt de kaart "Meer over dit onderwerp" naartoe. |
 | `onderwerp_naam` | nee | De tekst op die kaart. Standaard de H1 van die pagina. |
 | `onderwerp_tekst` | nee | Een zin onder die kaart. |
@@ -60,3 +68,4 @@ Tussen twee regels `---`, een veld per regel, `naam: waarde`. Platte tekst, gewo
 - Een bericht weghalen. Klopt er iets niet, verbeter het, zet `bijgewerkt` en zeg in de tekst wat er veranderde. Moet het echt weg, dan is dat een doorverwijzing in `vercel.json` en een besluit, geen ronde.
 - Een slug wijzigen. De URL is van het bericht, voor altijd.
 - `nieuws/*.html` met de hand bewerken: de volgende ronde bouwt ze opnieuw uit dit bronbestand.
+- Persbeeld bijsnijden, bewerken of in een eigen post op social zetten. Deel een bericht met persbeeld op social met eigen beeld.

@@ -24,7 +24,8 @@ Wat eruit komt:
   nieuws/feed.xml                        RSS met de nieuwste twintig berichten
   nieuws.html                            overzicht, agenda, JSON-LD, metabeschrijving
   index.html                             topnieuws, Net binnen, agenda, metabeschrijving
-  images/paginas/nieuws-<slug>*.jpg      16:9 (1200 breed), 4:3, 1:1 en een kleine kaart
+  images/paginas/nieuws-<slug>*.jpg      16:9 (1200 breed), 4:3, 1:1 en een kleine kaart;
+                                         bij persbeeld alleen verkleind, nooit bijgesneden
   sitemap.xml                            elke berichtpagina met de datum van het bericht
   app.js                                 de zoekindex van de site
 
@@ -38,6 +39,15 @@ Het script stopt met een foutmelding (en schrijft niets) bij een ontbrekend verp
 veld, een dode interne link, een gedachtestreepje of een beeld dat niet bestaat.
 Waarschuwingen (te lange titel, beeld te smal voor Discover, topnieuws ouder dan
 zeven dagen, geen "Voor ouders") schrijven wel, maar horen in het verslag.
+
+Persbeeld uit Filmdepot (9 november 2026, vraag van Cars: "heldenshop.nl kan toch ook gewoon
+bij de beeldbank van filmdepot?", nadat het topnieuws over Avengers: Doomsday een foto van
+Star Wars-figuren droeg). Gaat een bericht over een film die in Filmdepot staat, dan draagt het
+officieel persbeeld: kopregel 'persbeeld: ja' met persbeeld_film, persbeeld_credit (letterlijk
+uit het depot) en persbeeld_id (film-ID/media-ID). Licentieregel: persbeeld wordt nooit
+bijgesneden. Het script maakt dan alleen verkleinde versies (geen 4:3 en 1:1), toont het beeld
+op kaarten met object-fit:contain en zet de creditregel als bijschrift onder het beeld. Zonder
+registerregel met 'Filmdepot' en het media-ID in images/BRONNEN.md schrijft het niets.
 
 Geen git, geen netwerk: veilig in de gekoppelde map op Boris. Python 3.10 en Pillow.
 """
@@ -212,6 +222,17 @@ def lees_bericht(pad, fouten, waarschuwingen):
             fouten.append("%s: bijgewerkt '%s' is geen jjjj-mm-dd [uu:mm]" % (naam, bw))
     b["volgorde"] = int(b.get("volgorde", "0") or 0)
     b["topnieuws"] = b.get("topnieuws", "").lower() in ("ja", "j", "1", "true")
+    # Persbeeld uit Filmdepot (9 november 2026): de vijf depotvoorwaarden uit claude/mandaten.md v9.
+    b["persbeeld"] = b.get("persbeeld", "").lower() in ("ja", "j", "1", "true")
+    if b["persbeeld"]:
+        for k in ("persbeeld_film", "persbeeld_credit", "persbeeld_id"):
+            if not b.get(k):
+                fouten.append("%s: persbeeld vraagt '%s' (licentievoorwaarde: creditregel en registratie met film- en media-ID)" % (naam, k))
+        if b.get("persbeeld_id") and not re.match(r"^\d+/\d+$", b["persbeeld_id"]):
+            fouten.append("%s: persbeeld_id '%s' moet film-ID/media-ID zijn, bijvoorbeeld 34711/215035" % (naam, b["persbeeld_id"]))
+        b["persbeeld_credit"] = b.get("persbeeld_credit", "").lstrip("\u00a9").strip()
+        if b.get("beeld_focus"):
+            waarschuwingen.append("%s: beeld_focus doet niets bij persbeeld (persbeeld wordt nooit bijgesneden)" % naam)
     # inhoudelijke toetsen
     if re.search(r"<h1[\s>]", tekst, re.I):
         fouten.append("%s: de tekst bevat een <h1>; de kop is de enige H1" % naam)
@@ -295,6 +316,31 @@ def maak_beelden(b, manifest, schrijf, waarschuwingen, fouten, gewijzigd):
         fouten.append("Pillow ontbreekt: pip install pillow")
         return
     sha = hashlib.sha256(open(bron, "rb").read()).hexdigest()[:16]
+    if b.get("persbeeld"):
+        # Persbeeld uit Filmdepot: licentieregel, nooit bijsnijden. Alleen verkleinen, en geen
+        # 4:3 of 1:1 (dat zouden uitsneden zijn). De sleutels '16x9' en 'klein' blijven de namen
+        # van het hoofdbeeld en de kaart, ook al heeft het beeld de verhouding van het origineel.
+        sleutel = "%s|%s|pers" % (bron, sha)
+        with Image.open(bron) as im0:
+            im0 = im0.convert("RGB")
+            w0, h0 = im0.size
+            if w0 < 1200:
+                waarschuwingen.append("%s: persbeeld is %d px breed; Discover vraagt minstens 1200 px (niet oprekken)" % (slug, w0))
+            if manifest.get(slug) == sleutel and all(os.path.exists(doel[v]) for v in ("16x9", "klein")):
+                with Image.open(doel["16x9"]) as k:
+                    b["img_wh"] = k.size
+                return
+            for v, maxw in (("16x9", 1200), ("klein", 640)):
+                c = im0.copy()
+                if c.width > maxw:
+                    c = c.resize((maxw, int(round(maxw * h0 / w0))), Image.LANCZOS)
+                if schrijf:
+                    c.save(doel[v], "JPEG", quality=86, optimize=True, progressive=True)
+                gewijzigd.add(doel[v])
+                if v == "16x9":
+                    b["img_wh"] = c.size
+        manifest[slug] = sleutel
+        return
     focus = b.get("beeld_focus", "0.5,0.5")
     sleutel = "%s|%s|%s" % (bron, sha, focus)
     with Image.open(bron) as im0:
@@ -372,7 +418,7 @@ def onderwerp_info(pad):
     """Titel (h1) en beeld van de onderwerppagina, voor de kaart onder een bericht.
 
     Alleen beeld uit images/paginas/ (het eigen beeld van die pagina). Nooit het og:image
-    als dat een Filmdepot-still is: die mag alleen op de pagina over die film zelf."""
+    als dat een Filmdepot-still is: deze kaart snijdt bij, en persbeeld wordt nooit bijgesneden."""
     p = pad.split("#")[0].strip("/")
     bestand = (p + ".html") if p else "index.html"
     if not os.path.exists(bestand):
@@ -449,6 +495,9 @@ NIEUWS_CSS = """
 .nb-sectie{font-family:var(--display);font-weight:400;letter-spacing:.4px;font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.1;margin:0 0 14px;color:var(--ink)}
 .nb-anker{display:block;height:0}
 .nb-kaart[id],.nb-anker,.nb-eerder li[id]{scroll-margin-top:clamp(110px,17vh,180px)}
+.nb-kaart img.nb-pers,.nb-lead-beeld img.nb-pers,.hn-lijst img.nb-pers{object-fit:contain;background:#0e1430}
+.nb-credit,.nb-credits{font-family:var(--body);font-size:.74rem!important;line-height:1.4!important;color:#6a7099!important;font-weight:600;margin:6px 0 0!important}
+.hn-lijst+.nb-credits{padding:2px 16px 10px}
 """
 
 ARTIKEL_CSS = """
@@ -460,6 +509,8 @@ ARTIKEL_CSS = """
 .nb-door a{color:var(--blue)}
 .nb-beeld{margin:0 0 24px}
 .nb-beeld img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:20px;border:3px solid var(--ink);box-shadow:6px 8px 0 rgba(26,31,61,.16);background:#0e1430;display:block}
+.nb-beeld img.nb-pers{aspect-ratio:auto;object-fit:contain}
+.nb-beeld figcaption{margin:10px 4px 0;font-size:.85rem;line-height:1.45;color:#5a6086;font-weight:600}
 .nb-feiten{background:#FFF6DC;border:3px solid var(--ink);border-radius:20px;box-shadow:var(--shadow-sm);padding:18px 22px;margin:0 0 26px}
 .nb-feiten h2{font-family:var(--display);font-weight:400;letter-spacing:.4px;font-size:1.25rem;margin:0 0 10px;color:var(--ink)}
 .nb-feiten dl{display:grid;grid-template-columns:minmax(7rem,auto) 1fr;gap:8px 18px;margin:0}
@@ -484,13 +535,46 @@ ARTIKEL_CSS = """
 """
 
 
+def pers_klasse(b):
+    """Persbeeld krijgt overal object-fit:contain: een kaart mag het niet bijsnijden."""
+    return ' class="nb-pers"' if b.get("persbeeld") else ""
+
+
+def pers_credit(b):
+    """De creditregel zoals het depot hem geeft; begint hij zelf al met (c) of Copyright, dan geen tweede."""
+    c = b["persbeeld_credit"]
+    return c if c.lower().startswith(("\u00a9", "copyright")) else "\u00a9 " + c
+
+
+def pers_bijschrift(b):
+    return "Officieel persbeeld uit %s, via Filmdepot. %s" % (b["persbeeld_film"], pers_credit(b))
+
+
+def pers_titel(b):
+    return (' title="%s"' % esc("%s (officieel persbeeld uit %s, via Filmdepot)" % (pers_credit(b), b["persbeeld_film"]))
+            if b.get("persbeeld") else "")
+
+
+def credits_regel(lijst):
+    """Een zichtbare regel onder een lijst kaarten met de creditregels van het persbeeld erin."""
+    gezien = []
+    for b in lijst:
+        if b.get("persbeeld"):
+            t = "%s: %s." % (b["persbeeld_film"], pers_credit(b).rstrip("."))
+            if t not in gezien:
+                gezien.append(t)
+    if not gezien:
+        return ""
+    return '<p class="nb-credits">Officieel persbeeld via Filmdepot. %s</p>' % esc(" ".join(gezien))
+
+
 def kaart_html(b, kopniveau="h3", beeld_laden="lazy", met_id=False):
     d = b["d"]
     idattr = ' id="%s"' % esc(b["anker"]) if met_id and b.get("anker") else ""
-    return ('<li class="nb-kaart"%s><a href="/nieuws/%s"><img src="/%s" alt="%s" width="640" height="360" loading="%s">'
+    return ('<li class="nb-kaart"%s><a href="/nieuws/%s"><img%s%s src="/%s" alt="%s" width="640" height="360" loading="%s">'
             '<span class="nk-body"><span class="nb-meta">%s<time datetime="%s">%s</time></span>'
             '<%s>%s</%s><p>%s</p></span></a></li>') % (
-        idattr, b["slug"], b["img"]["klein"], esc(b["beeld_alt"]), beeld_laden,
+        idattr, b["slug"], pers_klasse(b), pers_titel(b), b["img"]["klein"], esc(b["beeld_alt"]), beeld_laden,
         tag_html(b), d.isoformat(), datum_kort(d), kopniveau, esc(b["kop"]), kopniveau, esc(b["samenvatting"]))
 
 
@@ -498,13 +582,14 @@ def lead_html(b, sticker="Topnieuws", kopniveau="h2", knop="Lees het hele berich
     d = b["d"]
     w, h = b.get("img_wh", (1200, 675))
     return ('<article class="nb-lead"><a class="nb-lead-beeld" href="/nieuws/%s" tabindex="-1" aria-hidden="true">'
-            '<img src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high"><span class="nb-sticker">%s</span></a>'
+            '<img%s src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high"><span class="nb-sticker">%s</span></a>'
             '<div class="nb-lead-tekst"><p class="nb-meta">%s<time datetime="%s">%s</time></p>'
             '<%s class="nb-lead-kop"><a href="/nieuws/%s">%s</a></%s><p>%s</p>'
-            '<a class="btn btn-red" href="/nieuws/%s">%s &rarr;</a></div></article>') % (
-        b["slug"], b["img"]["16x9"], esc(b["beeld_alt"]), w, h, esc(sticker),
+            '<a class="btn btn-red" href="/nieuws/%s">%s &rarr;</a>%s</div></article>') % (
+        b["slug"], pers_klasse(b), b["img"]["16x9"], esc(b["beeld_alt"]), w, h, esc(sticker),
         tag_html(b), d.isoformat(), datum_lang(d), kopniveau, b["slug"], esc(b["kop"]), kopniveau,
-        esc(b["samenvatting"]), b["slug"], esc(knop))
+        esc(b["samenvatting"]), b["slug"], esc(knop),
+        ('<p class="nb-credit">%s</p>' % esc(pers_bijschrift(b))) if b.get("persbeeld") else "")
 
 
 def waar_html(waar):
@@ -560,7 +645,18 @@ def artikel_html(b, alle, chrome, vandaag):
     if len(titel) + len(" | Heldenshop") <= 60:
         titel += " | Heldenshop"
     w, h = b.get("img_wh", (1200, 675))
-    beelden = ["%s/%s" % (BASIS, b["img"][v]) for v in ("16x9", "4x3", "1x1")]
+    varianten = ("16x9",) if b.get("persbeeld") else ("16x9", "4x3", "1x1")
+    beelden = ["%s/%s" % (BASIS, b["img"][v]) for v in varianten]
+    ld_beeld = beelden
+    figuur = '<figure class="nb-beeld"><img src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high"></figure>\n' % (
+        b["img"]["16x9"], esc(b["beeld_alt"]), w, h)
+    if b.get("persbeeld"):
+        # Persbeeld: het hele beeld, met de creditregel van het depot eronder (licentievoorwaarde 3).
+        ld_beeld = [{"@type": "ImageObject", "url": beelden[0], "width": w, "height": h,
+                     "caption": pers_bijschrift(b), "creditText": "Filmdepot",
+                     "copyrightNotice": pers_credit(b)}]
+        figuur = ('<figure class="nb-beeld"><img class="nb-pers" src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high">'
+                  '<figcaption>%s</figcaption></figure>\n') % (b["img"]["16x9"], esc(b["beeld_alt"]), w, h, esc(pers_bijschrift(b)))
     kruimel = b.get("kort") or b["kop"]
     kruimel = kruimel[0].upper() + kruimel[1:]
     ld = {"@context": "https://schema.org", "@graph": [
@@ -569,7 +665,7 @@ def artikel_html(b, alle, chrome, vandaag):
             {"@type": "ListItem", "position": 2, "name": "Superheldennieuws", "item": BASIS + "/nieuws"},
             {"@type": "ListItem", "position": 3, "name": kruimel, "item": url}]},
         {"@type": "NewsArticle", "@id": url + "#bericht", "mainEntityOfPage": url, "url": url,
-         "headline": b["kop"], "description": b["omschrijving"], "image": beelden,
+         "headline": b["kop"], "description": b["omschrijving"], "image": ld_beeld,
          "datePublished": iso, "dateModified": iso_mod, "inLanguage": "nl-NL",
          "articleSection": "Superheldennieuws", "wordCount": b["woorden"],
          "author": {"@type": "Organization", "name": "Heldenshop", "url": BASIS + "/over-ons"},
@@ -603,7 +699,7 @@ def artikel_html(b, alle, chrome, vandaag):
     meer = ('<section class="nb-meer"><div class="wrap"><div class="sec-head"><div><span class="eyebrow" style="color:var(--red)">Superheldennieuws</span>'
             '<h2 class="sec-title" style="font-size:clamp(1.5rem,3vw,2.1rem)">Meer nieuws</h2></div>'
             '<a href="/nieuws" style="font-family:var(--display);color:var(--blue);text-decoration:none">Al het nieuws &rarr;</a></div>'
-            '<ul class="nb-kaarten">%s</ul></div></section>') % "".join(kaart_html(x) for x in eerder) if eerder else ""
+            '<ul class="nb-kaarten">%s</ul>%s</div></section>') % ("".join(kaart_html(x) for x in eerder), credits_regel(eerder)) if eerder else ""
     voettekst = ('%s Heldenshop is een onafhankelijke Nederlandse fansite over superhelden, voor kinderen en hun ouders, '
                  'met het laatste <a href="/nieuws">superheldennieuws</a>, weetjes en eerlijke cadeautips.') % esc(b["samenvatting"])
     # Productschap bij het bericht (6 oktober 2026): onze eigen kop en zin staan in de HTML,
@@ -653,8 +749,7 @@ def artikel_html(b, alle, chrome, vandaag):
             tag_html(b), iso, datum_lang(d), bijgewerkt),
         '<h1 class="nb-h1">%s</h1>\n<p class="nb-intro">%s</p>\n' % (esc(b["kop"]), esc(b["samenvatting"])),
         '<p class="nb-door">Door de redactie van Heldenshop &middot; <a href="/hoe-wij-werken">zo werken wij</a></p></header>\n',
-        '<figure class="nb-beeld"><img src="/%s" alt="%s" width="%d" height="%d" fetchpriority="high"></figure>\n' % (
-            b["img"]["16x9"], esc(b["beeld_alt"]), w, h),
+        figuur,
         feiten + "\n",
         '<div class="prose nb-prose">\n%s\n<p class="nb-bron">Bron: %s</p>\n</div>\n' % (b["body"], b["bron"]),
         schap_html, ond_html + "\n</div></article>\n", meer, "\n</main>\n",
@@ -710,8 +805,8 @@ def bouw_overzicht(nieuws, alle, top, ag, vandaag, fouten):
     blok = lead_html(top, sticker="Topnieuws")
     if top.get("anker"):
         blok = '<span id="%s" class="nb-anker"></span>' % esc(top["anker"]) + blok
-    blok += '<h2 class="nb-sectie">Meer nieuws</h2><ul class="nb-kaarten">%s</ul>' % "".join(
-        kaart_html(b, met_id=True) for b in kaarten)
+    blok += '<h2 class="nb-sectie">Meer nieuws</h2><ul class="nb-kaarten">%s</ul>%s' % ("".join(
+        kaart_html(b, met_id=True) for b in kaarten), credits_regel(kaarten))
     if eerder:
         per_maand = {}
         for b in eerder:
@@ -753,11 +848,11 @@ def bouw_home(index, alle, top, ag, vandaag, fouten):
     rest = [b for b in alle if b is not top]
     index = vervang_blok(index, "top", lead_html(top, sticker="Topnieuws", knop="Lees het nieuws"), "index.html", fouten)
     rijen = "".join(
-        '<li><a href="/nieuws/%s"><img src="/%s" alt="" width="640" height="360" loading="lazy">'
+        '<li><a href="/nieuws/%s"><img%s%s src="/%s" alt="" width="640" height="360" loading="lazy">'
         '<span class="hn-l-tekst"><span class="nb-meta">%s<time datetime="%s">%s</time></span><h3>%s</h3></span></a></li>' % (
-            b["slug"], b["img"]["klein"], tag_html(b), b["d"].isoformat(), datum_kort(b["d"]), esc(b["kop"]))
+            b["slug"], pers_klasse(b), pers_titel(b), b["img"]["klein"], tag_html(b), b["d"].isoformat(), datum_kort(b["d"]), esc(b["kop"]))
         for b in rest[:MAX_NET_BINNEN])
-    index = vervang_blok(index, "lijst", '<ul class="hn-lijst">%s</ul>' % rijen, "index.html", fouten)
+    index = vervang_blok(index, "lijst", '<ul class="hn-lijst">%s</ul>%s' % (rijen, credits_regel(rest[:MAX_NET_BINNEN])), "index.html", fouten)
     index = vervang_blok(index, "agenda", agenda_home(ag, vandaag), "index.html", fouten)
     index = vervang_stijl(index, NIEUWS_CSS.replace("\n", ""), "index.html", fouten)
     om = omschrijving_met("Superheldennieuws voor kinderen en ouders: ", [top] + rest, ", weetjes en eerlijke cadeautips.")
@@ -914,6 +1009,12 @@ def main():
     for b in berichten:
         if ("nieuws-%s.jpg" % b["slug"]) not in register:
             waarschuwingen.append("%s: nieuws-%s.jpg staat niet in images/BRONNEN.md; zet de bron erbij (zonder regel geen beeld)" % (b["slug"], b["slug"]))
+    for b in berichten:
+        if b.get("persbeeld"):
+            media = b.get("persbeeld_id", "/").split("/")[-1]
+            regels = [r for r in register.splitlines() if ("nieuws-%s.jpg" % b["slug"]) in r]
+            if not any(("Filmdepot" in r and media in r) for r in regels):
+                fouten.append("%s: persbeeld zonder regel voor nieuws-%s.jpg met 'Filmdepot' en media-ID %s in images/BRONNEN.md (licentievoorwaarde 4)" % (b["slug"], b["slug"], media))
     if fouten:
         return afsluiten(fouten, waarschuwingen, [], args)
 
