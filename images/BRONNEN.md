@@ -112,7 +112,7 @@ Licentie voor alle onderstaande bestanden: Pexels-licentie (https://www.pexels.c
 | gidsen-wie-is-miles-morales.jpg | Een muurschildering van een vliegende blauw-oranje vogel op de zijgevel van een oude schuur in een veld | 39080576 | El Capra |
 | gidsen-wie-is-super-mario.jpg | Speelfiguren van Mario en Yoshi | 163077 | Pixabay |
 | gidsen-wie-is-supergirl.jpg | Iemand in een lange rode cape die in de wind uitwaait, staand in een leeg veld onder een grijze lucht | 37567179 | Melih ERŞAHİN |
-| gidsen-wie-is-superman.jpg | Een Superman-figuur klimt langs een gebouw bij neonlicht | 28245751 | Abigail Sylvester |
+| gidsen-wie-is-superman.jpg | Een man in een Superman-pak met rode cape balt zijn vuist, met flatgebouwen en een blauwe lucht achter zich | 28245751 | Abigail Sylvester |
 | gidsen-wie-is-the-flash.jpg | Levendige witte en rode lichtsporen vastgelegd op de Autobahn van Berlijn 's nachts | 36700857 | Adrian Smarrelli |
 | gidsen-wie-is-thor.jpg | Een vertakte bliksemschicht licht op in een paarse nachthemel, met boomtakken als silhouet aan de rand | 37968617 | Stuart  Robinson |
 | gidsen-wie-is-venom.jpg | Een superheld in een zwart pak in de regen | 38691336 | Pedro H.  Novais |
@@ -140,7 +140,8 @@ Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg
 | nieuws-spider-man-brand-new-day-thuis-kijken.jpg | Spider-Man springt boven de daken van een stad, met een groep vechters in rode gewaden achter zich aan | Filmdepot, film-ID 36048, media-ID 207882 (Spider-Man: Brand New Day): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/spider-man-brand-new-day-thuis-kijken.jpg` | 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL. |
 | nieuws-lanterns-alle-afleveringen-online.jpg | Een silhouet van een persoon in het donker, voor een fel groen licht in de mist | Pexels 6276690 (zelfde foto als lanterns.jpg) | Victor de Dompablo |
 | nieuws-endgame-weer-best-verdienende-film.jpg | Vier Avengers lopen 's avonds over het gras voor het hoofdkwartier met het A-logo | Filmdepot, film-ID 19803, media-ID 215496 (Avengers: Endgame Encore): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/endgame-weer-best-verdienende-film.jpg` | Copyright 2026 Marvel |
-| nieuws-superman-2025-op-netflix.jpg | Een Superman-figuur klimt langs een gebouw bij neonlicht | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
+| nieuws-superman-2025-op-netflix.jpg | Een man in een Superman-pak met rode cape balt zijn vuist, met flatgebouwen en een blauwe lucht achter zich | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
+| nieuws-james-gunn-stopt-bij-dc-studios.jpg | Een man in een Superman-pak met rode cape balt zijn vuist, met flatgebouwen en een blauwe lucht achter zich | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
 | nieuws-supergirl-op-hbo-max.jpg | Supergirl in haar blauwe pak met de rode S glimlacht tegen een lichte lucht | Filmdepot, film-ID 35742, media-ID 203466 (Supergirl): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/supergirl-op-hbo-max.jpg` | 2026 Warner Bros. Ent. All Rights Reserved Photo Credit: Courtesy of DC Studios and Warner Bros. Pictures. |
 
 ## Toegevoegd onder het beeldbeleid (Filmdepot)

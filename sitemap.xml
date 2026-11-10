@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.heldenshop.nl/</loc><lastmod>2026-11-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.heldenshop.nl/nieuws</loc><lastmod>2026-11-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.heldenshop.nl/</loc><lastmod>2026-11-10</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.heldenshop.nl/nieuws</loc><lastmod>2026-11-10</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.heldenshop.nl/nieuws/james-gunn-stopt-bij-dc-studios</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/nieuws/avengers-doomsday-voorverkoop</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/nieuws/nieuwe-beelden-avengers-doomsday</loc><lastmod>2026-10-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/nieuws/clayface-kijkwijzer-16</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -31,7 +32,7 @@
   <url><loc>https://www.heldenshop.nl/paw-patrol</loc><lastmod>2026-09-21</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/harry-potter</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/spider-man-brand-new-day</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.heldenshop.nl/gidsen</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.heldenshop.nl/gidsen</loc><lastmod>2026-11-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/gidsen/de-geschiedenis-van-spider-man</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/gidsen/spider-man-films-op-een-rij</loc><lastmod>2026-11-06</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.heldenshop.nl/gidsen/brand-new-day-alles-wat-we-weten</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -95,7 +96,7 @@
   <url><loc>https://www.heldenshop.nl/wolverine</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.heldenshop.nl/black-panther</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://www.heldenshop.nl/doctor-strange</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://www.heldenshop.nl/superman</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://www.heldenshop.nl/superman</loc><lastmod>2026-11-10</lastmod></url>
   <url><loc>https://www.heldenshop.nl/wonder-woman</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://www.heldenshop.nl/the-flash</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://www.heldenshop.nl/aquaman</loc><lastmod>2026-10-04</lastmod></url>
@@ -108,14 +109,14 @@
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-wolverine</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-black-panther</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-doctor-strange</loc><lastmod>2026-11-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.heldenshop.nl/gidsen/wie-is-superman</loc><lastmod>2026-11-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://www.heldenshop.nl/gidsen/wie-is-superman</loc><lastmod>2026-11-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-wonder-woman</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-the-flash</loc><lastmod>2026-11-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-aquaman</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-green-lantern</loc><lastmod>2026-09-27</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/wie-is-supergirl</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/het-beste-iron-man-speelgoed</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-<url><loc>https://www.heldenshop.nl/gidsen/het-beste-captain-america-speelgoed</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://www.heldenshop.nl/gidsen/het-beste-captain-america-speelgoed</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/het-beste-thor-speelgoed</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/het-beste-wolverine-speelgoed</loc><lastmod>2026-09-04</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>https://www.heldenshop.nl/gidsen/het-beste-black-panther-speelgoed</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
