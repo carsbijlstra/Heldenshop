@@ -214,6 +214,13 @@ async function fetchByEan(ean, token, debug, idHint, subid) {
   // Zonder titel is het record half: de productaanroep faalde. Dan geen prijs, zodat het blok de
   // kaart verbergt in plaats van een kaart zonder naam te tonen; de volgende aanroep probeert opnieuw.
   if (!out.title) { out.price = null; out.delivery = null; out.incompleet = true; }
+  // Faalde alleen de aanbodaanroep, en niet met 404 (dat betekent: geen aanbod), dan weten we niet
+  // of het product te koop is. Bol weigert die aanroep bij veel verzoeken tegelijk; het antwoord zag
+  // er dan uit als "niet te koop" en bleef een uur in de CDN staan (Thuisstroomcheck, 11 november
+  // 2026: een batterij viel uit de vergelijking terwijl bol hem verkocht). Ook dat is dus een half
+  // record: geen prijs, niet bewaren, de volgende aanroep probeert opnieuw (studio, 11 november
+  // 2026, ja van Cars).
+  if (!offer.ok && offer.status !== 404) { out.price = null; out.delivery = null; out.incompleet = true; }
   const rt = ratings.ok ? extractRating(ratings.json) : { rating: null, count: null };
   out.rating = rt.rating;
   out.ratingCount = rt.count;
