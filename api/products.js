@@ -229,11 +229,16 @@ async function fetchByEan(ean, token, debug, idHint, subid) {
   const rt = ratings.ok ? extractRating(ratings.json) : { rating: null, count: null };
   out.rating = rt.rating;
   out.ratingCount = rt.count;
+  // Faalde alleen de aanroep voor de beoordelingen, en niet met 404 (dat betekent: geen
+  // beoordelingen), dan weten we niet hoeveel sterren het product heeft. De kaart mag er staan,
+  // maar het antwoord hoort niet een uur zonder sterren in de CDN te blijven: de volgende aanroep
+  // probeert opnieuw (studio, 12 november 2026, ja van Cars).
+  if (!ratings.ok && ratings.status !== 404) out.zonderSterren = true;
   if (debug) out.debug = { product: prod, media: media, offer: offer, ratings: ratings };
   else {
     const zonderLink = Object.assign({}, out);
     delete zonderLink.affiliateUrl; // de link is paginagebonden, de productdata niet
-    if (!out.incompleet && !out.zonderBeeld) cacheSet(productCache, ean, zonderLink); // een half record of een record zonder foto niet bewaren (studio, 8 en 12 nov 2026)
+    if (!out.incompleet && !out.zonderBeeld && !out.zonderSterren) cacheSet(productCache, ean, zonderLink); // een half record of een record zonder foto of zonder sterren niet bewaren (studio, 8 en 12 nov 2026)
   }
   return out;
 }
@@ -292,7 +297,7 @@ async function searchProducts(term, maxRaw, token, debug, subid) {
 // Een antwoord met een half of mislukt product mag niet in de CDN blijven staan (studio,
 // 8 november 2026): dan krijgt de volgende bezoeker gewoon een nieuwe poging bij bol.
 function onvolledig(lijst) {
-  return (lijst || []).some((p) => !p || p.error || p.incompleet || p.zonderBeeld);
+  return (lijst || []).some((p) => !p || p.error || p.incompleet || p.zonderBeeld || p.zonderSterren);
 }
 
 module.exports = async (req, res) => {
