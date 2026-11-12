@@ -215,9 +215,11 @@
     var plus = pickList(el, 'data-pick-plus', 'Pluspunten', 'bol-pick__plus');
     var min = pickList(el, 'data-pick-min', 'Let op', 'bol-pick__min');
 
+    // Weigerde bol de aanroep voor de beoordelingen (zonderSterren, in de productroute sinds
+    // 12 november 2026), dan weten we niet of er beoordelingen zijn: de kaart zegt er dan niets over.
     var beoordeling = (p.rating != null && p.ratingCount)
       ? '<span>' + stars(p.rating, p.ratingCount) + '</span>'
-      : '<span class="bol-pick__norating">Nog geen beoordelingen bij bol</span>';
+      : (p.zonderSterren ? '' : '<span class="bol-pick__norating">Nog geen beoordelingen bij bol</span>');
 
     el.innerHTML =
       '<div class="bol-pick__figure">' +
