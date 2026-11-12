@@ -183,10 +183,82 @@
 
   var DISC = '<p class="bol-disc">Prijzen zijn richtprijzen; de actuele prijs zie je bij bol. Via onze links verdienen wij een kleine commissie.</p>';
 
-  function renderShelf(shelf, products) {
+  // --- Herkansing ----------------------------------------------------------------
+  // Studio, 12 november 2026 (ja van Cars, idee 92). Een pagina vraagt al haar producten in
+  // een keer op, en bol weigert in zo'n klap soms een paar aanvragen. De productroute geeft
+  // zo'n product dan terecht als half terug (incompleet), en tot die dag verdween de kaart
+  // meteen: op de Avengers-gids stonden zo vijf van de negen keuzes terwijl alle negen te
+  // koop waren. Daarom vraagt het script een half product nog twee keer opnieuw, na elkaar
+  // en met een pauze ervoor, en verdwijnt een kaart pas als bol een heel antwoord zonder
+  // prijs geeft of als de pogingen op zijn. Wat heel terugkwam wordt niet opnieuw gevraagd.
+  // Een bruikbaar product zonder foto door een geweigerde beeldaanroep staat er meteen en
+  // krijgt in dezelfde herkansing alsnog zijn foto.
+  var PAUZES = [1500, 3000]; // wachttijd in ms voor de tweede en de derde poging
+
+  // Half: we weten nog niet of dit product te koop is.
+  function half(p) {
+    if (!p) return true;                                           // niets teruggekregen
+    if (p.error) return !/\(status 404\)/.test(String(p.error));   // 404: bol kent dit product-ID niet
+    return !!p.incompleet;                                         // de product- of aanbodaanroep is geweigerd
+  }
+
+  // 0 half; 1 een heel antwoord zonder bruikbare kaart (niet te koop); 2 bruikbaar, maar de
+  // foto is geweigerd; 3 bruikbaar. Een later antwoord vervangt een eerder alleen als het
+  // beter is.
+  function rang(p) {
+    if (half(p)) return 0;
+    if (!usable(p)) return 1;
+    return (p.zonderBeeld && !p.image) ? 2 : 3;
+  }
+  function klaar(p) { var r = rang(p); return r === 1 || r === 3; }
+
+  function wacht(ms) { return new Promise(function (ok) { setTimeout(ok, ms); }); }
+
+  // Herkansingen lopen na elkaar en nooit tegelijk: zo krijgt bol geen tweede klap.
+  var rij = Promise.resolve();
+  function naElkaar(taak) { rij = rij.then(taak, taak); return rij; }
+  // straks: de taak komt achter in de rij en begint niet eerder dan over ms milliseconden.
+  // De pauze telt vanaf nu, zodat pauzes van verschillende blokken niet optellen.
+  function straks(ms, taak) {
+    var nietVoor = Date.now() + ms;
+    return naElkaar(function () { return wacht(Math.max(0, nietVoor - Date.now())).then(taak); });
+  }
+
+  // wachtend: per product true als er nog een poging komt; op die plek blijft een lege kaart staan.
+  function renderShelf(shelf, products, wachtend) {
     var note = shelf.getAttribute('data-bol-note') || '';
-    var html = (products || []).map(function (p) { return realCard(p, note); }).join('');
-    shelf.innerHTML = html.replace(/\s/g, '') ? (html + DISC) : '';
+    var echt = 0;
+    var html = (products || []).map(function (p, i) {
+      var kaart = realCard(p, note);
+      if (kaart) { echt++; return kaart; }
+      return (wachtend && wachtend[i]) ? skeletonCard(note) : '';
+    }).join('');
+    var nieuw = html.replace(/\s/g, '') ? (html + (echt ? DISC : '')) : '';
+    if (shelf._bolHtml === nieuw) return; // niets veranderd: niet opnieuw tekenen
+    shelf._bolHtml = nieuw;
+    shelf.innerHTML = nieuw;
+  }
+
+  // Een schap op een zoekterm. Mislukt de zoekaanroep of komt er een product half terug, dan
+  // volgt een herkansing; het antwoord met de meeste bruikbare kaarten blijft staan.
+  function zoekSchap(shelf, query, max, poging) {
+    return fetch('/api/products?q=' + encodeURIComponent(query) + '&max=' + max + subidDeel())
+      .then(function (r) { return r.json(); })
+      .catch(function () { return null; })
+      .then(function (data) {
+        var lijst = (data && data.products) || [];
+        var aantal = function (l) { return l.filter(usable).length; };
+        if (!shelf._bolLijst || aantal(lijst) >= aantal(shelf._bolLijst)) shelf._bolLijst = lijst;
+        var beste = shelf._bolLijst;
+        var nogHalf = !data || !!data.error || lijst.some(half);
+        if (nogHalf && poging < PAUZES.length) {
+          if (aantal(beste)) renderShelf(shelf, beste, beste.map(half)); // anders blijven de lege kaarten staan
+          straks(PAUZES[poging], function () { return zoekSchap(shelf, query, max, poging + 1); });
+        } else {
+          renderShelf(shelf, beste);
+        }
+      })
+      .catch(function () { shelf.innerHTML = ''; });
   }
 
 
@@ -203,17 +275,36 @@
     return '<div><h4>' + kop + '</h4><ul class="' + cls + '">' + bron.innerHTML + '</ul></div>';
   }
 
-  function renderPick(el, p) {
-    if (!usable(p)) { el.parentNode && el.parentNode.removeChild(el); return false; }
+  // wachten: er komt nog een poging voor dit product. Dan blijft de tekst van de redactie
+  // staan zoals hij in de pagina staat, zonder prijs en zonder knop, tot het antwoord er is.
+  function renderPick(el, p, wachten) {
+    if (!usable(p)) {
+      if (wachten) return false;
+      el.parentNode && el.parentNode.removeChild(el);
+      return false;
+    }
+    if (el._bolP === p) return true; // al getekend met dit antwoord
 
     var label = el.getAttribute('data-pick-label') || '';
     var voor = el.getAttribute('data-pick-for') || '';
-    var naamEl = el.querySelector('[data-pick-name]');
-    var naam = naamEl ? naamEl.innerHTML : esc(p.title);
-    var whyEl = el.querySelector('[data-pick-why]');
-    var why = whyEl ? whyEl.innerHTML : '';
-    var plus = pickList(el, 'data-pick-plus', 'Pluspunten', 'bol-pick__plus');
-    var min = pickList(el, 'data-pick-min', 'Let op', 'bol-pick__min');
+    // De tekst van de redactie een keer uit de pagina lezen en onthouden: na het tekenen staat
+    // hij niet meer in zijn oude vorm in het blok, en een herkansing kan het blok opnieuw
+    // tekenen (de foto komt later).
+    var bron = el._bolBron;
+    if (!bron) {
+      var naamEl = el.querySelector('[data-pick-name]');
+      var whyEl = el.querySelector('[data-pick-why]');
+      bron = el._bolBron = {
+        naam: naamEl ? naamEl.innerHTML : null,
+        why: whyEl ? whyEl.innerHTML : '',
+        plus: pickList(el, 'data-pick-plus', 'Pluspunten', 'bol-pick__plus'),
+        min: pickList(el, 'data-pick-min', 'Let op', 'bol-pick__min')
+      };
+    }
+    var naam = bron.naam != null ? bron.naam : esc(p.title);
+    var why = bron.why;
+    var plus = bron.plus;
+    var min = bron.min;
 
     // Weigerde bol de aanroep voor de beoordelingen (zonderSterren, in de productroute sinds
     // 12 november 2026), dan weten we niet of er beoordelingen zijn: de kaart zegt er dan niets over.
@@ -240,6 +331,7 @@
         '<a class="bol-pick__btn" href="' + esc(affiliateHref(p)) + '" target="_blank" rel="sponsored noopener" aria-label="Bekijk ' + esc(p.title) + ' bij bol (opent in nieuw tabblad)">Bekijk bij bol ↗</a>' +
       '</div>';
     el.className = 'bol-pick is-ready';
+    el._bolP = p;
     return true;
   }
 
@@ -263,9 +355,13 @@
         '</tr>';
     });
     if (!rijen) { tabel.style.display = 'none'; return; }
-    tabel.innerHTML = '<div class="bol-picktable-wrap"><table class="bol-picktable">' +
+    if (tabel.style.display === 'none') tabel.style.display = ''; // na een herkansing is er alsnog een rij
+    var html = '<div class="bol-picktable-wrap"><table class="bol-picktable">' +
       '<thead><tr><th scope="col">Onze keuze</th><th scope="col">Voor wie</th><th scope="col">Wat het is</th><th scope="col">Prijs</th></tr></thead>' +
       '<tbody>' + rijen + '</tbody></table></div>';
+    if (tabel._bolHtml === html) return; // niets veranderd: niet opnieuw tekenen
+    tabel._bolHtml = html;
+    tabel.innerHTML = html;
   }
 
   function init() {
@@ -283,14 +379,12 @@
         var max = parseInt(shelf.getAttribute('data-bol-max'), 10) || 3;
         var sk = ''; for (var i = 0; i < max; i++) sk += skeletonCard(note);
         shelf.innerHTML = sk;
-        fetch('/api/products?q=' + encodeURIComponent(query) + '&max=' + max + subidDeel())
-          .then(function (r) { return r.json(); })
-          .then(function (data) { renderShelf(shelf, data.products); })
-          .catch(function () { shelf.innerHTML = ''; });
+        zoekSchap(shelf, query, max, 0);
       } else {
         var ids = (shelf.getAttribute('data-bol-ids') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
         shelf._ids = ids;
-        shelf.innerHTML = ids.map(function () { return skeletonCard(note); }).join('');
+        shelf._bolHtml = ids.map(function () { return skeletonCard(note); }).join('');
+        shelf.innerHTML = shelf._bolHtml;
         ids.forEach(function (id) { if (allIds.indexOf(id) < 0) allIds.push(id); });
         idShelves.push(shelf);
       }
@@ -308,21 +402,44 @@
       var CHUNK = 3;
       var groepen = [];
       for (var g = 0; g < allIds.length; g += CHUNK) groepen.push(allIds.slice(g, g + CHUNK));
-      Promise.all(groepen.map(function (groep) {
+      var byId = {}; // per product-ID het beste antwoord tot nu toe
+      var neem = function (lijst) {
+        (lijst || []).forEach(function (p) { if (p && p.id && rang(p) > rang(byId[p.id])) byId[p.id] = p; });
+      };
+      var vraag = function (groep) {
         return fetch('/api/products?ids=' + encodeURIComponent(groep.join(',')) + subidDeel())
           .then(function (r) { return r.json(); })
           .then(function (data) { return (data && data.products) || []; })
           .catch(function () { return []; });
-      })).then(function (delen) {
-        var byId = {};
-        delen.forEach(function (lijst) {
-          lijst.forEach(function (p) { if (p && p.id) byId[p.id] = p; });
-        });
+      };
+      // laatste: er komt geen poging meer; wat dan nog half is, verdwijnt.
+      var teken = function (laatste) {
+        var wachten = function (id) { return !laatste && !klaar(byId[id]); };
         idShelves.forEach(function (shelf) {
-          renderShelf(shelf, shelf._ids.map(function (id) { return byId[id]; }));
+          renderShelf(shelf, shelf._ids.map(function (id) { return byId[id]; }), shelf._ids.map(wachten));
         });
         buildPickTable(byId);
-        picks.forEach(function (el) { renderPick(el, byId[el.getAttribute('data-bol-id')]); });
+        picks.forEach(function (el) {
+          var id = el.getAttribute('data-bol-id');
+          renderPick(el, byId[id], wachten(id));
+        });
+      };
+      // De eerste ronde gaat zoals altijd in een keer. Daarna: wat nog niet klaar is opnieuw
+      // vragen, in porties van drie en na elkaar, hooguit twee keer.
+      var ronde = function (poging) {
+        var open = allIds.filter(function (id) { return !klaar(byId[id]); });
+        if (!open.length || poging >= PAUZES.length) { teken(true); return; }
+        teken(false);
+        for (var h = 0; h < open.length; h += CHUNK) {
+          (function (groep) {
+            straks(PAUZES[poging], function () { return vraag(groep).then(neem); });
+          })(open.slice(h, h + CHUNK));
+        }
+        naElkaar(function () { ronde(poging + 1); });
+      };
+      Promise.all(groepen.map(vraag)).then(function (delen) {
+        delen.forEach(neem);
+        ronde(0);
       });
     }
   }
