@@ -904,6 +904,11 @@ def bouw_sitemap(sitemap, alle):
     regels = "".join("\n  <url><loc>%s/nieuws/%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>" % (
         BASIS, b["slug"], (b.get("bd") or b["d"]).isoformat()) for b in alle)
     nieuwste = max((b.get("bd") or b["d"]) for b in alle).isoformat()
+    # /nieuws verandert ook door de agenda (zonder nieuw bericht); een latere datum
+    # die er al staat, blijft staan, zodat een bouw de lastmod nooit terugzet
+    oud = re.search(r"<url><loc>%s/nieuws</loc><lastmod>([0-9-]{10})</lastmod>" % re.escape(BASIS), sitemap)
+    if oud and oud.group(1) > nieuwste:
+        nieuwste = oud.group(1)
     sitemap = re.sub(r"(<url><loc>%s/nieuws</loc><lastmod>)[^<]*(</lastmod>.*?</url>)" % re.escape(BASIS),
                      lambda m: m.group(1) + nieuwste + m.group(2), sitemap, count=1, flags=re.S)
     m = re.search(r"<url><loc>%s/nieuws</loc>.*?</url>" % re.escape(BASIS), sitemap, re.S)
