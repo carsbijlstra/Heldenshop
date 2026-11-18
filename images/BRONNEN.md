@@ -144,6 +144,7 @@ Elk bericht op `/nieuws/<slug>` heeft een eigen beeld `paginas/nieuws-<slug>.jpg
 | nieuws-superman-2025-op-netflix.jpg | Een man in een Superman-pak met rode cape balt zijn vuist, met flatgebouwen en een blauwe lucht achter zich | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
 | nieuws-james-gunn-stopt-bij-dc-studios.jpg | Een man in een Superman-pak met rode cape balt zijn vuist, met flatgebouwen en een blauwe lucht achter zich | Pexels 28245751 (zelfde foto als gidsen-wie-is-superman.jpg) | Abigail Sylvester |
 | nieuws-supergirl-op-hbo-max.jpg | Supergirl in haar blauwe pak met de rode S glimlacht tegen een lichte lucht | Filmdepot, film-ID 35742, media-ID 203466 (Supergirl): officieel persbeeld, onbewerkt, alleen verkleind; bron in `gereedschap/berichten/beeld/supergirl-op-hbo-max.jpg` | 2026 Warner Bros. Ent. All Rights Reserved Photo Credit: Courtesy of DC Studios and Warner Bros. Pictures. |
+| nieuws-spider-man-brand-new-day-op-netflix.jpg | Spider-Man tilt in zijn rood met blauwe pak een enorme ronde metalen plaat boven zijn hoofd, op een plein in de stad | Filmdepot, film-ID 36048, media-ID 213787 (Spider-Man: Brand New Day, still 10, hoge resolutie): officieel persbeeld, onbewerkt, alleen verkleind (5252×3501 → 1600×1067); bron in `gereedschap/berichten/beeld/spider-man-brand-new-day-op-netflix.jpg`; toegevoegd 18 november 2026 | 2026 CTMG. All Rights Reserved. & ™ 2026 MARVEL. |
 
 ## Toegevoegd onder het beeldbeleid (Filmdepot)
 
